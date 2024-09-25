@@ -1,0 +1,86 @@
+{
+  "aboutMe": {
+    "name": "Ibrahim Klusmann",
+    "title": "About Me",
+    "subtitle": "{{age}} years old | Software Developer",
+    "description": "I'm a {{age}} year old frontend developer with a passion for problem-solving and experimenting with new technologies, especially AI.",
+    "passion": "I love turning complex problems into simple, create user-friendly websites and apps, elegant solutions through clean and efficient code",
+    "hobbies": "When not coding, i like to dance salsa and bachata, photography, cooking and lift weights. These activities help me stay creative and energized.",
+    "experiences": {
+      "coding": "Years of Coding",
+      "industry": "Years in Tech Industry",
+      "projects": "Projects Completed"
+    }
+  },
+  "header": {
+    "title": "My Portfolio",
+    "navItems": {
+      "aboutMe": "About Me",
+      "techStack": "Tech Stack",
+      "workTimeline": "Work Timeline",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
+  },
+  "techStack": {
+    "title": "My Tech Stack",
+    "frontEnd": "Front-End",
+    "backEnd": "Back-End",
+    "tools": "Tools & Sonstiges"
+  },
+  "workTimeline": {
+    "title": "Work Timeline",
+    "positions": {
+      "frontend": "Frontend Developer",
+      "vb": "Visual basic Developer",
+      "support": "IT Support Specialist"
+    },
+    "description": {
+      "frontend": "Developing new features and maintaining a responsive portal using modern frontend technologies.",
+      "vb": "Developing functional and user-friendly interface as a replacement for the excel sheets.",
+      "support": "Providing first and second level support for the employees by troubleshooting hardware and software issues.",
+      "student": "Studied and graduated from the University of osnabrueck with a Bachelor of Science in computer science."
+    },
+    "companies": {
+      "concentrix": "Concentrix",
+      "e3dc": "E3/DC",
+      "uos": "University of osnabrueck"
+    }
+  },
+  "projects": {
+    "title": "Projects Overview",
+    "learnMore": "Learn More",
+    "items": {
+      "ecommerce": {
+        "title": "E-commerce Platform",
+        "description": "A full-stack e-commerce solution with React and Node.js"
+      },
+      "taskManagement": {
+        "title": "Task Management App",
+        "description": "A React-based task management application with drag-and-drop functionality"
+      },
+      "socialMedia": {
+        "title": "Dashboard",
+        "description": "A responsive dashboard for tax analytics using React"
+      },
+      "fitness": {
+        "title": "Fitness App",
+        "description": "A fitness app with React and Node.js"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Message",
+    "submitButton": "Send Message",
+    "successMessage": "Message sent successfully!",
+    "errorMessage": "Error sending message: {{error}}. Please try again.",
+    "unexpectedError": "An unexpected error occurred"
+  },
+  "translationKey": {
+    "enable": "Enable display of translation keys",
+    "disable": "Disable display of translation keys"
+  }
+}

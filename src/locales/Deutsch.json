@@ -1,0 +1,86 @@
+{
+  "aboutMe": {
+    "name": "Ibrahim Klusmann",
+    "title": "Über mich",
+    "subtitle": "{{age}} Jahre alt | Softwareentwickler",
+    "description": "Ich bin ein {{age}}-jähriger Frontend-Entwickler mit einer Leidenschaft für Problemlösung und das Experimentieren mit neuen Technologien, insbesondere KI.",
+    "passion": "Ich liebe es, komplexe Probleme in einfache, benutzerfreundliche Websites und Apps umzuwandeln und elegante Lösungen durch sauberen und effizienten Code zu schaffen",
+    "hobbies": "Wenn ich nicht programmiere, tanze ich gerne Salsa und Bachata, fotografiere, trainiere im Fitnessstudio und koche gerne. Diese Aktivitäten helfen mir, kreativ und energiegeladen zu bleiben.",
+    "experiences": {
+      "coding": "Jahre Programmiererfahrung",
+      "industry": "Jahre in der Tech-Branche",
+      "projects": "Abgeschlossene Projekte"
+    }
+  },
+  "header": {
+    "title": "Mein Portfolio",
+    "navItems": {
+      "aboutMe": "Über mich",
+      "techStack": "Tech-Stack",
+      "workTimeline": "Arbeitsverlauf",
+      "projects": "Projekte",
+      "contact": "Kontakt"
+    }
+  },
+  "techStack": {
+    "title": "Mein Tech-Stack",
+    "frontEnd": "Front-End",
+    "backEnd": "Back-End",
+    "tools": "Tools & Sonstiges"
+  },
+  "workTimeline": {
+    "title": "Arbeitsverlauf",
+    "positions": {
+      "frontend": "Frontend-Entwickler",
+      "vb": "Visual Basic-Entwickler",
+      "support": "IT-Support-Spezialist"
+    },
+    "description": {
+      "frontend": "Entwicklung neuer Funktionen und Wartung eines responsiven Portals mit modernen Frontend-Technologien.",
+      "vb": "Entwicklung einer funktionalen und benutzerfreundlichen Oberfläche als Ersatz für Excel-Tabellen.",
+      "support": "Bereitstellung von First- und Second-Level-Support für die Mitarbeiter durch Fehlerbehebung bei Hard- und Software-Problemen.",
+      "student": "Studium und Abschluss an der Universität Osnabrück mit einem Bachelor of Science in Informatik."
+    },
+    "companies": {
+      "concentrix": "Concentrix",
+      "e3dc": "E3/DC",
+      "uos": "Universität Osnabrück"
+    }
+  },
+  "projects": {
+    "title": "Projektübersicht",
+    "learnMore": "Mehr erfahren",
+    "items": {
+      "ecommerce": {
+        "title": "E-Commerce-Plattform",
+        "description": "Eine Full-Stack-E-Commerce-Lösung mit React und Node.js"
+      },
+      "taskManagement": {
+        "title": "Aufgabenverwaltungs-App",
+        "description": "Eine React-basierte Aufgabenverwaltungsanwendung mit Drag-and-Drop-Funktionalität"
+      },
+      "socialMedia": {
+        "title": "Dashboard",
+        "description": "Ein responsives Dashboard für Steueranalysen mit React"
+      },
+      "fitness": {
+        "title": "Fitness-App",
+        "description": "Eine Fitness-App mit React und Node.js"
+      }
+    }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie mich",
+    "nameLabel": "Name",
+    "emailLabel": "E-Mail",
+    "messageLabel": "Nachricht",
+    "submitButton": "Nachricht senden",
+    "successMessage": "Nachricht erfolgreich gesendet!",
+    "errorMessage": "Fehler beim Senden der Nachricht: {{error}}. Bitte versuchen Sie es erneut.",
+    "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten"
+  },
+  "translationKey": {
+    "enable": "Anzeige der Übersetzungsschlüssel aktivieren",
+    "disable": "Anzeige der Übersetzungsschlüssel deaktivieren"
+  }
+}
