@@ -43,7 +43,7 @@ const TechStack: React.FC = () => {
   const theme = useTheme();
 
   return (
-    <Box component="section" id="tech-stack" py={8}>
+    <Box component="section" id="techStack" py={8}>
       <Typography variant="h2" textAlign="center" mb={4} fontWeight="bold">
         {t('techStack.title')}
       </Typography>

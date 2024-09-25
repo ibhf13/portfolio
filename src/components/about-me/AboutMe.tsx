@@ -39,7 +39,7 @@ const AboutMe: React.FC = () => {
   return (
     <Box
       component="section"
-      id="about-me"
+      id="aboutMe"
       position="relative"
       overflow="hidden"
       sx={{
