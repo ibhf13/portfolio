@@ -5,7 +5,7 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { calculateAge } from '../../utils/dateUtils';
 import ProfileImage from './ProfileImage';
 import ExperienceCard from './ExperienceCard';
-import AnimatedBackground from './AnimatedBackground';
+import AnimatedBackground from '../AnimatedBackground/AnimatedBackground';
 import CodeIcon from '@mui/icons-material/Code';
 import SchoolIcon from '@mui/icons-material/School';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
@@ -24,10 +24,6 @@ const AboutMe: React.FC = () => {
     { icon: <EmojiEventsIcon fontSize="large" />, years: 4, text: t('aboutMe.experiences.projects') },
   ];
 
-  const backgroundColorByTheme = theme.palette.mode === 'light'
-    ? 'rgba(255, 255, 255, 0.5)'
-    : 'rgba(18, 18, 18, 0.5)';
-
   const cardBackgroundColor = theme.palette.mode === 'light'
     ? 'rgba(255, 255, 255, 0.85)'
     : 'rgba(18, 18, 18, 0.85)';
@@ -37,20 +33,7 @@ const AboutMe: React.FC = () => {
     : theme.palette.primary.light;
 
   return (
-    <Box
-      component="section"
-      id="aboutMe"
-      position="relative"
-      overflow="hidden"
-      sx={{
-        py: { xs: 6, md: 8 },
-        px: 2,
-        mt: { xs: 10, sm: 12, md: 16 },
-        backgroundColor: backgroundColorByTheme,
-        borderRadius: 4,
-        border: `2px solid ${cardBorderColor}`,
-      }}
-    >
+    <Box position="relative" overflow="hidden" borderRadius={2}>
       <AnimatedBackground />
 
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
@@ -79,7 +62,7 @@ const AboutMe: React.FC = () => {
           </Grid>
         </Grid>
 
-        <Box mt={12}>
+        <Box p={4}>
           <Grid container spacing={4}>
             {experienceData.map((exp, index) => (
               <Grid item xs={12} sm={4} key={index}>

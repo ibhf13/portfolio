@@ -1,48 +1,46 @@
 import { createTheme, responsiveFontSizes, Theme, alpha } from '@mui/material/styles';
 
 const createAppTheme = (mode: 'light' | 'dark'): Theme => {
-  const primaryMain = mode === 'light' ? '#2E7D32' : '#81C784';
-  const secondaryMain = mode === 'light' ? '#E65100' : '#FFB74D'; // Orange
-  // const secondaryMain = mode === 'light' ? '#795548' : '#A1887F'; // Uncomment for Brown
+  const palette = {
+    primary: {
+      main: mode === 'light' ? '#3f51b5' : '#90caf9',
+      light: mode === 'light' ? '#757de8' : '#e3f2fd',
+      dark: mode === 'light' ? '#002984' : '#42a5f5',
+      contrastText: '#FFFFFF',
+    },
+    secondary: {
+      main: mode === 'light' ? '#f50057' : '#f48fb1',
+      light: mode === 'light' ? '#ff5983' : '#fce4ec',
+      dark: mode === 'light' ? '#c51162' : '#f06292',
+      contrastText: '#FFFFFF',
+    },
+    background: {
+      default: mode === 'light' ? '#f5f5f5' : '#121212',
+      paper: mode === 'light' ? '#ffffff' : '#1e1e1e',
+    },
+    text: {
+      primary: mode === 'light' ? '#212121' : '#ffffff',
+      secondary: mode === 'light' ? '#757575' : '#b0bec5',
+    },
+    error: {
+      main: mode === 'light' ? '#f44336' : '#ef5350',
+    },
+    warning: {
+      main: mode === 'light' ? '#ff9800' : '#ffb74d',
+    },
+    info: {
+      main: mode === 'light' ? '#2196f3' : '#4fc3f7',
+    },
+    success: {
+      main: mode === 'light' ? '#4caf50' : '#81c784',
+    },
+    divider: mode === 'light' ? 'rgba(0, 0, 0, 0.12)' : 'rgba(255, 255, 255, 0.12)',
+  };
 
   const baseTheme = createTheme({
     palette: {
       mode,
-      primary: {
-        main: primaryMain,
-        light: mode === 'light' ? '#4CAF50' : '#A5D6A7',
-        dark: mode === 'light' ? '#1B5E20' : '#66BB6A',
-        contrastText: '#FFFFFF',
-      },
-      secondary: {
-        main: secondaryMain,
-        light: mode === 'light' ? '#FF9800' : '#FFCC80', // Orange
-        dark: mode === 'light' ? '#BF360C' : '#F57C00', // Orange
-        // light: mode === 'light' ? '#8D6E63' : '#BCAAA4', // Uncomment for Brown
-        // dark: mode === 'light' ? '#5D4037' : '#6D4C41', // Uncomment for Brown
-        contrastText: '#FFFFFF',
-      },
-      background: {
-        default: mode === 'light' ? '#F1F8E9' : '#121212',
-        paper: mode === 'light' ? '#FFFFFF' : '#1E1E1E',
-      },
-      text: {
-        primary: mode === 'light' ? '#1B5E20' : '#E0E0E0',
-        secondary: mode === 'light' ? '#33691E' : '#B0BEC5',
-      },
-      error: {
-        main: mode === 'light' ? '#D32F2F' : '#EF5350',
-      },
-      warning: {
-        main: mode === 'light' ? '#FFA000' : '#FFB74D',
-      },
-      info: {
-        main: mode === 'light' ? '#0288D1' : '#4FC3F7',
-      },
-      success: {
-        main: mode === 'light' ? '#388E3C' : '#66BB6A',
-      },
-      divider: mode === 'light' ? 'rgba(0, 0, 0, 0.1)' : 'rgba(255, 255, 255, 0.12)',
+      ...palette,
     },
     typography: {
       fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
@@ -67,19 +65,19 @@ const createAppTheme = (mode: 'light' | 'dark'): Theme => {
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            scrollbarColor: mode === 'light' ? "#A5D6A7 #F1F8E9" : "#4A5568 #2D3748",
+            scrollbarColor: mode === 'light' ? "#CFD8DC #ECEFF1" : "#37474F #263238",
             "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
-              backgroundColor: mode === 'light' ? "#F1F8E9" : "#2D3748",
+              backgroundColor: mode === 'light' ? "#ECEFF1" : "#263238",
               width: 8,
             },
             "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
               borderRadius: 8,
-              backgroundColor: mode === 'light' ? "#A5D6A7" : "#4A5568",
+              backgroundColor: mode === 'light' ? "#CFD8DC" : "#37474F",
               minHeight: 24,
-              border: `2px solid ${mode === 'light' ? "#F1F8E9" : "#2D3748"}`,
+              border: `2px solid ${mode === 'light' ? "#ECEFF1" : "#263238"}`,
             },
             "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus": {
-              backgroundColor: mode === 'light' ? "#66BB6A" : "#718096",
+              backgroundColor: mode === 'light' ? "#B0BEC5" : "#455A64",
             },
           },
         },
@@ -94,32 +92,22 @@ const createAppTheme = (mode: 'light' | 'dark'): Theme => {
             transition: 'all 0.2s ease-in-out',
             '&:hover': {
               transform: 'translateY(-2px)',
-              boxShadow: `0 4px 8px ${alpha(mode === 'light' ? '#000000' : '#FFFFFF', 0.15)}`,
+              boxShadow: `0 4px 8px ${alpha(palette.primary.main, 0.25)}`,
             },
           },
           contained: {
-            background: mode === 'light'
-              ?'#28892c'
-              // ? 'linear-gradient(45deg, #2E7D32 30%, #795548 90%)' // Uncomment for Green to Brown
-              : 'linear-gradient(45deg, #8E24AA 30%, #00BCD4 90%)',
-          color: 'white',
-            color: '#FFFFFF',
-            boxShadow: `0 2px 4px ${alpha(mode === 'light' ? '#000000' : '#FFFFFF', 0.2)}`,
+            background: `linear-gradient(45deg, ${palette.primary.main} 30%, ${palette.primary.light} 90%)`,
+            color: palette.primary.contrastText,
+            boxShadow: `0 2px 4px ${alpha(palette.primary.main, 0.25)}`,
             '&:hover': {
-              background: mode === 'light'
-                ? '#236d26'
-                // ? 'linear-gradient(45deg, #1B5E20 30%, #5D4037 90%)' // Uncomment for Darker Green to Darker Brown
-                : 'linear-gradient(45deg, #6A0080 30%, #008BA3 90%)'
+              background: `linear-gradient(45deg, ${palette.primary.dark} 30%, ${palette.primary.main} 90%)`,
             },
           },
           outlined: {
             borderWidth: 2,
             '&:hover': {
               borderWidth: 2,
-              background: mode === 'light'
-                ? 'linear-gradient(45deg, rgba(46, 125, 50, 0.1) 30%, rgba(230, 81, 0, 0.1) 90%)' // Green to Orange
-                // ? 'linear-gradient(45deg, rgba(46, 125, 50, 0.1) 30%, rgba(121, 85, 72, 0.1) 90%)' // Uncomment for Green to Brown
-                : 'rgba(142, 36, 170, 0.08)',
+              background: alpha(palette.primary.main, 0.08),
             },
           },
         },
@@ -132,7 +120,7 @@ const createAppTheme = (mode: 'light' | 'dark'): Theme => {
               ? '0 4px 20px rgba(0, 0, 0, 0.1)'
               : '0 4px 20px rgba(255, 255, 255, 0.1)',
             background: mode === 'light'
-              ? 'linear-gradient(135deg, #FFFFFF 0%, #E8F5E9 100%)'
+              ? 'linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)'
               : 'linear-gradient(135deg, #1E1E1E 0%, #2D3748 100%)',
             transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
             '&:hover': {
@@ -147,10 +135,7 @@ const createAppTheme = (mode: 'light' | 'dark'): Theme => {
       MuiAppBar: {
         styleOverrides: {
           root: {
-            background: mode === 'light'
-              ? 'linear-gradient(90deg, #2E7D32 0%, #E65100 100%)' // Green to Orange
-              // ? 'linear-gradient(90deg, #2E7D32 0%, #795548 100%)' // Uncomment for Green to Brown
-              : 'linear-gradient(90deg, #0A0E17 0%, #141B2D 100%)',
+            background: `linear-gradient(90deg, ${palette.primary.main} 0%, ${palette.primary.dark} 100%)`,
             boxShadow: mode === 'light'
               ? '0 2px 10px rgba(0, 0, 0, 0.1)'
               : '0 2px 10px rgba(255, 255, 255, 0.1)',
@@ -160,9 +145,7 @@ const createAppTheme = (mode: 'light' | 'dark'): Theme => {
       MuiPaper: {
         styleOverrides: {
           root: {
-            backgroundImage: mode === 'light'
-              ? 'linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))'
-              : 'linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05))',
+            backgroundImage: 'none',
           },
           elevation1: {
             boxShadow: mode === 'light'
@@ -174,12 +157,11 @@ const createAppTheme = (mode: 'light' | 'dark'): Theme => {
       MuiLink: {
         styleOverrides: {
           root: {
-            color: mode === 'light' ? '#2E7D32' : '#81C784',
+            color: palette.primary.main,
             textDecoration: 'none',
             transition: 'color 0.2s ease-in-out',
             '&:hover': {
-              color: mode === 'light' ? '#E65100' : '#FFB74D', // Green to Orange
-              // color: mode === 'light' ? '#795548' : '#A1887F', // Uncomment for Green to Brown
+              color: palette.primary.dark,
               textDecoration: 'underline',
             },
           },
@@ -195,10 +177,10 @@ const createAppTheme = (mode: 'light' | 'dark'): Theme => {
           },
           switchBase: {
             padding: 1,
-            '&$checked, &$colorPrimary$checked, &$colorSecondary$checked': {
+            '&.Mui-checked, &.Mui-checked.Mui-colorPrimary, &.Mui-checked.Mui-colorSecondary': {
               transform: 'translateX(16px)',
               color: '#fff',
-              '& + $track': {
+              '& + .MuiSwitch-track': {
                 opacity: 1,
                 border: 'none',
               },
