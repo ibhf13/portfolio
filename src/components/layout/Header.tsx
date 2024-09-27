@@ -11,12 +11,13 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from '@mui/material/Box';
 import { motion } from 'framer-motion';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import TranslationKeyDisplay from './TranslationKeyDisplay';
 import MobileDrawer from './MobileDrawer';
 import LanguageMenu from './LanguageMenu';
 import { HeaderProps, NAV_ITEMS } from './types';
+import { isLocalEnvironment } from '../../utils/environmentUtils';
 
 const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
   const { t, showKeys, toggleShowKeys } = useTranslation();
@@ -63,6 +64,8 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
     </Box>
   );
 
+  const isLocal = isLocalEnvironment();
+
   return (
     <AppBar position="sticky" elevation={0}>
       <Toolbar>
@@ -94,10 +97,17 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
             />
           </>
         ) : renderNavItems()}
-        <IconButton color="inherit" onClick={toggleTheme} sx={{ ml: 1 }}>
-          {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+        <IconButton
+          color="inherit"
+          onClick={toggleTheme}
+          sx={{ ml: 1 }}
+          aria-label={theme.palette.mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+        >
+          {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
-        <TranslationKeyDisplay showKeys={showKeys} toggleShowKeys={toggleShowKeys} />
+        {isLocal && (
+          <TranslationKeyDisplay showKeys={showKeys} toggleShowKeys={toggleShowKeys} />
+        )}
         <LanguageMenu
           currentLanguage={language}
           onLanguageChange={setLanguage}
