@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { StarConfig } from './BackgroundConfig';
+import { StarConfig } from './types';
 import useStarAnimation from '../../hooks/useStarAnimation';
 
 interface StarProps {
   config: StarConfig;
 }
 
-const createStarShape = (size: number) => {
+const createStarShape = (size: number): string => {
   const innerRadius = size / 2;
   const outerRadius = size;
   const points = 5;

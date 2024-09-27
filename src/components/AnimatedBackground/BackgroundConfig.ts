@@ -36,7 +36,7 @@ const createBackgroundConfig = (
   stars: generateStars(starCount, starBrightness),
 });
 
-const getShapeColor = (theme: Theme, lightModeColor: string, darkModeColor: string) =>
+const getShapeColor = (theme: Theme, lightModeColor: string, darkModeColor: string): string =>
   theme.palette.mode === 'light' ? lightModeColor : darkModeColor;
 
 export const backgroundConfigs: Record<string, (theme: Theme) => BackgroundConfig> = {

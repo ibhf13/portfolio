@@ -6,7 +6,7 @@ interface ParticleProps {
   config: ParticleConfig;
 }
 
-const getParticleShape = (shape: ParticleConfig['shape']) => {
+const getParticleShape = (shape: ParticleConfig['shape']): string => {
   switch (shape) {
     case 'square':
       return '0%';
