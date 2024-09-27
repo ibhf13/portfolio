@@ -5,7 +5,6 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion';
 import { calculateAge } from '../../utils/dateUtils';
 import ProfileImage from './ProfileImage';
 import ExperienceCard from './ExperienceCard';
-import AnimatedBackground from '../AnimatedBackground/AnimatedBackground';
 import CodeIcon from '@mui/icons-material/Code';
 import SchoolIcon from '@mui/icons-material/School';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
@@ -34,8 +33,6 @@ const AboutMe: React.FC = () => {
 
   return (
     <Box position="relative" overflow="hidden" borderRadius={2}>
-      <AnimatedBackground />
-
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Grid container spacing={4} alignItems="center">
           <Grid item xs={12} md={4}>

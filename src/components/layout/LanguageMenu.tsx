@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { LANGUAGES } from './types';
+import LanguageIcon from '@mui/icons-material/Language';
 
 interface LanguageMenuProps {
   currentLanguage: string;
@@ -25,14 +26,17 @@ const LanguageMenu: React.FC<LanguageMenuProps> = ({ currentLanguage, onLanguage
     handleMenuClose();
   };
 
+  const currentLanguageLabel = currentLanguage ? LANGUAGES[currentLanguage as keyof typeof LANGUAGES] : '';
+
   return (
     <>
       <Button
         color="inherit"
         onClick={handleMenuOpen}
         sx={{ ml: 1, minWidth: 40 }}
+        startIcon={<LanguageIcon />}
       >
-        {LANGUAGES[currentLanguage as keyof typeof LANGUAGES]}
+        {currentLanguageLabel || 'Language'}
       </Button>
       <Menu
         anchorEl={anchorEl}

@@ -97,21 +97,23 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
             />
           </>
         ) : renderNavItems()}
-        <IconButton
-          color="inherit"
-          onClick={toggleTheme}
-          sx={{ ml: 1 }}
-          aria-label={theme.palette.mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-        >
-          {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
-        </IconButton>
-        {isLocal && (
-          <TranslationKeyDisplay showKeys={showKeys} toggleShowKeys={toggleShowKeys} />
-        )}
-        <LanguageMenu
-          currentLanguage={language}
-          onLanguageChange={setLanguage}
-        />
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <IconButton
+            color="inherit"
+            onClick={toggleTheme}
+            sx={{ ml: 1 }}
+            aria-label={theme.palette.mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+          </IconButton>
+          {isLocal && (
+            <TranslationKeyDisplay showKeys={showKeys} toggleShowKeys={toggleShowKeys} />
+          )}
+          <LanguageMenu
+            currentLanguage={language}
+            onLanguageChange={setLanguage}
+          />
+        </Box>
       </Toolbar>
     </AppBar>
   );

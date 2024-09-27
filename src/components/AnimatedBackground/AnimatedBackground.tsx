@@ -31,7 +31,6 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         zIndex: 0,
       }}
     >
-      {/* Background layer */}
       <Box
         sx={{
           position: 'absolute',
@@ -45,8 +44,6 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
           backgroundPosition: 'center',
         }}
       />
-
-      {/* Gradient layer */}
       <Box
         sx={{
           position: 'absolute',
@@ -57,8 +54,6 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
           background: `linear-gradient(135deg, ${config.gradientColors.join(', ')})`,
         }}
       />
-
-      {/* Particles and stars layer */}
       <Box
         sx={{
           position: 'relative',

@@ -1,47 +1,47 @@
-import { createTheme, responsiveFontSizes, Theme, alpha } from '@mui/material/styles';
+import { createTheme, responsiveFontSizes, Theme, alpha, PaletteMode } from '@mui/material/styles';
 
-const createAppTheme = (mode: 'light' | 'dark'): Theme => {
+const createAppTheme = (mode: PaletteMode): Theme => {
+  const getColor = (lightColor: string, darkColor: string) => mode === 'light' ? lightColor : darkColor;
+
   const palette = {
+    mode,
     primary: {
-      main: mode === 'light' ? '#3f51b5' : '#90caf9',
-      light: mode === 'light' ? '#757de8' : '#e3f2fd',
-      dark: mode === 'light' ? '#002984' : '#42a5f5',
+      main: getColor('#3f51b5', '#90caf9'),
+      light: getColor('#757de8', '#e3f2fd'),
+      dark: getColor('#002984', '#42a5f5'),
       contrastText: '#FFFFFF',
     },
     secondary: {
-      main: mode === 'light' ? '#f50057' : '#f48fb1',
-      light: mode === 'light' ? '#ff5983' : '#fce4ec',
-      dark: mode === 'light' ? '#c51162' : '#f06292',
+      main: getColor('#f50057', '#f48fb1'),
+      light: getColor('#ff5983', '#fce4ec'),
+      dark: getColor('#c51162', '#f06292'),
       contrastText: '#FFFFFF',
     },
     background: {
-      default: mode === 'light' ? '#f5f5f5' : '#121212',
-      paper: mode === 'light' ? '#ffffff' : '#1e1e1e',
+      default: getColor('#f5f5f5', '#121212'),
+      paper: getColor('#ffffff', '#1e1e1e'),
     },
     text: {
-      primary: mode === 'light' ? '#212121' : '#ffffff',
-      secondary: mode === 'light' ? '#757575' : '#b0bec5',
+      primary: getColor('#212121', '#ffffff'),
+      secondary: getColor('#757575', '#b0bec5'),
     },
     error: {
-      main: mode === 'light' ? '#f44336' : '#ef5350',
+      main: getColor('#f44336', '#ef5350'),
     },
     warning: {
-      main: mode === 'light' ? '#ff9800' : '#ffb74d',
+      main: getColor('#ff9800', '#ffb74d'),
     },
     info: {
-      main: mode === 'light' ? '#2196f3' : '#4fc3f7',
+      main: getColor('#2196f3', '#4fc3f7'),
     },
     success: {
-      main: mode === 'light' ? '#4caf50' : '#81c784',
+      main: getColor('#4caf50', '#81c784'),
     },
-    divider: mode === 'light' ? 'rgba(0, 0, 0, 0.12)' : 'rgba(255, 255, 255, 0.12)',
+    divider: getColor('rgba(0, 0, 0, 0.12)', 'rgba(255, 255, 255, 0.12)'),
   };
 
   const baseTheme = createTheme({
-    palette: {
-      mode,
-      ...palette,
-    },
+    palette,
     typography: {
       fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
       h1: { fontWeight: 700, letterSpacing: '-0.01562em' },
@@ -65,19 +65,19 @@ const createAppTheme = (mode: 'light' | 'dark'): Theme => {
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            scrollbarColor: mode === 'light' ? "#CFD8DC #ECEFF1" : "#37474F #263238",
+            scrollbarColor: getColor("#CFD8DC #ECEFF1", "#37474F #263238"),
             "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
-              backgroundColor: mode === 'light' ? "#ECEFF1" : "#263238",
+              backgroundColor: getColor("#ECEFF1", "#263238"),
               width: 8,
             },
             "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
               borderRadius: 8,
-              backgroundColor: mode === 'light' ? "#CFD8DC" : "#37474F",
+              backgroundColor: getColor("#CFD8DC", "#37474F"),
               minHeight: 24,
-              border: `2px solid ${mode === 'light' ? "#ECEFF1" : "#263238"}`,
+              border: `2px solid ${getColor("#ECEFF1", "#263238")}`,
             },
             "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus": {
-              backgroundColor: mode === 'light' ? "#B0BEC5" : "#455A64",
+              backgroundColor: getColor("#B0BEC5", "#455A64"),
             },
           },
         },
