@@ -10,16 +10,22 @@ const createAppTheme = (mode: PaletteMode): Theme => {
       light: getColor('#757de8', '#e3f2fd'),
       dark: getColor('#002984', '#42a5f5'),
       contrastText: '#FFFFFF',
-    },
+      gradientLight: 'linear-gradient(45deg, #b95c5c 30%, #83b1c7 60%, #71cb66 90%)',
+      gradientDark: 'linear-gradient(45deg, #002984 30%, #42a5f5 60%, #6b1007 90%)',
+      },
     secondary: {
-      main: getColor('#f50057', '#f48fb1'),
-      light: getColor('#ff5983', '#fce4ec'),
-      dark: getColor('#c51162', '#f06292'),
+      main: getColor('#FF6B6B', '#4ECDC4'),
+      light: getColor('#FF8E8E', '#7EEEE7'),
+      dark: getColor('#FF4949', '#45B7AA'),
       contrastText: '#FFFFFF',
+      gradientLight: 'linear-gradient(45deg, #FF6B6B 30%, #FF8E8E 60%, #FFB6B6 90%)',
+      gradientDark: 'linear-gradient(45deg, #4ECDC4 30%, #45B7AA 60%, #7EEEE7 90%)',
     },
     background: {
       default: getColor('#f5f5f5', '#121212'),
       paper: getColor('#ffffff', '#1e1e1e'),
+      gradientLight: 'linear-gradient(180deg, #ffffff 30%, #f5f5f5 60%, #eeeeee 90%)',
+      gradientDark: 'linear-gradient(180deg, #121212 30%, #1e1e1e 60%, #2b2b2b 90%)',
     },
     text: {
       primary: getColor('#212121', '#ffffff'),
@@ -39,6 +45,8 @@ const createAppTheme = (mode: PaletteMode): Theme => {
     },
     divider: getColor('rgba(0, 0, 0, 0.12)', 'rgba(255, 255, 255, 0.12)'),
   };
+
+
 
   const baseTheme = createTheme({
     palette,
@@ -145,7 +153,7 @@ const createAppTheme = (mode: PaletteMode): Theme => {
       MuiPaper: {
         styleOverrides: {
           root: {
-            backgroundImage: 'none',
+            // backgroundImage: 'none',
           },
           elevation1: {
             boxShadow: mode === 'light'
