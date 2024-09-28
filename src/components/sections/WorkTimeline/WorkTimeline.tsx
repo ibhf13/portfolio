@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Typography, useTheme, useMediaQuery, Grid, Paper } from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
 import { motion, Variants, useAnimation } from 'framer-motion';
-import { useTranslation } from '../../hooks/useCustomTranslation';
+import { useTranslation } from '../../../hooks/useCustomTranslation';
 import { useInView } from 'react-intersection-observer';
 
 interface WorkExperience {
@@ -14,7 +14,7 @@ interface WorkExperience {
 }
 
 const WorkTimeline: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
@@ -24,11 +24,15 @@ const WorkTimeline: React.FC = () => {
     triggerOnce: true,
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (inView) {
       controls.start('visible');
     }
   }, [controls, inView]);
+
+  useEffect(() => {
+    controls.start('visible');
+  }, [controls, i18n.language]);
 
   const workExperience: WorkExperience[] = [
     {

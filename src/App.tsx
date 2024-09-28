@@ -6,7 +6,7 @@ import Header from './components/layout/Header/Header';
 import AboutMe from './components/sections/aboutMe/AboutMe';
 import TechStack from './components/sections/techStack/TechStack';
 import ContactForm from './components/sections/contactForm/ContactForm';
-import WorkTimeline from './components/sections/WorkTimeline';
+import WorkTimeline from './components/sections/WorkTimeline/WorkTimeline';
 import ProjectsOverview from './components/sections/ProjectsOverview';
 import SectionWrapper, { AnimationType } from './components/common/sectionWrapper/SectionWrapper';
 import { useTheme } from './hooks/useTheme';

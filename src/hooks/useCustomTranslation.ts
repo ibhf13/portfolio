@@ -1,3 +1,5 @@
+// src/hooks/useCustomTranslation.ts
+
 import { useTranslation as useI18nTranslation, TFunction } from 'react-i18next';
 import { useTranslationKey } from '../contexts/TranslationKeyContext';
 import { useCallback } from 'react';
@@ -8,24 +10,25 @@ interface CustomTFunction extends TFunction {
 
 export const useTranslation = (): {
   t: CustomTFunction;
+  i18n: unknown;
   showKeys: boolean;
   toggleShowKeys: () => void;
   [key: string]: unknown;
 } => {
-  const { t: i18nT, ...rest } = useI18nTranslation();
+  const { t: i18nT, i18n, ...rest } = useI18nTranslation();
   const { showKeys, setShowKeys } = useTranslationKey();
 
   const customT: CustomTFunction = useCallback((key, options) => {
     if (showKeys) {
-      // Return the full key path
       return key;
     }
-    return i18nT(key, options);
-  }, [showKeys, i18nT]);
+    const translated = i18nT(key, options);
+    return translated;
+  }, [showKeys, i18nT, i18n.language]);
 
   const toggleShowKeys = useCallback(() => {
     setShowKeys((prevShowKeys) => !prevShowKeys);
   }, [setShowKeys]);
 
-  return { t: customT, showKeys, toggleShowKeys, ...rest };
+  return { t: customT, i18n, showKeys, toggleShowKeys, ...rest };
 };
