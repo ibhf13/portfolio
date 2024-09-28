@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { Box, useTheme } from '@mui/material';
-import useBackgroundConfig from '../../hooks/useBackgroundConfig';
+import useBackgroundConfig from '../../../hooks/useBackgroundConfig';
 import Particle from './Particle';
 import Star from './Star';
 

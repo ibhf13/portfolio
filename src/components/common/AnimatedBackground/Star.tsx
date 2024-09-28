@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { StarConfig } from './types';
-import useStarAnimation from '../../hooks/useStarAnimation';
+import useStarAnimation from '../../../hooks/useStarAnimation';
 
 interface StarProps {
   config: StarConfig;

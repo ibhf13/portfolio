@@ -1,7 +1,7 @@
 import { useState, useCallback, useMemo } from 'react';
 import createAppTheme from '../styles/theme';
-import background from '../resources/back.mp4';
-import background2 from '../resources/back2.mp4';
+import background from '../resources/videos/back.mp4';
+import background2 from '../resources/videos/back2.mp4';
 
 export const useTheme = () => {
   const [mode, setMode] = useState<'light' | 'dark'>(() =>

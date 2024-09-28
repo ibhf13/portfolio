@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, useTheme } from '@mui/material';
 import { motion } from 'framer-motion';
-import profileImage from '../../resources/Profile.jpg';
+import profileImage from '../../../resources/images/Profile.jpg';
 
 const ProfileImage: React.FC = () => {
   const theme = useTheme();

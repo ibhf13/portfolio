@@ -1,23 +1,23 @@
 import React from 'react';
 import { Box, Typography, Grid, Paper, useTheme, useMediaQuery } from '@mui/material';
 import { motion, Variants } from 'framer-motion';
-import { useTranslation } from '../hooks/useCustomTranslation';
+import { useTranslation } from '../../hooks/useCustomTranslation';
 import { Technology } from '../types/Technology';
 
-import ReactIcon from '../resources/icons/react.svg';
-import TypeScriptIcon from '../resources/icons/typescript.svg';
-import JavaScriptIcon from '../resources/icons/javascript.svg';
-import HTMLIcon from '../resources/icons/html.svg';
-import CSSIcon from '../resources/icons/css.svg';
-import NodeJSIcon from '../resources/icons/nodejs.svg';
-import ExpressIcon from '../resources/icons/express.svg';
-import MongoDBIcon from '../resources/icons/mongodb.svg';
-import MaterialUIIcon from '../resources/icons/material-ui.svg';
-import GitIcon from '../resources/icons/git.svg';
-import JestIcon from '../resources/icons/jest.svg';
-import BrowserStackIcon from '../resources/icons/browserstack.svg';
-import MySQLIcon from '../resources/icons/mysql.svg';
-import PlaywrightIcon from '../resources/icons/playwright.svg';
+import ReactIcon from '../../resources/icons/react.svg';
+import TypeScriptIcon from '../../resources/icons/typescript.svg';
+import JavaScriptIcon from '../../resources/icons/javascript.svg';
+import HTMLIcon from '../../resources/icons/html.svg';
+import CSSIcon from '../../resources/icons/css.svg';
+import NodeJSIcon from '../../resources/icons/nodejs.svg';
+import ExpressIcon from '../../resources/icons/express.svg';
+import MongoDBIcon from '../../resources/icons/mongodb.svg';
+import MaterialUIIcon from '../../resources/icons/material-ui.svg';
+import GitIcon from '../../resources/icons/git.svg';
+import JestIcon from '../../resources/icons/jest.svg';
+import BrowserStackIcon from '../../resources/icons/browserstack.svg';
+import MySQLIcon from '../../resources/icons/mysql.svg';
+import PlaywrightIcon from '../../resources/icons/playwright.svg';
 
 const technologies: Technology[] = [
   { name: 'React', icon: ReactIcon, color: '#61DAFB' },

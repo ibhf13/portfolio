@@ -1,8 +1,8 @@
 import React from 'react';
-import { useTranslation } from '../../hooks/useCustomTranslation';
+import { useTranslation } from '../../../hooks/useCustomTranslation';
 import { Box, Typography, Container, Grid, useTheme, useMediaQuery } from '@mui/material';
 import { motion, Variants, useViewportScroll, useTransform } from 'framer-motion';
-import { calculateAge } from '../../utils/dateUtils';
+import { calculateAge } from '../../../utils/dateUtils';
 import ProfileImage from './ProfileImage';
 import ExperienceCard from './ExperienceCard';
 import CodeIcon from '@mui/icons-material/Code';

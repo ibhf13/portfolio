@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, useTheme, useMediaQuery, Grid, Paper } from '@mui/material';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from '@mui/lab';
 import { motion, Variants, useAnimation } from 'framer-motion';
-import { useTranslation } from '../hooks/useCustomTranslation';
+import { useTranslation } from '../../hooks/useCustomTranslation';
 import { useInView } from 'react-intersection-observer';
 
 interface WorkExperience {
