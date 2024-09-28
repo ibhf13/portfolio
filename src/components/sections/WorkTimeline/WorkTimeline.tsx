@@ -182,7 +182,7 @@ const WorkTimeline: React.FC = () => {
                     sx={{
                       p: theme.spacing(2),
                       backgroundColor: theme.palette.background.paper,
-                      borderRadius: theme.shape.borderRadius,
+                      borderRadius: 2,
                       transition: 'all 0.3s ease-in-out',
                       '&:hover': {
                         boxShadow: theme.shadows[8],

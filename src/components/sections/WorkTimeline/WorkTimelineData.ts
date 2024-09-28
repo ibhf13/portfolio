@@ -1,5 +1,5 @@
 import { WorkExperience } from './types';
-import { useTranslation } from '../../hooks/useCustomTranslation';
+import { useTranslation } from '../../../hooks/useCustomTranslation';
 
 export const useWorkExperienceData = (): WorkExperience[] => {
   const { t } = useTranslation();
