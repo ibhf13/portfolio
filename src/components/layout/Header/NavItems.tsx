@@ -1,8 +1,8 @@
 import React from 'react';
 import { Button, Box } from '@mui/material';
 import { motion } from 'framer-motion';
-import { useTranslation } from '../../hooks/useCustomTranslation';
-import { NAV_ITEMS } from './types';
+import { useTranslation } from '../../../hooks/useCustomTranslation';
+import { NAV_ITEMS } from './HeaderTypes';
 
 const NavItems: React.FC = () => {
   const { t } = useTranslation();

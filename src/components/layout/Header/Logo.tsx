@@ -1,6 +1,6 @@
 import React from 'react';
 import { Typography } from '@mui/material';
-import { useTranslation } from '../../hooks/useCustomTranslation';
+import { useTranslation } from '../../../hooks/useCustomTranslation';
 
 const Logo: React.FC = () => {
   const { t } = useTranslation();

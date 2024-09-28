@@ -3,8 +3,8 @@ import { Box, Typography, Grid } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from '../../../hooks/useCustomTranslation';
 import TechCard from './TechCard';
-import { containerVariants, titleVariants, tabContentVariants } from './Animations';
-import { techStackData, TechStackSection } from './Data';
+import { containerVariants, titleVariants, tabContentVariants } from './TechStackAnimations';
+import { techStackData, TechStackSection } from './TechStackData';
 import TechStackTabs from './TechStackTabs';
 import { styled } from '@mui/material/styles';
 

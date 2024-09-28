@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { Box, useMediaQuery } from '@mui/material';
-import Header from './components/layout/Header';
+import Header from './components/layout/Header/Header';
 import AboutMe from './components/sections/aboutMe/AboutMe';
 import TechStack from './components/sections/techStack/TechStack';
 import ContactForm from './components/sections/contactForm/ContactForm';

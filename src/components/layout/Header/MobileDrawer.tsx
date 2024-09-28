@@ -4,10 +4,10 @@ import CloseIcon from '@mui/icons-material/Close';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { motion } from 'framer-motion';
-import { useTranslation } from '../../hooks/useCustomTranslation';
-import { NAV_ITEMS } from './types';
+import { useTranslation } from '../../../hooks/useCustomTranslation';
+import { NAV_ITEMS } from './HeaderTypes';
 import LanguageMenu from './LanguageMenu';
-import { useLanguage } from '../../contexts/LanguageContext';
+import { useLanguage } from '../../../contexts/LanguageContext';
 
 interface MobileDrawerProps {
   isOpen: boolean;

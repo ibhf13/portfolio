@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Paper, Typography, Tooltip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { TechCardProps } from './types';
-import { cardVariants, iconVariants } from './Animations';
+import { cardVariants, iconVariants } from './TechStackAnimations';
 import { useTranslation } from '../../../hooks/useCustomTranslation';
 import { styled, useTheme } from '@mui/material/styles';
 

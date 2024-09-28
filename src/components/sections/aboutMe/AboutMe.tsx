@@ -5,8 +5,8 @@ import { useTranslation } from '../../../hooks/useCustomTranslation';
 import { calculateAge } from '../../../utils/dateUtils';
 import ProfileImage from './ProfileImage';
 import ExperienceCard from './ExperienceCard';
-import { containerVariants, itemVariants } from './Animations';
-import { useExperienceData } from './Data';
+import { containerVariants, itemVariants } from './AboutMeAnimations';
+import { useExperienceData } from './AboutMeData';
 
 const AboutMe: React.FC = () => {
   const { t } = useTranslation();
