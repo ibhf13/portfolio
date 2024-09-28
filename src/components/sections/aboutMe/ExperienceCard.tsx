@@ -8,8 +8,6 @@ interface ExperienceCardProps {
   text: string;
   index: number;
   isMobile: boolean;
-  backgroundColor: string;
-  borderColor: string;
 }
 
 const ExperienceCard: React.FC<ExperienceCardProps> = ({
@@ -18,8 +16,6 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
   text,
   index,
   isMobile,
-  backgroundColor,
-  borderColor,
 }) => {
   const theme = useTheme();
 
@@ -34,10 +30,10 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
         p={3}
         borderRadius={2}
         sx={{
-          backgroundColor: backgroundColor,
+          backgroundColor: theme.palette.background.paper,
           color: theme.palette.text.primary,
           boxShadow: theme.shadows[3],
-          border: `2px solid ${borderColor}`,
+          border: `2px solid ${theme.palette.primary.main}`,
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
@@ -47,7 +43,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
           '&:hover': {
             transform: 'translateY(-10px)',
             boxShadow: theme.shadows[10],
-            border: `2px solid ${theme.palette.primary.main}`,
+            border: `2px solid ${theme.palette.primary.light}`,
           },
         }}
       >
