@@ -10,7 +10,9 @@
     "preview": "rsbuild preview",
     "cache": "cache clean",
     "delete-build": "rm -rf dist",
-    "deploy": "node_modules/.bin/vercel --prod"
+    "deploy": "node_modules/.bin/vercel --prod",
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "prettier:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",

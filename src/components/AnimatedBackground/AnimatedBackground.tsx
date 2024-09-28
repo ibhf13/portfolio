@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box } from '@mui/material';
+import React, { useMemo } from 'react';
+import { Box, useTheme } from '@mui/material';
 import useBackgroundConfig from '../../hooks/useBackgroundConfig';
 import Particle from './Particle';
 import Star from './Star';
@@ -8,25 +8,40 @@ interface AnimatedBackgroundProps {
   sectionId: string;
   backgroundColor?: string;
   backgroundImage?: string;
+  particleCount?: number;
+  starCount?: number;
 }
 
 const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   sectionId,
   backgroundColor = 'transparent',
-  backgroundImage
+  backgroundImage,
+  particleCount = 50,
+  starCount = 100
 }) => {
+  const theme = useTheme();
   const config = useBackgroundConfig(sectionId);
+
+  const particles = useMemo(() => {
+    return Array.from({ length: particleCount }, (_, index) => (
+      <Particle key={`particle-${index}`} config={config.particles[index % config.particles.length]} />
+    ));
+  }, [config.particles, particleCount]);
+
+  const stars = useMemo(() => {
+    return Array.from({ length: starCount }, (_, index) => (
+      <Star key={`star-${index}`} config={config.stars[index % config.stars.length]} />
+    ));
+  }, [config.stars, starCount]);
 
   return (
     <Box
       sx={{
         position: 'absolute',
         top: 0,
-        left: '50%',
-        transform: 'translateX(-50%)',
-        height: '100%',
-        width: '90%',
-        maxWidth: '90%',
+        left: 0,
+        right: 0,
+        bottom: 0,
         overflow: 'hidden',
         zIndex: 0,
       }}
@@ -42,6 +57,9 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
           backgroundImage: backgroundImage ? `url(${backgroundImage})` : 'none',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          transition: theme.transitions.create(['background-color', 'background-image'], {
+            duration: theme.transitions.duration.standard,
+          }),
         }}
       />
       <Box
@@ -52,6 +70,10 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
           right: 0,
           bottom: 0,
           background: `linear-gradient(135deg, ${config.gradientColors.join(', ')})`,
+          opacity: 0.7,
+          transition: theme.transitions.create('background', {
+            duration: theme.transitions.duration.standard,
+          }),
         }}
       />
       <Box
@@ -61,12 +83,8 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
           height: '100%',
         }}
       >
-        {config.particles.map((particleConfig, index) => (
-          <Particle key={`particle-${index}`} config={particleConfig} />
-        ))}
-        {config.stars.map((starConfig, index) => (
-          <Star key={`star-${index}`} config={starConfig} />
-        ))}
+        {particles}
+        {stars}
       </Box>
     </Box>
   );
