@@ -22,11 +22,71 @@
       "contact": "Contact"
     }
   },
-  "techStack": {
-    "title": "My Tech Stack",
-    "frontEnd": "Front-End",
-    "backEnd": "Back-End",
-    "tools": "Tools & Sonstiges"
+    "techStack": {
+      "title": "My Tech Stack",
+      "all": "All",
+      "frontend": "Front-End",
+      "backend": "Back-End",
+      "testing": "Testing",
+      "tools": "Tools",
+      "technologies": {
+        "React": {
+          "name": "React",
+          "description": "A JavaScript library for building user interfaces"
+        },
+        "TypeScript": {
+          "name": "TypeScript",
+          "description": "A typed superset of JavaScript that compiles to plain JavaScript"
+        },
+        "JavaScript": {
+          "name": "JavaScript",
+          "description": "A high-level, interpreted programming language"
+        },
+        "HTML": {
+          "name": "HTML",
+          "description": "The standard markup language for documents designed to be displayed in a web browser"
+        },
+        "CSS": {
+          "name": "CSS",
+          "description": "A style sheet language used for describing the presentation of a document"
+        },
+        "MaterialUI": {
+          "name": "Material-UI",
+          "description": "A popular React UI framework"
+        },
+        "NodeJS": {
+          "name": "Node.js",
+          "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine"
+        },
+        "Express": {
+          "name": "Express",
+          "description": "A minimal and flexible Node.js web application framework"
+        },
+        "MongoDB": {
+          "name": "MongoDB",
+          "description": "A source-available cross-platform document-oriented database program"
+        },
+        "MySQL": {
+          "name": "MySQL",
+          "description": "An open-source relational database management system"
+        },
+        "Git": {
+          "name": "Git",
+          "description": "A distributed version control system"
+        },
+        "Jest": {
+          "name": "Jest",
+          "description": "A delightful JavaScript Testing Framework with a focus on simplicity"
+        },
+        "BrowserStack": {
+          "name": "BrowserStack",
+          "description": "A cloud web and mobile testing platform"
+        },
+        "Playwright": {
+          "name": "Playwright",
+          "description": "A framework for Web Testing and Automation"
+        }
+      }
   },
   "workTimeline": {
     "title": "Work Timeline",

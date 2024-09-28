@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Box, useMediaQuery } from '@mui/material';
 import Header from './components/layout/Header';
 import AboutMe from './components/sections/aboutMe/AboutMe';
-import TechStack from './components/sections/TechStack';
+import TechStack from './components/sections/TechStack/TechStack';
 import ContactForm from './components/sections/ContactForm';
 import WorkTimeline from './components/sections/WorkTimeline';
 import ProjectsOverview from './components/sections/ProjectsOverview';
