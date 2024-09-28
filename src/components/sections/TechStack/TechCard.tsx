@@ -16,8 +16,9 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   transition: 'all 0.3s ease-in-out',
 }));
 
-const IconWrapper = styled(motion.div)<{ $isActive: boolean; $bgcolor: string }>(
-  ({ $isActive, $bgcolor }) => ({
+const IconWrapper = styled(motion.div, {
+    shouldForwardProp: (prop) => prop !== '$isActive' && prop !== '$bgcolor',
+  })<{ $isActive: boolean; $bgcolor: string }>(({ $isActive, $bgcolor }) => ({
     backgroundColor: $isActive ? $bgcolor : 'transparent',
     borderRadius: '50%',
     padding: '8px',
@@ -27,8 +28,8 @@ const IconWrapper = styled(motion.div)<{ $isActive: boolean; $bgcolor: string }>
     width: '64px',
     height: '64px',
     transition: 'background-color 0.3s ease-in-out',
-  })
-);
+  }));
+
 
 const TechIcon = styled('img')<{ $isExpress: boolean; $isActive: boolean }>(
   ({ $isExpress, $isActive }) => ({
