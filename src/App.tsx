@@ -5,7 +5,7 @@ import { Box, useMediaQuery } from '@mui/material';
 import Header from './components/layout/Header';
 import AboutMe from './components/sections/aboutMe/AboutMe';
 import TechStack from './components/sections/techStack/TechStack';
-import ContactForm from './components/sections/ContactForm';
+import ContactForm from './components/sections/contactForm/ContactForm';
 import WorkTimeline from './components/sections/WorkTimeline';
 import ProjectsOverview from './components/sections/ProjectsOverview';
 import SectionWrapper, { AnimationType } from './components/common/sectionWrapper/SectionWrapper';

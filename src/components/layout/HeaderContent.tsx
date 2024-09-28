@@ -8,6 +8,7 @@ import NavItems from './NavItems';
 import LanguageMenu from './LanguageMenu';
 import TranslationKeyDisplay from './TranslationKeyDisplay';
 import { useLanguage } from '../../contexts/LanguageContext';
+import { isLocalEnvironment } from '../../utils/environmentUtils';
 
 interface HeaderContentProps {
   toggleTheme: () => void;
@@ -26,7 +27,7 @@ const HeaderContent: React.FC<HeaderContentProps> = ({ toggleTheme }) => {
           currentLanguage={language}
           onLanguageChange={setLanguage}
         />
-        <TranslationKeyDisplay />
+        {isLocalEnvironment() && <TranslationKeyDisplay />}
         <IconButton
           onClick={toggleTheme}
           color="inherit"
