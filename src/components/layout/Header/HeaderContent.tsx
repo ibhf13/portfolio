@@ -21,8 +21,8 @@ const HeaderContent: React.FC<HeaderContentProps> = ({ toggleTheme }) => {
   return (
     <>
       <Logo />
-      <NavItems />
       <Box sx={{ display: 'flex', alignItems: 'center', ml: 'auto' }}>
+        <NavItems />
         <LanguageMenu
           currentLanguage={language}
           onLanguageChange={setLanguage}
@@ -40,5 +40,4 @@ const HeaderContent: React.FC<HeaderContentProps> = ({ toggleTheme }) => {
     </>
   );
 };
-
 export default HeaderContent;

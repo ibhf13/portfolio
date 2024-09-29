@@ -1,24 +1,20 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import { useTranslation } from '../../../hooks/useCustomTranslation';
+import { Box } from '@mui/material';
+import logo from '../../../resources/images/logo.png';
 
 const Logo: React.FC = () => {
-  const { t } = useTranslation();
-
   return (
-    <Typography
-      variant="h6"
-      component="div"
+    <Box
+      component="img"
+      src={logo}
+      alt="Logo"
       sx={{
-        fontWeight: 'bold',
-        color: 'text.primary',
-        flexGrow: 1,
+        height: '64px',
         cursor: 'pointer',
+        objectFit: 'contain',
       }}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-    >
-      {t('header.title')}
-    </Typography>
+    />
   );
 };
 
