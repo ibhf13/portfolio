@@ -64,7 +64,7 @@ export const techStackData: TechStackData = {
       name: 'Express',
       icon: ExpressIcon,
       color: '#FFFFFF',
-      backgroundColor: '#333333',
+      backgroundColor: '#339933',
       translationKey: 'Express'
     },
     {

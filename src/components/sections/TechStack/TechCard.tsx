@@ -17,8 +17,8 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
 }));
 
 const IconWrapper = styled(motion.div, {
-    shouldForwardProp: (prop) => prop !== '$isActive' && prop !== '$bgcolor',
-  })<{ $isActive: boolean; $bgcolor: string }>(({ $isActive, $bgcolor }) => ({
+    shouldForwardProp: (prop) => prop !== '$isActive' && prop !== '$bgcolor' && prop !== '$needsWhiteBg',
+  })<{ $isActive: boolean; $bgcolor: string; $needsWhiteBg: boolean }>(({ $isActive, $bgcolor, $needsWhiteBg, theme }) => ({
     backgroundColor: $isActive ? $bgcolor : 'transparent',
     borderRadius: '50%',
     padding: '8px',
@@ -28,16 +28,30 @@ const IconWrapper = styled(motion.div, {
     width: '64px',
     height: '64px',
     transition: 'background-color 0.3s ease-in-out',
+    position: 'relative',
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      width: '90%',
+      height: '90%',
+      backgroundColor: $needsWhiteBg ? theme.palette.mode ==='dark' ? '#ffffff' : '#c2c9d6' : 'transparent',
+      borderRadius: '50%',
+      zIndex: 0,
+    },
   }));
 
-
-const TechIcon = styled('img')<{ $isExpress: boolean; $isActive: boolean }>(
-  ({ $isExpress, $isActive }) => ({
+const TechIcon = styled('img')<{ isExpress: boolean; isActive: boolean; }>(
+  ({ isExpress, isActive, }) => ({
     width: '100%',
     height: '100%',
     objectFit: 'contain',
-    filter: $isExpress && $isActive ? 'invert(1) brightness(2) contrast(150%)' : 'none',
+    filter: isExpress && isActive ? 'invert(1) brightness(2) contrast(150%)' : 'none',
     transition: 'filter 0.3s ease-in-out',
+    position: 'relative',
+    zIndex: 1,
   })
 );
 
@@ -45,6 +59,8 @@ const TechCard: React.FC<TechCardProps> = ({ tech, index }) => {
   const { t } = useTranslation();
   const theme = useTheme();
   const [isActive, setIsActive] = useState(false);
+
+  const needsWhiteBg = tech.name === 'MongoDB' || tech.name === 'Express';
 
   const handleCardStyle = {
     boxShadow: isActive ? `0 0 15px ${tech.color}` : theme.shadows[3],
@@ -68,12 +84,13 @@ const TechCard: React.FC<TechCardProps> = ({ tech, index }) => {
         onTap={handleActivation(false)}
       >
         <StyledPaper elevation={3} sx={handleCardStyle}>
-          <IconWrapper variants={iconVariants} $isActive={isActive} $bgcolor={tech.backgroundColor}>
+          <IconWrapper variants={iconVariants} $isActive={isActive} $bgcolor={tech.backgroundColor || tech.color} $needsWhiteBg={needsWhiteBg}>
             <TechIcon
               src={tech.icon}
               alt={`${tech.name} icon`}
               $isExpress={tech.name === 'Express'}
               $isActive={isActive}
+              $needsWhiteBg={needsWhiteBg}
             />
           </IconWrapper>
           <Typography variant="body1" mt={2} textAlign="center" fontWeight="medium">
