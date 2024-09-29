@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Grid, Card, CardContent, CardMedia, Button, useTheme, useMediaQuery } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslation } from '../../hooks/useCustomTranslation';
+import { useTranslation } from '../../../hooks/useCustomTranslation';
 
 const ProjectsOverview: React.FC = () => {
   const { t } = useTranslation();
