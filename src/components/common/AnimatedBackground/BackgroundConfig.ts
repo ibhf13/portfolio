@@ -68,10 +68,10 @@ export const backgroundConfigs: Record<string, (theme: Theme) => BackgroundConfi
     0.8
   ),
   projects: createBackgroundConfig(
-    ['#3A1C71', '#D76D77', '#FFAF7B'],
+    ['#2C3E50', '#4CA1AF'],
     [
-      createParticle(170, theme => getShapeColor(theme, 'rgba(0, 0, 0, 0.2)', 'rgba(255, 255, 255, 0.2)'), 0.6, 'circle', { scale: [1, 1.1, 1], x: [0, 20, 0], y: [0, 35, 0], duration: 28 }, 2),
-      createParticle(130, theme => getShapeColor(theme, '#3A1C71', '#FFAF7B'), 0.4, 'triangle', { scale: [1, 1.25, 1], x: [0, -35, 0], y: [0, -15, 0], rotate: [0, 120, 240], duration: 24 }),
+      createParticle(180, theme => getShapeColor(theme, 'rgba(0, 0, 0, 0.2)', 'rgba(255, 255, 255, 0.2)'), 0.6, 'circle', { scale: [1, 1.1, 1], x: [0, 30, 0], y: [0, 20, 0], duration: 25 }, 2),
+      createParticle(120, theme => getShapeColor(theme, '#1A2980', '#26D0CE'), 0.4, 'hexagon', { scale: [1, 1.2, 1], x: [0, -20, 0], y: [0, -30, 0], rotate: [0, 180, 360], duration: 20 }),
     ],
     200,
     1.1
