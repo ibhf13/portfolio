@@ -31,9 +31,9 @@ const StyledIconButton = styled(IconButton)(({ theme }) => ({
 }));
 
 const socialLinks = [
-  { name: 'LinkedIn', icon: LinkedInIcon, url: 'https://www.linkedin.com/in/yourusername' },
-  { name: 'GitHub', icon: GitHubIcon, url: 'https://github.com/yourusername' },
-  { name: 'Xing', icon: XingIcon, url: 'https://www.xing.com/profile/yourusername' },
+  { name: 'LinkedIn', icon: LinkedInIcon, url: 'https://www.linkedin.com/in/ibrahimklusmann/' },
+  { name: 'GitHub', icon: GitHubIcon, url: 'https://github.com/ibhf13' },
+  { name: 'Xing', icon: XingIcon, url: '' },
 ];
 
 const containerVariants = {
