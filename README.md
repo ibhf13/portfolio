@@ -29,7 +29,6 @@ This is a personal portfolio website built with React, TypeScript, and Material-
 - i18next for internationalization
 - Rsbuild for building and development
 
-## Project Structure
 
 ```
 portfolio/
