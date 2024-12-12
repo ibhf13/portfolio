@@ -10,6 +10,6 @@ export const useExperienceData = () => {
   return [
     { icon: <CodeIcon fontSize="large" />, years: 5, text: t('aboutMe.experiences.coding') },
     { icon: <SchoolIcon fontSize="large" />, years: 2, text: t('aboutMe.experiences.industry') },
-    { icon: <EmojiEventsIcon fontSize="large" />, years: 4, text: t('aboutMe.experiences.projects') },
+    { icon: <EmojiEventsIcon fontSize="large" />, years: 3, text: t('aboutMe.experiences.projects') },
   ];
 };

@@ -112,20 +112,20 @@
     "learnMore": "Mehr erfahren",
     "items": {
       "ecommerce": {
-        "title": "E-Commerce-Plattform",
-        "description": "Eine Full-Stack-E-Commerce-Lösung mit React und Node.js"
+        "title": "Coming soon",
+        "description": ""
       },
       "taskManagement": {
-        "title": "Aufgabenverwaltungs-App",
-        "description": "Eine React-basierte Aufgabenverwaltungsanwendung mit Drag-and-Drop-Funktionalität"
+        "title": "Coming soon",
+        "description": ""
       },
       "socialMedia": {
-        "title": "Dashboard",
-        "description": "Ein responsives Dashboard für Steueranalysen mit React"
+        "title": "Coming soon",
+        "description": ""
       },
       "fitness": {
-        "title": "Fitness-App",
-        "description": "Eine Fitness-App mit React und Node.js"
+        "title": "Coming soon",
+        "description": ""
       }
     }
   },
