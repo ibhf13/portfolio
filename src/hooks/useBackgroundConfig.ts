@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useTheme } from '@mui/material';
-import { backgroundConfigs, BackgroundConfig } from '../components/common/AnimatedBackground/BackgroundConfig';
+import { BackgroundConfig } from '../components/common/AnimatedBackground/types';
+import backgroundConfigs from '../components/common/AnimatedBackground/BackgroundConfig';
 
 const useBackgroundConfig = (sectionId: string): BackgroundConfig => {
   const theme = useTheme();

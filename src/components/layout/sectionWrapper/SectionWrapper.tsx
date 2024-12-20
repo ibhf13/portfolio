@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { Box, Container, useTheme, alpha, useMediaQuery } from '@mui/material';
 import { motion, useAnimation, Variants, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import AnimatedBackground from "../AnimatedBackground/AnimatedBackground";
-
+import { AnimatedBackground } from '../../common/AnimatedBackground';
 export enum AnimationType {
   Fade = 'fade',
   Slide = 'slide',

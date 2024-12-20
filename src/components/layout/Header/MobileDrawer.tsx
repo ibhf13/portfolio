@@ -48,7 +48,6 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, toggleThem
       <List>
         {NAV_ITEMS.map((item, index) => (
           <ListItem
-            button
             key={item.key}
             onClick={() => scrollToSection(item.key)}
             component={motion.li}

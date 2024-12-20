@@ -8,11 +8,11 @@ import TechStack from './components/sections/techStack/TechStack';
 import ContactForm from './components/sections/contactForm/ContactForm';
 import WorkTimeline from './components/sections/workTimeline/WorkTimeline';
 import ProjectsOverview from './components/sections/projectsOverview/ProjectsOverview';
-import SectionWrapper, { AnimationType } from './components/common/sectionWrapper/SectionWrapper';
 import { useTheme } from './hooks/useTheme';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { TranslationKeyProvider } from './contexts/TranslationKeyContext';
 import './config/i18n';
+import SectionWrapper, { AnimationType } from './components/layout/sectionWrapper/SectionWrapper';
 
 const App: React.FC = () => {
   const { theme, toggleTheme } = useTheme();

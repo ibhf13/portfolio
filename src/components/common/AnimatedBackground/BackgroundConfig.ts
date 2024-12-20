@@ -39,7 +39,7 @@ const createBackgroundConfig = (
 const getShapeColor = (theme: Theme, lightModeColor: string, darkModeColor: string): string =>
   theme.palette.mode === 'light' ? lightModeColor : darkModeColor;
 
-export const backgroundConfigs: Record<string, (theme: Theme) => BackgroundConfig> = {
+const backgroundConfigs: Record<string, (theme: Theme) => BackgroundConfig> = {
   aboutMe: createBackgroundConfig(
     ['#1A2980', '#26D0CE'],
     [
@@ -85,4 +85,6 @@ export const backgroundConfigs: Record<string, (theme: Theme) => BackgroundConfi
     125,
     0.9
   ),
-};
+}
+
+export default backgroundConfigs

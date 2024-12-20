@@ -4,6 +4,7 @@ import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import HeaderContent from './HeaderContent';
 import MobileHeader from './MobileHeader';
+import '../../../styles/theme.types';
 
 interface HeaderProps {
   toggleTheme: () => void;
