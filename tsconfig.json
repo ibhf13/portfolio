@@ -23,7 +23,6 @@
     "paths": {
       "@/*": ["src/*"],
       "@sections/*": ["src/components/sections/*"],
-      "@animations/*": ["src/animations/*"],
       "@contexts/*": ["src/contexts/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
