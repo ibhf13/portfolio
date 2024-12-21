@@ -1,29 +1,28 @@
-import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import { Box, useMediaQuery } from '@mui/material';
-import Header from './components/layout/Header/Header';
-import AboutMe from './components/sections/aboutMe/AboutMe';
-import TechStack from './components/sections/techStack/TechStack';
-import ContactForm from './components/sections/contactForm/ContactForm';
-import WorkTimeline from './components/sections/workTimeline/WorkTimeline';
-import ProjectsOverview from './components/sections/projectsOverview/ProjectsOverview';
-import { useTheme } from './hooks/useTheme';
-import { LanguageProvider } from './contexts/LanguageContext';
-import { TranslationKeyProvider } from './contexts/TranslationKeyContext';
-import './config/i18n';
-import SectionWrapper, { AnimationType } from './components/layout/sectionWrapper/SectionWrapper';
+import { Box, useMediaQuery } from '@mui/material'
+import CssBaseline from '@mui/material/CssBaseline'
+import { ThemeProvider } from '@mui/material/styles'
+import React from 'react'
+import Header from './components/layout/Header/Header'
+import SectionWrapper, { AnimationType } from './components/layout/sectionWrapper/SectionWrapper'
+import AboutMe from './components/sections/aboutMe/AboutMe'
+import ContactForm from './components/sections/contactForm/ContactForm'
+import ProjectsOverview from './components/sections/projectsOverview/ProjectsOverview'
+import TechStack from './components/sections/techStack/TechStack'
+import WorkTimeline from './components/sections/workTimeline/WorkTimeline'
+import { LanguageProvider } from './contexts/LanguageContext'
+import { TranslationKeyProvider } from './contexts/TranslationKeyContext'
+import { useTheme } from './hooks/useTheme'
 
 const App: React.FC = () => {
-  const { theme, toggleTheme } = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const { theme, toggleTheme } = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
+  const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'))
 
   const getContainerWidth = () => {
-    if (isMobile) return 'xs';
-    if (isTablet) return 'sm';
-    return 'lg';
-  };
+    if (isMobile) return 'xs'
+    if (isTablet) return 'sm'
+    return 'lg'
+  }
 
   const sections = [
     {
@@ -57,7 +56,7 @@ const App: React.FC = () => {
       animationType: AnimationType.Elastic,
       backgroundColor: theme.palette.background.default,
     },
-  ];
+  ]
 
   return (
     <LanguageProvider>
@@ -82,7 +81,7 @@ const App: React.FC = () => {
         </ThemeProvider>
       </TranslationKeyProvider>
     </LanguageProvider>
-  );
-};
+  )
+}
 
-export default App;
+export default App

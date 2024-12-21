@@ -1,21 +1,21 @@
-import { useMemo } from 'react';
-import { useTheme } from '@mui/material';
-import { BackgroundConfig } from '../components/common/AnimatedBackground/types';
-import backgroundConfigs from '../components/common/AnimatedBackground/BackgroundConfig';
-
+import backgroundConfigs from '@/components/common/AnimatedBackground/BackgroundConfig'
+import { BackgroundConfig } from '@/components/common/AnimatedBackground/types'
+import { ThemeMode } from '@/types/theme.types'
+import { useTheme } from '@mui/material'
+import { useMemo } from 'react'
 const useBackgroundConfig = (sectionId: string): BackgroundConfig => {
-  const theme = useTheme();
-  const configFunction = backgroundConfigs[sectionId] || backgroundConfigs.aboutMe;
+  const theme = useTheme()
+  const configFunction = backgroundConfigs[sectionId] || backgroundConfigs.aboutMe
 
   return useMemo(() => {
-    const config = configFunction(theme);
+    const config = configFunction(theme)
     return {
       ...config,
       gradientColors: config.gradientColors.map(color =>
-        theme.palette.mode === 'dark' ? `${color}33` : `${color}4D`
+        theme.palette.mode === ThemeMode.DARK ? `${color}33` : `${color}4D`
       ),
-    };
-  }, [configFunction, theme]);
-};
+    }
+  }, [configFunction, theme])
+}
 
-export default useBackgroundConfig;
+export default useBackgroundConfig

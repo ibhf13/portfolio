@@ -1,18 +1,18 @@
-import React from 'react';
-import { AppBar, Toolbar } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-import HeaderContent from './HeaderContent';
-import MobileHeader from './MobileHeader';
-import '../../../styles/theme.types';
+import { ThemeMode } from '@/types/theme.types'
+import { AppBar, Toolbar } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import React from 'react'
+import HeaderContent from './HeaderContent'
+import MobileHeader from './MobileHeader'
 
 interface HeaderProps {
-  toggleTheme: () => void;
+  toggleTheme: () => void
 }
 
 const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const theme = useTheme()
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
     <AppBar
@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
       elevation={0}
     >
       <Toolbar sx={{
-        background: theme.palette.mode === 'light'
+        background: theme.palette.mode === ThemeMode.LIGHT
           ? theme.palette.primary.gradientLight
           : theme.palette.primary.gradientDark
       }}>
@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
         )}
       </Toolbar>
     </AppBar>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

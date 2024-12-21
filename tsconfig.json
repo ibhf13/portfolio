@@ -24,7 +24,6 @@
       "@/*": ["src/*"],
       "@sections/*": ["src/components/sections/*"],
       "@animations/*": ["src/animations/*"],
-      "@locales/*": ["src/locales/*"],
       "@contexts/*": ["src/contexts/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],

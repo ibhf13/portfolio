@@ -1,27 +1,26 @@
-import { useState, useCallback, useMemo } from 'react';
-import createAppTheme from '../styles/theme';
-import background from '../resources/videos/back.mp4';
-import background2 from '../resources/videos/back2.mp4';
+import createAppTheme from '@/styles/theme'
+import { DEFAULT_THEME_MODE, THEME_STORAGE_KEY, ThemeMode } from '@/types/theme.types'
+import { useState } from 'react'
+
+const getInitialThemeMode = (): ThemeMode => {
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY)
+  return (savedTheme === ThemeMode.LIGHT || savedTheme === ThemeMode.DARK) ? savedTheme : DEFAULT_THEME_MODE
+}
 
 export const useTheme = () => {
-  const [mode, setMode] = useState<'light' | 'dark'>(() =>
-    (localStorage.getItem('theme') as 'light' | 'dark') || 'dark'
-  );
+  const [mode, setMode] = useState<ThemeMode>(getInitialThemeMode)
+  const [key, setKey] = useState(0)
 
-  const [videoSrc, setVideoSrc] = useState(mode === 'dark' ? background : background2);
-  const [key, setKey] = useState(0);
-
-  const toggleTheme = useCallback(() => {
+  const toggleTheme = () => {
     setMode((prevMode) => {
-      const newMode = prevMode === 'light' ? 'dark' : 'light';
-      localStorage.setItem('theme', newMode);
-      setVideoSrc(newMode === 'dark' ? background : background2);
-      setKey(prevKey => prevKey + 1);
-      return newMode;
-    });
-  }, []);
+      const newMode: ThemeMode = prevMode === ThemeMode.LIGHT ? ThemeMode.DARK : ThemeMode.LIGHT
+      localStorage.setItem(THEME_STORAGE_KEY, newMode)
+      setKey((prevKey) => prevKey + 1)
+      return newMode
+    })
+  }
 
-  const theme = useMemo(() => createAppTheme(mode), [mode]);
+  const theme = createAppTheme(mode)
 
-  return { mode, theme, videoSrc, key, toggleTheme };
-};
+  return { mode, theme, key, toggleTheme } as const
+}

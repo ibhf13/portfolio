@@ -1,63 +1,121 @@
-import { createTheme, responsiveFontSizes, Theme, alpha, PaletteMode } from '@mui/material/styles';
+import { ThemeMode } from '@/types/theme.types'
+import { alpha, createTheme, responsiveFontSizes, Theme } from '@mui/material/styles'
 
-const createAppTheme = (mode: PaletteMode): Theme => {
-  const getColor = (lightColor: string, darkColor: string) => mode === 'light' ? lightColor : darkColor;
+const COLORS = {
+  light: {
+    primary: {
+      main: '#3f51b5',
+      light: '#757de8',
+      dark: '#002984',
+    },
+    secondary: {
+      main: '#FF6B6B',
+      light: '#FF8E8E',
+      dark: '#FF4949',
+    },
+    background: {
+      default: '#f5f5f5',
+      paper: '#ffffff',
+    },
+    text: {
+      primary: '#212121',
+      secondary: '#757575',
+    },
+  },
+  dark: {
+    primary: {
+      main: '#90caf9',
+      light: '#e3f2fd',
+      dark: '#42a5f5',
+    },
+    secondary: {
+      main: '#4ECDC4',
+      light: '#7EEEE7',
+      dark: '#45B7AA',
+    },
+    background: {
+      default: '#121212',
+      paper: '#1e1e1e',
+    },
+    text: {
+      primary: '#ffffff',
+      secondary: '#b0bec5',
+    },
+  },
+} as const
+
+const GRADIENTS = {
+  light: {
+    primary: 'linear-gradient(45deg, #b95c5c 30%, #83b1c7 60%, #71cb66 90%)',
+    secondary: 'linear-gradient(45deg, #FF6B6B 30%, #FF8E8E 60%, #FFB6B6 90%)',
+    background: 'linear-gradient(180deg, #ffffff 30%, #f5f5f5 60%, #eeeeee 90%)',
+  },
+  dark: {
+    primary: 'linear-gradient(45deg, #002984 30%, #42a5f5 60%, #6b1007 90%)',
+    secondary: 'linear-gradient(45deg, #4ECDC4 30%, #45B7AA 60%, #7EEEE7 90%)',
+    background: 'linear-gradient(180deg, #121212 30%, #1e1e1e 60%, #2b2b2b 90%)',
+  },
+} as const
+
+const TYPOGRAPHY = {
+  fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+  fontWeights: {
+    regular: 400,
+    medium: 500,
+    semiBold: 600,
+    bold: 700,
+  },
+} as const
+
+const createAppTheme = (mode: ThemeMode): Theme => {
+  const colors = mode === ThemeMode.LIGHT ? COLORS.light : COLORS.dark
+  const gradients = mode === ThemeMode.LIGHT ? GRADIENTS.light : GRADIENTS.dark
 
   const palette = {
     mode,
     primary: {
-      main: getColor('#3f51b5', '#90caf9'),
-      light: getColor('#757de8', '#e3f2fd'),
-      dark: getColor('#002984', '#42a5f5'),
+      ...colors.primary,
       contrastText: '#FFFFFF',
-      gradientLight: 'linear-gradient(45deg, #b95c5c 30%, #83b1c7 60%, #71cb66 90%)',
-      gradientDark: 'linear-gradient(45deg, #002984 30%, #42a5f5 60%, #6b1007 90%)',
-      },
+      gradientLight: gradients.primary,
+      gradientDark: gradients.primary,
+    },
     secondary: {
-      main: getColor('#FF6B6B', '#4ECDC4'),
-      light: getColor('#FF8E8E', '#7EEEE7'),
-      dark: getColor('#FF4949', '#45B7AA'),
+      ...colors.secondary,
       contrastText: '#FFFFFF',
-      gradientLight: 'linear-gradient(45deg, #FF6B6B 30%, #FF8E8E 60%, #FFB6B6 90%)',
-      gradientDark: 'linear-gradient(45deg, #4ECDC4 30%, #45B7AA 60%, #7EEEE7 90%)',
+      gradientLight: gradients.secondary,
+      gradientDark: gradients.secondary,
     },
     background: {
-      default: getColor('#f5f5f5', '#121212'),
-      paper: getColor('#ffffff', '#1e1e1e'),
-      gradientLight: 'linear-gradient(180deg, #ffffff 30%, #f5f5f5 60%, #eeeeee 90%)',
-      gradientDark: 'linear-gradient(180deg, #121212 30%, #1e1e1e 60%, #2b2b2b 90%)',
+      ...colors.background,
+      gradientLight: gradients.background,
+      gradientDark: gradients.background,
     },
-    text: {
-      primary: getColor('#212121', '#ffffff'),
-      secondary: getColor('#757575', '#b0bec5'),
-    },
+    text: colors.text,
     error: {
-      main: getColor('#f44336', '#ef5350'),
+      main: mode === ThemeMode.LIGHT ? '#f44336' : '#ef5350',
     },
     warning: {
-      main: getColor('#ff9800', '#ffb74d'),
+      main: mode === ThemeMode.LIGHT ? '#ff9800' : '#ffb74d',
     },
     info: {
-      main: getColor('#2196f3', '#4fc3f7'),
+      main: mode === ThemeMode.LIGHT ? '#2196f3' : '#4fc3f7',
     },
     success: {
-      main: getColor('#4caf50', '#81c784'),
+      main: mode === ThemeMode.LIGHT ? '#4caf50' : '#81c784',
     },
-    divider: getColor('rgba(0, 0, 0, 0.12)', 'rgba(255, 255, 255, 0.12)'),
-  };
-
-
+    divider: mode === ThemeMode.LIGHT ? 'rgba(0, 0, 0, 0.12)' : 'rgba(255, 255, 255, 0.12)',
+  }
 
   const baseTheme = createTheme({
     palette,
     typography: {
-      fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
-      h1: { fontWeight: 700, letterSpacing: '-0.01562em' },
-      h2: { fontWeight: 600, letterSpacing: '-0.00833em' },
-      h3: { fontWeight: 600, letterSpacing: '0em' },
-      h4: { fontWeight: 600, letterSpacing: '0.00735em' },
-      h5: { fontWeight: 600, letterSpacing: '0em' },
-      h6: { fontWeight: 600, letterSpacing: '0.0075em' },
+      fontFamily: TYPOGRAPHY.fontFamily,
+      h1: { fontWeight: TYPOGRAPHY.fontWeights.bold, letterSpacing: '-0.01562em' },
+      h2: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '-0.00833em' },
+      h3: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '0em' },
+      h4: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '0.00735em' },
+      h5: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '0em' },
+      h6: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '0.0075em' },
       subtitle1: { letterSpacing: '0.00938em' },
       subtitle2: { letterSpacing: '0.00714em' },
       body1: { letterSpacing: '0.00938em' },
@@ -73,19 +131,19 @@ const createAppTheme = (mode: PaletteMode): Theme => {
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            scrollbarColor: getColor("#CFD8DC #ECEFF1", "#37474F #263238"),
+            scrollbarColor: mode === ThemeMode.LIGHT ? "#CFD8DC #ECEFF1" : "#37474F #263238",
             "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
-              backgroundColor: getColor("#ECEFF1", "#263238"),
+              backgroundColor: mode === ThemeMode.LIGHT ? "#ECEFF1" : "#263238",
               width: 8,
             },
             "&::-webkit-scrollbar-thumb, & *::-webkit-scrollbar-thumb": {
               borderRadius: 8,
-              backgroundColor: getColor("#CFD8DC", "#37474F"),
+              backgroundColor: mode === ThemeMode.LIGHT ? "#CFD8DC" : "#37474F",
               minHeight: 24,
-              border: `2px solid ${getColor("#ECEFF1", "#263238")}`,
+              border: `2px solid ${mode === ThemeMode.LIGHT ? "#ECEFF1" : "#263238"}`,
             },
             "&::-webkit-scrollbar-thumb:focus, & *::-webkit-scrollbar-thumb:focus": {
-              backgroundColor: getColor("#B0BEC5", "#455A64"),
+              backgroundColor: mode === ThemeMode.LIGHT ? "#B0BEC5" : "#455A64",
             },
           },
         },
@@ -95,7 +153,7 @@ const createAppTheme = (mode: PaletteMode): Theme => {
           root: {
             borderRadius: 8,
             textTransform: 'none',
-            fontWeight: 600,
+            fontWeight: TYPOGRAPHY.fontWeights.semiBold,
             padding: '8px 16px',
             transition: 'all 0.2s ease-in-out',
             '&:hover': {
@@ -124,16 +182,16 @@ const createAppTheme = (mode: PaletteMode): Theme => {
         styleOverrides: {
           root: {
             borderRadius: 16,
-            boxShadow: mode === 'light'
+            boxShadow: mode === ThemeMode.LIGHT
               ? '0 4px 20px rgba(0, 0, 0, 0.1)'
               : '0 4px 20px rgba(255, 255, 255, 0.1)',
-            background: mode === 'light'
+            background: mode === ThemeMode.LIGHT
               ? 'linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)'
               : 'linear-gradient(135deg, #1E1E1E 0%, #2D3748 100%)',
             transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
             '&:hover': {
               transform: 'translateY(-4px)',
-              boxShadow: mode === 'light'
+              boxShadow: mode === ThemeMode.LIGHT
                 ? '0 12px 30px rgba(0, 0, 0, 0.15)'
                 : '0 12px 30px rgba(255, 255, 255, 0.15)',
             },
@@ -144,7 +202,7 @@ const createAppTheme = (mode: PaletteMode): Theme => {
         styleOverrides: {
           root: {
             background: `linear-gradient(90deg, ${palette.primary.main} 0%, ${palette.primary.dark} 100%)`,
-            boxShadow: mode === 'light'
+            boxShadow: mode === ThemeMode.LIGHT
               ? '0 2px 10px rgba(0, 0, 0, 0.1)'
               : '0 2px 10px rgba(255, 255, 255, 0.1)',
           },
@@ -156,7 +214,7 @@ const createAppTheme = (mode: PaletteMode): Theme => {
             // backgroundImage: 'none',
           },
           elevation1: {
-            boxShadow: mode === 'light'
+            boxShadow: mode === ThemeMode.LIGHT
               ? '0 2px 8px rgba(0, 0, 0, 0.1)'
               : '0 2px 8px rgba(255, 255, 255, 0.1)',
           },
@@ -208,9 +266,9 @@ const createAppTheme = (mode: PaletteMode): Theme => {
         },
       },
     },
-  });
+  })
 
-  return responsiveFontSizes(baseTheme);
-};
+  return responsiveFontSizes(baseTheme)
+}
 
-export default createAppTheme;
+export default createAppTheme

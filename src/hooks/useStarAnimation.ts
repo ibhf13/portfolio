@@ -1,6 +1,7 @@
-import { useMemo } from 'react';
+import { useMemo } from 'react'
 
 const useStarAnimation = () => {
+
   return useMemo(() => ({
     opacity: [0.5, 1, 0.5],
     scale: [1, 1.2, 1],
@@ -9,7 +10,7 @@ const useStarAnimation = () => {
       repeat: Infinity,
       ease: "easeInOut",
     },
-  }), []);
-};
+  }), [])
+}
 
-export default useStarAnimation;
+export default useStarAnimation
