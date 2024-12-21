@@ -1,32 +1,32 @@
-import React from 'react';
-import { Drawer, List, ListItem, ListItemText, IconButton, Box, useTheme } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import { motion } from 'framer-motion';
-import { useTranslation } from '../../../hooks/useCustomTranslation';
-import { NAV_ITEMS } from './HeaderTypes';
-import LanguageMenu from './LanguageMenu';
-import { useLanguage } from '../../../contexts/LanguageContext';
+import { useLanguage } from '@/contexts/LanguageContext'
+import { useTranslation } from '@/hooks/useCustomTranslation'
+import CloseIcon from '@mui/icons-material/Close'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import { Box, Drawer, IconButton, List, ListItem, ListItemText, useTheme } from '@mui/material'
+import { motion } from 'framer-motion'
+import React from 'react'
+import LanguageMenu from './LanguageMenu'
+import { NAV_ITEMS } from './types/header.types'
 
 interface MobileDrawerProps {
-  isOpen: boolean;
-  onClose: () => void;
-  toggleTheme: () => void;
+  isOpen: boolean
+  onClose: () => void
+  toggleTheme: () => void
 }
 
 const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, toggleTheme }) => {
-  const { t } = useTranslation();
-  const theme = useTheme();
-  const { language, setLanguage } = useLanguage();
+  const { t } = useTranslation()
+  const theme = useTheme()
+  const { language, setLanguage } = useLanguage()
 
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
+    const section = document.getElementById(sectionId)
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-      onClose();
+      section.scrollIntoView({ behavior: 'smooth' })
+      onClose()
     }
-  };
+  }
 
   return (
     <Drawer
@@ -69,7 +69,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, toggleThem
         </IconButton>
       </Box>
     </Drawer>
-  );
-};
+  )
+}
 
-export default MobileDrawer;
+export default MobileDrawer

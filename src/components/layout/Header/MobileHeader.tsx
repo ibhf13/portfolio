@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
-import { Box, IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import Logo from './Logo';
-import MobileDrawer from './MobileDrawer';
+import MenuIcon from '@mui/icons-material/Menu'
+import { Box, IconButton } from '@mui/material'
+import React, { useState } from 'react'
+import { HeaderProps } from '../types/layout.types'
+import Logo from './Logo'
+import MobileDrawer from './MobileDrawer'
 
-interface MobileHeaderProps {
-  toggleTheme: () => void;
-}
-
-const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleTheme }) => {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+const MobileHeader: React.FC<HeaderProps> = ({ toggleTheme }) => {
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false)
 
   const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
-  };
+    setIsDrawerOpen(!isDrawerOpen)
+  }
 
   return (
     <>
@@ -34,7 +31,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({ toggleTheme }) => {
         toggleTheme={toggleTheme}
       />
     </>
-  );
-};
+  )
+}
 
-export default MobileHeader;
+export default MobileHeader

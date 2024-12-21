@@ -1,22 +1,22 @@
-import React from 'react';
-import { Box, IconButton } from '@mui/material';
-import DarkModeIcon from '@mui/icons-material/DarkMode';
-import LightModeIcon from '@mui/icons-material/LightMode';
-import { useTheme } from '@mui/material/styles';
-import Logo from './Logo';
-import NavItems from './NavItems';
-import LanguageMenu from './LanguageMenu';
-import TranslationKeyDisplay from './TranslationKeyDisplay';
-import { useLanguage } from '../../../contexts/LanguageContext';
-import { isLocalEnvironment } from '../../../utils/environmentUtils';
+import { useLanguage } from '@/contexts/LanguageContext'
+import { isLocalEnvironment } from '@/utils/environmentUtils'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import { Box, IconButton } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
+import React from 'react'
+import LanguageMenu from './LanguageMenu'
+import Logo from './Logo'
+import NavItems from './NavItems'
+import TranslationKeyDisplay from './TranslationKeyDisplay'
 
 interface HeaderContentProps {
-  toggleTheme: () => void;
+  toggleTheme: () => void
 }
 
 const HeaderContent: React.FC<HeaderContentProps> = ({ toggleTheme }) => {
-  const theme = useTheme();
-  const { language, setLanguage } = useLanguage();
+  const theme = useTheme()
+  const { language, setLanguage } = useLanguage()
 
   return (
     <>
@@ -38,6 +38,6 @@ const HeaderContent: React.FC<HeaderContentProps> = ({ toggleTheme }) => {
         </IconButton>
       </Box>
     </>
-  );
-};
-export default HeaderContent;
+  )
+}
+export default HeaderContent

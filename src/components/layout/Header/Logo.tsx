@@ -1,6 +1,6 @@
-import React from 'react';
-import { Box } from '@mui/material';
-import logo from '../../../resources/images/logo.png';
+import logo from '@/resources/images/logo.png'
+import { Box } from '@mui/material'
+import React from 'react'
 
 const Logo: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const Logo: React.FC = () => {
       }}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
     />
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo

@@ -1,11 +1,11 @@
-import React from 'react';
-import { IconButton, Tooltip } from '@mui/material';
-import TranslateIcon from '@mui/icons-material/Translate';
-import CodeIcon from '@mui/icons-material/Code';
-import { useTranslation } from '../../../hooks/useCustomTranslation';
+import CodeIcon from '@mui/icons-material/Code'
+import TranslateIcon from '@mui/icons-material/Translate'
+import { IconButton, Tooltip } from '@mui/material'
+import React from 'react'
+import { useTranslation } from '../../../hooks/useCustomTranslation'
 
 const TranslationKeyDisplay: React.FC = () => {
-  const { t, showKeys, toggleShowKeys } = useTranslation();
+  const { t, showKeys, toggleShowKeys } = useTranslation()
 
   return (
     <Tooltip title={t(showKeys ? 'header.hideTranslationKeys' : 'header.showTranslationKeys')}>
@@ -13,7 +13,7 @@ const TranslationKeyDisplay: React.FC = () => {
         {showKeys ? <CodeIcon /> : <TranslateIcon />}
       </IconButton>
     </Tooltip>
-  );
-};
+  )
+}
 
-export default TranslationKeyDisplay;
+export default TranslationKeyDisplay

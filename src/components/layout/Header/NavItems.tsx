@@ -1,18 +1,18 @@
-import React from 'react';
-import { Button, Box } from '@mui/material';
-import { motion } from 'framer-motion';
-import { useTranslation } from '../../../hooks/useCustomTranslation';
-import { NAV_ITEMS } from './HeaderTypes';
+import { useTranslation } from '@/hooks/useCustomTranslation'
+import { Box, Button } from '@mui/material'
+import { motion } from 'framer-motion'
+import React from 'react'
+import { NAV_ITEMS } from './types/header.types'
 
 const NavItems: React.FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
+    const section = document.getElementById(sectionId)
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
 
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -50,7 +50,7 @@ const NavItems: React.FC = () => {
         </motion.div>
       ))}
     </Box>
-  );
-};
+  )
+}
 
-export default NavItems;
+export default NavItems

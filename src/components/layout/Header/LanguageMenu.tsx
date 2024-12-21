@@ -1,35 +1,35 @@
-import React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import { LANGUAGES } from './HeaderTypes';
-import LanguageIcon from '@mui/icons-material/Language';
-import { useTheme } from '@mui/material/styles';
-import { motion, AnimatePresence } from 'framer-motion';
+import { Language } from '@/contexts/LanguageContext'
+import LanguageIcon from '@mui/icons-material/Language'
+import Button from '@mui/material/Button'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import { useTheme } from '@mui/material/styles'
+import { AnimatePresence, motion } from 'framer-motion'
+import React from 'react'
 
 interface LanguageMenuProps {
-  currentLanguage: string;
-  onLanguageChange: (lang: string) => void;
+  currentLanguage: Language
+  onLanguageChange: (lang: Language) => void
 }
 
 const LanguageMenu: React.FC<LanguageMenuProps> = ({ currentLanguage, onLanguageChange }) => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const theme = useTheme();
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const theme = useTheme()
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+    setAnchorEl(event.currentTarget)
+  }
 
   const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
+    setAnchorEl(null)
+  }
 
-  const handleLanguageChange = (lang: string) => {
-    onLanguageChange(lang);
-    handleMenuClose();
-  };
+  const handleLanguageChange = (lang: Language) => {
+    onLanguageChange(lang)
+    handleMenuClose()
+  }
 
-  const currentLanguageLabel = currentLanguage ? LANGUAGES[currentLanguage as keyof typeof LANGUAGES] : '';
+  const currentLanguageLabel = currentLanguage ?? Language.DE
 
   return (
     <>
@@ -74,10 +74,10 @@ const LanguageMenu: React.FC<LanguageMenuProps> = ({ currentLanguage, onLanguage
               },
             }}
           >
-            {Object.entries(LANGUAGES).map(([langCode, langLabel]) => (
+            {Object.entries(Language).map(([langCode, langLabel]) => (
               <MenuItem
                 key={langCode}
-                onClick={() => handleLanguageChange(langCode)}
+                onClick={() => handleLanguageChange(langCode as Language)}
                 selected={currentLanguage === langCode}
                 sx={{
                   '&:hover': {
@@ -95,7 +95,7 @@ const LanguageMenu: React.FC<LanguageMenuProps> = ({ currentLanguage, onLanguage
         )}
       </AnimatePresence>
     </>
-  );
-};
+  )
+}
 
-export default LanguageMenu;
+export default LanguageMenu

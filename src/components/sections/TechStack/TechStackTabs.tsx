@@ -1,12 +1,12 @@
-import React, { useRef, useLayoutEffect, useState } from 'react';
-import { Tabs, Tab, Box } from '@mui/material';
-import { useTranslation } from '../../../hooks/useCustomTranslation';
-import { TechStackSection } from './types';
-import { styled } from '@mui/material/styles';
+import { Box, Tab, Tabs } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import React, { useLayoutEffect, useRef, useState } from 'react'
+import { useTranslation } from '../../../hooks/useCustomTranslation'
+import { TechStackSection } from './types'
 
 interface TechStackTabsProps {
-  activeSection: TechStackSection | 'all';
-  onChangeSection: (section: TechStackSection | 'all') => void;
+  activeSection: TechStackSection | 'all'
+  onChangeSection: (section: TechStackSection | 'all') => void
 }
 
 const ScrollableBox = styled(Box)(({ theme }) => ({
@@ -15,9 +15,9 @@ const ScrollableBox = styled(Box)(({ theme }) => ({
   '&::-webkit-scrollbar': {
     display: 'none',
   },
-  '-ms-overflow-style': 'none',
+  msOverflowStyle: 'none',
   marginBottom: theme.spacing(4),
-}));
+}))
 
 const StyledTabs = styled(Tabs)(({ theme }) => ({
   '& .MuiTabs-flexContainer': {
@@ -30,43 +30,43 @@ const StyledTabs = styled(Tabs)(({ theme }) => ({
     fontSize: theme.typography.body1.fontSize,
     whiteSpace: 'nowrap',
   },
-}));
+}))
 
 const TechStackTabs: React.FC<TechStackTabsProps> = ({ activeSection, onChangeSection }) => {
-  const { t } = useTranslation();
-  const [tabIndicatorStyle, setTabIndicatorStyle] = useState({});
-  const tabsRef = useRef<HTMLDivElement>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation()
+  const [tabIndicatorStyle, setTabIndicatorStyle] = useState({})
+  const tabsRef = useRef<HTMLDivElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
     const updateTabIndicator = () => {
       if (tabsRef.current) {
-        const activeTab = tabsRef.current.querySelector('[aria-selected="true"]') as HTMLElement;
+        const activeTab = tabsRef.current.querySelector('[aria-selected="true"]') as HTMLElement
         if (activeTab) {
           setTabIndicatorStyle({
             left: `${activeTab.offsetLeft}px`,
             width: `${activeTab.offsetWidth}px`,
-          });
+          })
         }
       }
-    };
+    }
 
-    updateTabIndicator();
-    window.addEventListener('resize', updateTabIndicator);
-    return () => window.removeEventListener('resize', updateTabIndicator);
-  }, [activeSection]);
+    updateTabIndicator()
+    window.addEventListener('resize', updateTabIndicator)
+    return () => window.removeEventListener('resize', updateTabIndicator)
+  }, [activeSection])
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: TechStackSection | 'all') => {
-    onChangeSection(newValue);
+    onChangeSection(newValue)
     // Scroll the active tab into view
     if (scrollRef.current) {
-      const activeTab = scrollRef.current.querySelector('[aria-selected="true"]') as HTMLElement;
+      const activeTab = scrollRef.current.querySelector('[aria-selected="true"]') as HTMLElement
       if (activeTab) {
-        const scrollLeft = activeTab.offsetLeft - scrollRef.current.offsetWidth / 2 + activeTab.offsetWidth / 2;
-        scrollRef.current.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+        const scrollLeft = activeTab.offsetLeft - scrollRef.current.offsetWidth / 2 + activeTab.offsetWidth / 2
+        scrollRef.current.scrollTo({ left: scrollLeft, behavior: 'smooth' })
       }
     }
-  };
+  }
 
   return (
     <ScrollableBox ref={scrollRef}>
@@ -91,7 +91,7 @@ const TechStackTabs: React.FC<TechStackTabsProps> = ({ activeSection, onChangeSe
         <Tab label={t('techStack.tools')} value="tools" />
       </StyledTabs>
     </ScrollableBox>
-  );
-};
+  )
+}
 
-export default TechStackTabs;
+export default TechStackTabs

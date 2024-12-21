@@ -6,8 +6,8 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import { initReactI18next } from 'react-i18next'
 
 export enum Language {
-  EN = 'en',
-  DE = 'de',
+  EN = 'EN',
+  DE = 'DE',
 }
 
 interface LanguageContextType {
@@ -20,8 +20,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources: {
-      en: { translation: enTranslations },
-      de: { translation: deTranslations },
+      EN: { translation: enTranslations },
+      DE: { translation: deTranslations },
     },
     detection: {
       order: ['navigator', 'localStorage', 'htmlTag'],
