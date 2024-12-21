@@ -1,15 +1,15 @@
-import React, { useMemo } from 'react';
-import { Box, useTheme } from '@mui/material';
-import useBackgroundConfig from '../../../hooks/useBackgroundConfig';
-import Particle from './Particle';
-import Star from './Star';
+import { Box, useTheme } from '@mui/material'
+import React, { useMemo } from 'react'
+import useBackgroundConfig from '../hooks/useBackgroundConfig'
+import Particle from './Particle'
+import Star from './Star'
 
 interface AnimatedBackgroundProps {
-  sectionId: string;
-  backgroundColor?: string;
-  backgroundImage?: string;
-  particleCount?: number;
-  starCount?: number;
+  sectionId: string
+  backgroundColor?: string
+  backgroundImage?: string
+  particleCount?: number
+  starCount?: number
 }
 
 const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
@@ -19,20 +19,20 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   particleCount = 50,
   starCount = 100
 }) => {
-  const theme = useTheme();
-  const config = useBackgroundConfig(sectionId);
+  const theme = useTheme()
+  const config = useBackgroundConfig(sectionId)
 
   const particles = useMemo(() => {
     return Array.from({ length: particleCount }, (_, index) => (
       <Particle key={`particle-${index}`} config={config.particles[index % config.particles.length]} />
-    ));
-  }, [config.particles, particleCount]);
+    ))
+  }, [config.particles, particleCount])
 
   const stars = useMemo(() => {
     return Array.from({ length: starCount }, (_, index) => (
       <Star key={`star-${index}`} config={config.stars[index % config.stars.length]} />
-    ));
-  }, [config.stars, starCount]);
+    ))
+  }, [config.stars, starCount])
 
   return (
     <Box
@@ -87,7 +87,7 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         {stars}
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default AnimatedBackground;
+export default AnimatedBackground

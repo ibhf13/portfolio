@@ -1,23 +1,23 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ParticleConfig } from './types';
+import { motion } from 'framer-motion'
+import React from 'react'
+import { ParticleConfig, Shape } from '../types/animatedBackground.types'
 
 interface ParticleProps {
-  config: ParticleConfig;
+  config: ParticleConfig
 }
 
-const getParticleShape = (shape: ParticleConfig['shape']): string => {
+const getParticleShape = (shape: Shape): string => {
   switch (shape) {
-    case 'square':
-      return '0%';
-    case 'triangle':
-      return '50% 0%, 0% 100%, 100% 100%';
-    case 'hexagon':
-      return '25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%';
+    case Shape.SQUARE:
+      return '0%'
+    case Shape.TRIANGLE:
+      return '50% 0%, 0% 100%, 100% 100%'
+    case Shape.HEXAGON:
+      return '25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%'
     default:
-      return '50%';
+      return '50%'
   }
-};
+}
 
 const Particle: React.FC<ParticleProps> = ({ config }) => (
   <motion.div
@@ -45,6 +45,6 @@ const Particle: React.FC<ParticleProps> = ({ config }) => (
       repeatType: "reverse",
     }}
   />
-);
+)
 
-export default Particle;
+export default Particle
