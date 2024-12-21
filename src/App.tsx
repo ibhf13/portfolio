@@ -64,7 +64,20 @@ const App: React.FC = () => {
       <TranslationKeyProvider>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Box sx={{ position: 'relative', zIndex: 1 }}>
+          <Box
+            sx={{
+              position: 'relative',
+              zIndex: 1,
+              overflow: 'hidden',
+              height: '100vh',
+              overflowY: 'scroll',
+              '&::-webkit-scrollbar': {
+                display: 'none'
+              },
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+            }}
+          >
             <Header toggleTheme={toggleTheme} />
             {sections.map(({ name, Component, animationType, fullHeight, backgroundColor }) => (
               <SectionWrapper

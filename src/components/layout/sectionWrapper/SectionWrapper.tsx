@@ -28,7 +28,10 @@ const SectionWrapper = ({
     <Box
       component="section"
       id={id}
-      sx={styles.section({ fullHeight, customStyles })}
+      sx={{
+        ...styles.section({ fullHeight, customStyles }),
+        scrollSnapAlign: 'start',
+      }}
     >
       <AnimatedBackground
         sectionId={id}
