@@ -1,5 +1,5 @@
-import { defineConfig } from '@rsbuild/core';
-import { pluginReact } from '@rsbuild/plugin-react';
+import { defineConfig } from '@rsbuild/core'
+import { pluginReact } from '@rsbuild/plugin-react'
 
 export default defineConfig({
   plugins: [pluginReact()],
@@ -12,7 +12,6 @@ export default defineConfig({
       js: 'static/js',
       css: 'static/css',
       image: 'static/images',
-      fonts: 'static/fonts',
     },
   },
   tools: {
@@ -30,4 +29,4 @@ export default defineConfig({
       },
     },
   },
-});
+})
