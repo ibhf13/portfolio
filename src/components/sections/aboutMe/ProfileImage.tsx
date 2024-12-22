@@ -1,10 +1,10 @@
-import React from 'react';
-import { Box, useTheme } from '@mui/material';
-import { motion } from 'framer-motion';
-import profileImage from '../../../resources/images/Profile.jpg';
+import profileImage from '@/resources/images/Profile.jpg'
+import { Box, useTheme } from '@mui/material'
+import { motion } from 'framer-motion'
+import React from 'react'
 
 const ProfileImage: React.FC = () => {
-  const theme = useTheme();
+  const theme = useTheme()
 
   return (
     <motion.div
@@ -27,7 +27,7 @@ const ProfileImage: React.FC = () => {
         <Box
           component="img"
           src={profileImage}
-          alt="Ibrahim Klusmann"
+          alt="Ibrahim Klusmann Image"
           sx={{
             width: '100%',
             height: '100%',
@@ -38,7 +38,7 @@ const ProfileImage: React.FC = () => {
         />
       </Box>
     </motion.div>
-  );
-};
+  )
+}
 
-export default ProfileImage;
+export default ProfileImage
