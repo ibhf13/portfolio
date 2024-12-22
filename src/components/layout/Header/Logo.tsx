@@ -1,8 +1,16 @@
 import logo from '@/resources/images/logo.png'
 import { Box } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Logo: React.FC = () => {
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate('/')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <Box
       component="img"
@@ -13,7 +21,7 @@ const Logo: React.FC = () => {
         cursor: 'pointer',
         objectFit: 'contain',
       }}
-      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      onClick={handleClick}
     />
   )
 }

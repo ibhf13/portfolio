@@ -115,22 +115,13 @@
   "projects": {
     "title": "Projects Overview",
     "learnMore": "Learn More",
+    "problemSolution": "Problem & Solution",
+    "techStack": "Tech Stack",
     "items": {
-      "ecommerce": {
-        "title": "Coming soon",
-        "description": ""
-      },
-      "taskManagement": {
-        "title": "Coming soon",
-        "description": ""
-      },
-      "socialMedia": {
-        "title": "Coming soon",
-        "description": ""
-      },
-      "fitness": {
-        "title": "Coming soon",
-        "description": ""
+      "portfolio": {
+        "title": "Personal Portfolio",
+        "description": "A modern, responsive portfolio website built with React and TypeScript",
+        "problemSolution": "Created a professional portfolio website to showcase my projects and skills, with a focus on performance, accessibility, and user experience."
       }
     }
   },
