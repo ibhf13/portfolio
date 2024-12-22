@@ -15,6 +15,8 @@ interface LanguageContextType {
   setLanguage: (lang: Language) => void
 }
 
+const LANGUAGE_STORAGE_KEY = 'preferredLanguage'
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -24,7 +26,7 @@ i18n
       DE: { translation: deTranslations },
     },
     detection: {
-      order: ['navigator', 'localStorage', 'htmlTag'],
+      order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage'],
     },
     fallbackLng: Language.DE,
@@ -35,16 +37,25 @@ i18n
     nsSeparator: ':',
   })
 
-
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const getBrowserLanguage = (): Language => {
-    const browserLang = navigator.language.split('-')[0]
+  const getInitialLanguage = (): Language => {
+    const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY)
+    if (savedLanguage && Object.values(Language).includes(savedLanguage as Language)) {
+      return savedLanguage as Language
+    }
+
+    const browserLang = navigator.language.split('-')[0].toUpperCase()
     return browserLang === Language.DE ? Language.DE : Language.EN
   }
 
-  const [language, setLanguage] = useState<Language>(getBrowserLanguage())
+  const [language, setLanguage] = useState<Language>(getInitialLanguage())
+
+  const handleSetLanguage = (lang: Language) => {
+    setLanguage(lang)
+    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang)
+  }
 
   useEffect(() => {
     const changeLanguage = async () => {
@@ -54,7 +65,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   }, [language])
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage }}>
+    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
       {children}
     </LanguageContext.Provider>
   )
