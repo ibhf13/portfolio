@@ -2,7 +2,8 @@
   "aboutMe": {
     "name": "Ibrahim Klusmann",
     "title": "About Me",
-    "subtitle": "{{age}} years old | Software Developer",
+    "age": "{{age}} years old |",
+    "profession": "Software Developer",
     "description": "I'm a {{age}} year old frontend developer with a passion for problem-solving and experimenting with new technologies, especially AI.",
     "passion": "I love turning complex problems into simple, create user-friendly websites and apps, elegant solutions through clean and efficient code",
     "hobbies": "When not coding, i like to dance salsa and bachata, photography, cooking and lift weights. These activities help me stay creative and energized.",
@@ -10,6 +11,10 @@
       "coding": "Years of Coding",
       "industry": "Years in Tech Industry",
       "projects": "Projects Completed"
+    },
+    "professions": {
+      "software": "Software Developer",
+      "frontend": "Frontend Developer"
     }
   },
   "header": {

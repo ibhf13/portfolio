@@ -2,7 +2,8 @@
   "aboutMe": {
     "name": "Ibrahim Klusmann",
     "title": "Über mich",
-    "subtitle": "{{age}} Jahre alt | Softwareentwickler",
+    "age": "{{age}} Jahre alt |",
+    "profession": "Softwareentwickler",
     "description": "Ich bin ein {{age}}-jähriger Frontend-Entwickler mit einer Leidenschaft für Problemlösung und das Experimentieren mit neuen Technologien, insbesondere KI.",
     "passion": "Ich liebe es, komplexe Probleme in einfache, benutzerfreundliche Websites und Apps umzuwandeln und elegante Lösungen durch sauberen und effizienten Code zu schaffen",
     "hobbies": "Wenn ich nicht programmiere, tanze ich gerne Salsa und Bachata, fotografiere, trainiere im Fitnessstudio und koche gerne. Diese Aktivitäten helfen mir, kreativ und energiegeladen zu bleiben.",
@@ -10,6 +11,10 @@
       "coding": "Jahre Programmiererfahrung",
       "industry": "Jahre in der Tech-Branche",
       "projects": "Abgeschlossene Projekte"
+    },
+    "professions": {
+      "software": "Softwareentwickler",
+      "frontend": "Frontend-Entwickler"
     }
   },
   "header": {

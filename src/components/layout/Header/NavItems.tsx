@@ -1,4 +1,6 @@
+import { useAnimatedSection } from '@/hooks/useAnimatedSection'
 import { useTranslation } from '@/hooks/useCustomTranslation'
+import { AnimationType } from '@/styles/animations'
 import { Box, Button } from '@mui/material'
 import { motion } from 'framer-motion'
 import React from 'react'
@@ -6,6 +8,7 @@ import { NAV_ITEMS } from './types/header.types'
 
 const NavItems: React.FC = () => {
   const { t } = useTranslation()
+  const { itemVariants } = useAnimatedSection({ type: AnimationType.Slide })
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId)
@@ -14,14 +17,13 @@ const NavItems: React.FC = () => {
     }
   }
 
+
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      {NAV_ITEMS.map((item, index) => (
+      {NAV_ITEMS.map((item) => (
         <motion.div
           key={item.key}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
+          variants={itemVariants}
         >
           <Button
             color="inherit"
