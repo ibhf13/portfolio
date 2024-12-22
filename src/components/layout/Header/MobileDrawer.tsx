@@ -1,5 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext'
 import { useTranslation } from '@/hooks/useCustomTranslation'
+import { useNavigation } from '@/hooks/useNavigation'
 import CloseIcon from '@mui/icons-material/Close'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
@@ -19,13 +20,11 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, toggleThem
   const { t } = useTranslation()
   const theme = useTheme()
   const { language, setLanguage } = useLanguage()
+  const { navigateToSection } = useNavigation()
 
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId)
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
-      onClose()
-    }
+  const handleNavigation = (sectionId: string) => {
+    navigateToSection(sectionId)
+    onClose()
   }
 
   return (
@@ -49,7 +48,7 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, toggleThem
         {NAV_ITEMS.map((item, index) => (
           <ListItem
             key={item.key}
-            onClick={() => scrollToSection(item.key)}
+            onClick={() => handleNavigation(item.key)}
             component={motion.li}
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

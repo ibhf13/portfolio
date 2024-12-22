@@ -1,5 +1,6 @@
 import { useAnimatedSection } from '@/hooks/useAnimatedSection'
 import { useTranslation } from '@/hooks/useCustomTranslation'
+import { useNavigation } from '@/hooks/useNavigation'
 import { AnimationType } from '@/styles/animations'
 import { Box, Button } from '@mui/material'
 import { motion } from 'framer-motion'
@@ -9,14 +10,7 @@ import { NAV_ITEMS } from './types/header.types'
 const NavItems: React.FC = () => {
   const { t } = useTranslation()
   const { itemVariants } = useAnimatedSection({ type: AnimationType.Slide })
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId)
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
+  const { navigateToSection } = useNavigation()
 
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -27,7 +21,7 @@ const NavItems: React.FC = () => {
         >
           <Button
             color="inherit"
-            onClick={() => scrollToSection(item.key)}
+            onClick={() => navigateToSection(item.key)}
             sx={{
               mx: 1,
               position: 'relative',
