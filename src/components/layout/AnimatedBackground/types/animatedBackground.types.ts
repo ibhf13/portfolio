@@ -34,6 +34,6 @@ export interface ParticleConfig {
 
 export interface BackgroundConfig {
     gradientColors: string[]
-    particles: ParticleConfig[]
+    particles?: ParticleConfig[]
     stars: StarConfig[]
 } 
