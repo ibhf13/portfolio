@@ -117,9 +117,11 @@
     "learnMore": "Learn More",
     "problemSolution": "Problem & Solution",
     "techStack": "Tech Stack",
+    "comingSoon": "Coming Soon",
     "items": {
       "portfolio": {
         "title": "Personal Portfolio",
+        "description": "A modern and responsive portfolio developed with React and TypeScript that showcases my professionalism and technical skills.",
         "problem": "Creating a platform that professionally and engagingly showcases my technical skills, projects, and personality was a challenge. The website needed to stand out visually while also excelling technically with interactivity, internationalization, and user-friendliness.",
         "solution": "To address this challenge, I developed a portfolio using React and TypeScript. It features modern animations, interactive elements, and supports internationalization through i18n. Additionally, I integrated a dark and light mode to allow users to choose their preferred theme. The overall user experience was optimized to make navigation intuitive and engaging."
       },

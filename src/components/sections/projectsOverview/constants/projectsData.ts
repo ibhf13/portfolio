@@ -1,9 +1,8 @@
+import FlexJourneyLogo from '@/resources/images/FlexJourney/logo.png'
 import PortfolioLogo from '@/resources/images/logo.png'
 import PortfolioImage1 from '@/resources/images/portfolio/image.png'
 import PortfolioImage3 from '@/resources/images/portfolio/portfolio.gif'
 import PortfolioImage2 from '@/resources/images/portfolio/projects.png'
-
-import FlexJourneyLogo from '@/resources/images/FlexJourney/logo.png'
 
 
 
@@ -79,7 +78,9 @@ const projects: Project[] = [
     title: 'QRBites',
     image: '/images/QRBites-preview.png',
     logo: '/images/QRBites-logo.png',
-    description: 'projects.items.portfolio.description',
+    description: 'coming soon',
+    problem: 'coming soon',
+    solution: 'coming soon',
     techStack: [
       'React',
       'TypeScript',
@@ -88,8 +89,7 @@ const projects: Project[] = [
       'i18next',
       'Rsbuild'
     ],
-    problem: 'coming soon',
-    solution: 'coming soon',
+
     demoUrl: 'https://ibrahimklusmann.com',
     githubUrl: 'https://github.com/ibhf13/portfolio',
     screenshots: [

@@ -1,22 +1,21 @@
-import React, { useEffect, useRef } from 'react';
-import { Box } from '@mui/material';
+import { Box } from '@mui/material'
+import React, { useEffect, useRef } from 'react'
 
 interface VideoBackgroundProps {
-  videoSrc: string;
-  fallbackImageSrc: string;
+  videoSrc: string
+  fallbackImageSrc: string
 }
 
 const VideoBackground: React.FC<VideoBackgroundProps> = ({ videoSrc, fallbackImageSrc }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
-    console.log('Video source in VideoBackground:', videoSrc);
     if (videoRef.current) {
       videoRef.current.addEventListener('error', (e) => {
-        console.error('Video error:', e);
-      });
+        console.error('Video error:', e)
+      })
     }
-  }, [videoSrc]);
+  }, [videoSrc])
 
   return (
     <Box
@@ -47,7 +46,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ videoSrc, fallbackIma
         Your browser does not support the video tag.
       </video>
     </Box>
-  );
-};
+  )
+}
 
-export default VideoBackground;
+export default VideoBackground
