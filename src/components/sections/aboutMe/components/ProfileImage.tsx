@@ -1,17 +1,16 @@
+import { useAnimatedSection } from '@/hooks/useAnimatedSection'
 import profileImage from '@/resources/images/Profile.jpg'
+import { AnimationType } from '@/styles/animations'
 import { Box, useTheme } from '@mui/material'
 import { motion } from 'framer-motion'
 import React from 'react'
 
 const ProfileImage: React.FC = () => {
   const theme = useTheme()
+  const { itemVariants } = useAnimatedSection({ type: AnimationType.ScaleInCenter })
 
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.5 }}
-    >
+    <motion.div variants={itemVariants}>
       <Box
         sx={{
           width: 250,
