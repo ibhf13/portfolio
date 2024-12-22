@@ -4,14 +4,14 @@ import { alpha, createTheme, responsiveFontSizes, Theme } from '@mui/material/st
 const COLORS = {
   light: {
     primary: {
-      main: '#3f51b5',
-      light: '#757de8',
-      dark: '#002984',
+      main: '#5C85B9',
+      light: '#83b1c7',
+      dark: '#5c85b9',
     },
     secondary: {
       main: '#FF6B6B',
       light: '#FF8E8E',
-      dark: '#FF4949',
+      dark: '#62969b',
     },
     background: {
       default: '#f5f5f5',
@@ -24,14 +24,14 @@ const COLORS = {
   },
   dark: {
     primary: {
-      main: '#90caf9',
-      light: '#e3f2fd',
-      dark: '#42a5f5',
+      main: '#58bb9c',
+      light: '#62969b',
+      dark: '#095748',
     },
     secondary: {
       main: '#4ECDC4',
       light: '#7EEEE7',
-      dark: '#45B7AA',
+      dark: '#095748',
     },
     background: {
       default: '#121212',
@@ -46,12 +46,12 @@ const COLORS = {
 
 const GRADIENTS = {
   light: {
-    primary: 'linear-gradient(45deg, #b95c5c 30%, #83b1c7 60%, #71cb66 90%)',
+    primary: 'linear-gradient(45deg, #5c85b9 30%, #83b1c7 60%, #58bb9c 90%)',
     secondary: 'linear-gradient(45deg, #FF6B6B 30%, #FF8E8E 60%, #FFB6B6 90%)',
     background: 'linear-gradient(180deg, #ffffff 30%, #f5f5f5 60%, #eeeeee 90%)',
   },
   dark: {
-    primary: 'linear-gradient(45deg, #002984 30%, #42a5f5 60%, #6b1007 90%)',
+    primary: 'linear-gradient(60deg, #095748 30%, #62969b 70%, #2c5d71 90%)',
     secondary: 'linear-gradient(45deg, #4ECDC4 30%, #45B7AA 60%, #7EEEE7 90%)',
     background: 'linear-gradient(180deg, #121212 30%, #1e1e1e 60%, #2b2b2b 90%)',
   },

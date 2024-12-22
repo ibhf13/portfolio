@@ -18,10 +18,10 @@ export const createStarShape = (size: number): string => {
     return path
 }
 
-export const generateStars = (count: number, brightness: number = 1): StarConfig[] => {
+export const generateStars = (count: number): StarConfig[] => {
     return Array.from({ length: count }, () => ({
         size: Math.random() * 2 + 1,
-        color: `rgba(255, 255, 255, ${0.5 * brightness + Math.random() * 0.5})`,
+        color: `rgba(255, 255, 255)`,
         position: { x: `${Math.random() * 100}%`, y: `${Math.random() * 100}%` },
     }))
 }
