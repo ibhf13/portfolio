@@ -20,7 +20,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
                         component="img"
                         src={project.logo}
                         alt={t(project.title)}
-                        sx={{ width: 48, height: 48 }}
+                        sx={{ width: 60, height: 60 }}
                     />
                 )}
                 <Typography variant="h3">{t(project.title)}</Typography>
@@ -37,7 +37,8 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
                             <Typography variant="h5" gutterBottom>
                                 {t('projects.problemSolution')}
                             </Typography>
-                            <Typography paragraph>{t(project.problemSolution)}</Typography>
+                            <Typography paragraph>{t(project.problem)}</Typography>
+                            <Typography paragraph>{t(project.solution)}</Typography>
                         </Box>
                         <Typography variant="h5" gutterBottom>
                             {t('projects.techStack')}

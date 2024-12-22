@@ -3,6 +3,9 @@ import PortfolioImage1 from '@/resources/images/portfolio/image.png'
 import PortfolioImage3 from '@/resources/images/portfolio/portfolio.gif'
 import PortfolioImage2 from '@/resources/images/portfolio/projects.png'
 
+import FlexJourneyLogo from '@/resources/images/FlexJourney/logo.png'
+
+
 
 
 export interface Project {
@@ -12,43 +15,48 @@ export interface Project {
   description: string
   logo?: string
   techStack: string[]
-  problemSolution: string
+  problem: string
+  solution: string
   demoUrl?: string
   githubUrl?: string
   screenshots: string[]
+  isAvailable: boolean
 }
 
 
 const projects: Project[] = [
   {
-    id: '1',
+    id: 'portfolio',
     title: 'projects.items.portfolio.title',
-    image: '/images/portfolio-preview.png',
+    image: PortfolioLogo,
     logo: PortfolioLogo,
     description: 'projects.items.portfolio.description',
+    problem: 'projects.items.portfolio.problem',
+    solution: 'projects.items.portfolio.solution',
     techStack: [
       'React',
       'TypeScript',
       'Material-UI',
       'Framer Motion',
       'i18next',
-      'Rsbuild'
     ],
-    problemSolution: 'projects.items.portfolio.problemSolution',
     demoUrl: 'https://ibrahimklusmann.com',
     githubUrl: 'https://github.com/ibhf13/portfolio',
     screenshots: [
       PortfolioImage1,
       PortfolioImage2,
       PortfolioImage3
-    ]
+    ],
+    isAvailable: true
   },
   {
-    id: '2',
-    title: 'projects.items.portfolio.title',
-    image: '/images/portfolio-preview.png',
-    logo: PortfolioLogo,
-    description: 'projects.items.portfolio.description',
+    id: 'FlexJourney',
+    title: 'projects.items.FlexJourney.title',
+    image: FlexJourneyLogo,
+    logo: FlexJourneyLogo,
+    description: 'projects.items.FlexJourney.description',
+    problem: 'projects.items.FlexJourney.problem',
+    solution: 'projects.items.FlexJourney.solution',
     techStack: [
       'React',
       'TypeScript',
@@ -57,20 +65,20 @@ const projects: Project[] = [
       'i18next',
       'Rsbuild'
     ],
-    problemSolution: 'projects.items.portfolio.problemSolution',
-    demoUrl: 'https://ibrahimklusmann.com',
-    githubUrl: 'https://github.com/ibhf13/portfolio',
+    demoUrl: 'https://flexjourney.web.app/',
+    githubUrl: 'https://github.com/ibhf13/flexjourney',
     screenshots: [
       '/images/portfolio-1.png',
       '/images/portfolio-2.png',
       '/images/portfolio-3.png'
-    ]
+    ],
+    isAvailable: true
   },
   {
     id: '3',
-    title: 'projects.items.portfolio.title',
-    image: '/images/portfolio-preview.png',
-    logo: '/images/portfolio-logo.png',
+    title: 'QRBites',
+    image: '/images/QRBites-preview.png',
+    logo: '/images/QRBites-logo.png',
     description: 'projects.items.portfolio.description',
     techStack: [
       'React',
@@ -80,14 +88,16 @@ const projects: Project[] = [
       'i18next',
       'Rsbuild'
     ],
-    problemSolution: 'projects.items.portfolio.problemSolution',
+    problem: 'coming soon',
+    solution: 'coming soon',
     demoUrl: 'https://ibrahimklusmann.com',
     githubUrl: 'https://github.com/ibhf13/portfolio',
     screenshots: [
       '/images/portfolio-1.png',
       '/images/portfolio-2.png',
       '/images/portfolio-3.png'
-    ]
+    ],
+    isAvailable: false
   },
 
 ]

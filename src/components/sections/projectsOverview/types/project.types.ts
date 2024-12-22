@@ -5,8 +5,10 @@ export interface Project {
     description: string
     logo?: string
     techStack: string[]
-    problemSolution: string
+    problem: string
+    solution: string
     demoUrl?: string
     githubUrl?: string
     screenshots: string[]
+    isAvailable: boolean
 } 
