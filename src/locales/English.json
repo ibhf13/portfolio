@@ -27,71 +27,71 @@
       "contact": "Contact"
     }
   },
-    "techStack": {
-      "title": "My Tech Stack",
-      "all": "All",
-      "frontend": "Front-End",
-      "backend": "Back-End",
-      "testing": "Testing",
-      "tools": "Tools",
-      "technologies": {
-        "React": {
-          "name": "React",
-          "description": "A JavaScript library for building user interfaces"
-        },
-        "TypeScript": {
-          "name": "TypeScript",
-          "description": "A typed superset of JavaScript that compiles to plain JavaScript"
-        },
-        "JavaScript": {
-          "name": "JavaScript",
-          "description": "A high-level, interpreted programming language"
-        },
-        "HTML": {
-          "name": "HTML",
-          "description": "The standard markup language for documents designed to be displayed in a web browser"
-        },
-        "CSS": {
-          "name": "CSS",
-          "description": "A style sheet language used for describing the presentation of a document"
-        },
-        "MaterialUI": {
-          "name": "Material-UI",
-          "description": "A popular React UI framework"
-        },
-        "NodeJS": {
-          "name": "Node.js",
-          "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine"
-        },
-        "Express": {
-          "name": "Express",
-          "description": "A minimal and flexible Node.js web application framework"
-        },
-        "MongoDB": {
-          "name": "MongoDB",
-          "description": "A source-available cross-platform document-oriented database program"
-        },
-        "MySQL": {
-          "name": "MySQL",
-          "description": "An open-source relational database management system"
-        },
-        "Git": {
-          "name": "Git",
-          "description": "A distributed version control system"
-        },
-        "Jest": {
-          "name": "Jest",
-          "description": "A delightful JavaScript Testing Framework with a focus on simplicity"
-        },
-        "BrowserStack": {
-          "name": "BrowserStack",
-          "description": "A cloud web and mobile testing platform"
-        },
-        "Playwright": {
-          "name": "Playwright",
-          "description": "A framework for Web Testing and Automation"
-        }
+  "techStack": {
+    "title": "My Tech Stack",
+    "all": "All",
+    "frontend": "Front-End",
+    "backend": "Back-End",
+    "testing": "Testing",
+    "tools": "Tools",
+    "technologies": {
+      "React": {
+        "name": "React",
+        "description": "A JavaScript library for building user interfaces"
+      },
+      "TypeScript": {
+        "name": "TypeScript",
+        "description": "A typed superset of JavaScript that compiles to plain JavaScript"
+      },
+      "JavaScript": {
+        "name": "JavaScript",
+        "description": "A high-level, interpreted programming language"
+      },
+      "HTML": {
+        "name": "HTML",
+        "description": "The standard markup language for documents designed to be displayed in a web browser"
+      },
+      "CSS": {
+        "name": "CSS",
+        "description": "A style sheet language used for describing the presentation of a document"
+      },
+      "MaterialUI": {
+        "name": "Material-UI",
+        "description": "A popular React UI framework"
+      },
+      "NodeJS": {
+        "name": "Node.js",
+        "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine"
+      },
+      "Express": {
+        "name": "Express",
+        "description": "A minimal and flexible Node.js web application framework"
+      },
+      "MongoDB": {
+        "name": "MongoDB",
+        "description": "A source-available cross-platform document-oriented database program"
+      },
+      "MySQL": {
+        "name": "MySQL",
+        "description": "An open-source relational database management system"
+      },
+      "Git": {
+        "name": "Git",
+        "description": "A distributed version control system"
+      },
+      "Jest": {
+        "name": "Jest",
+        "description": "A delightful JavaScript Testing Framework with a focus on simplicity"
+      },
+      "BrowserStack": {
+        "name": "BrowserStack",
+        "description": "A cloud web and mobile testing platform"
+      },
+      "Playwright": {
+        "name": "Playwright",
+        "description": "A framework for Web Testing and Automation"
       }
+    }
   },
   "workTimeline": {
     "title": "Work Timeline",
@@ -120,8 +120,14 @@
     "items": {
       "portfolio": {
         "title": "Personal Portfolio",
-        "description": "A modern, responsive portfolio website built with React and TypeScript",
-        "problemSolution": "Created a professional portfolio website to showcase my projects and skills, with a focus on performance, accessibility, and user experience."
+        "problem": "Creating a platform that professionally and engagingly showcases my technical skills, projects, and personality was a challenge. The website needed to stand out visually while also excelling technically with interactivity, internationalization, and user-friendliness.",
+        "solution": "To address this challenge, I developed a portfolio using React and TypeScript. It features modern animations, interactive elements, and supports internationalization through i18n. Additionally, I integrated a dark and light mode to allow users to choose their preferred theme. The overall user experience was optimized to make navigation intuitive and engaging."
+      },
+      "FlexJourney": {
+        "title": "FlexJourney",
+        "description": "A modern, responsive fitness tracking website developed using React and TypeScript to help users track their fitness goals.",
+        "problem": "Many fitness tracking apps are either paid or loaded with intrusive ads, which detract from the user experience. This motivated me to create my own solution. FlexJourney is a fitness tracking app designed to help users monitor their progress while providing a seamless and user-friendly experience.",
+        "solution": "FlexJourney allows users to create personalized workout plans or choose from a curated list of pre-made plans. With an intuitive interface, the app makes it easy to track progress and ensures a high-quality user experience."
       }
     }
   },

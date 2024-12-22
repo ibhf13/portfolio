@@ -11,7 +11,6 @@ export const useProject = (id: string) => {
         try {
             setIsLoading(true)
             const foundProject = projects.find(p => p.id === id)
-
             if (!foundProject) {
                 throw new Error('Project not found')
             }

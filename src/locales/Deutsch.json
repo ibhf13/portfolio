@@ -27,72 +27,72 @@
       "contact": "Kontakt"
     }
   },
-    "techStack": {
-      "title": "Mein TechStack",
-      "all": "Alle",
-      "frontend": "FrontEnd",
-      "backend": "BackEnd",
-      "testing": "Testen",
-      "tools": "Werkzeuge",
-      "technologies": {
-        "React": {
-          "name": "React",
-          "description": "Eine JavaScript-Bibliothek zum Erstellen von Benutzeroberflächen"
-        },
-        "TypeScript": {
-          "name": "TypeScript",
-          "description": "Eine typisierte Obermenge von JavaScript, die zu normalem JavaScript kompiliert"
-        },
-        "JavaScript": {
-          "name": "JavaScript",
-          "description": "Eine hochentwickelte, interpretierte Programmiersprache"
-        },
-        "HTML": {
-          "name": "HTML",
-          "description": "Die Standard-Auszeichnungssprache für Dokumente, die in einem Webbrowser angezeigt werden sollen"
-        },
-        "CSS": {
-          "name": "CSS",
-          "description": "Eine Stylesheet-Sprache zur Beschreibung der Präsentation eines Dokuments"
-        },
-        "MaterialUI": {
-          "name": "Material-UI",
-          "description": "Ein beliebtes React UI-Framework"
-        },
-        "NodeJS": {
-          "name": "Node.js",
-          "description": "Eine JavaScript-Laufzeitumgebung, die auf Chromes V8 JavaScript-Engine aufbaut"
-        },
-        "Express": {
-          "name": "Express",
-          "description": "Ein minimales und flexibles Node.js-Webanwendungsframework"
-        },
-        "MongoDB": {
-          "name": "MongoDB",
-          "description": "Ein quelloffenes, plattformübergreifendes dokumentenorientiertes Datenbankprogramm"
-        },
-        "MySQL": {
-          "name": "MySQL",
-          "description": "Ein Open-Source-Relationales Datenbankmanagementsystem"
-        },
-        "Git": {
-          "name": "Git",
-          "description": "Ein verteiltes Versionskontrollsystem"
-        },
-        "Jest": {
-          "name": "Jest",
-          "description": "Ein angenehmes JavaScript-Testframework mit Fokus auf Einfachheit"
-        },
-        "BrowserStack": {
-          "name": "BrowserStack",
-          "description": "Eine Cloud-Web- und Mobile-Testplattform"
-        },
-        "Playwright": {
-          "name": "Playwright",
-          "description": "Ein Framework für Web-Tests und Automatisierung"
-        }
+  "techStack": {
+    "title": "Mein TechStack",
+    "all": "Alle",
+    "frontend": "FrontEnd",
+    "backend": "BackEnd",
+    "testing": "Testen",
+    "tools": "Werkzeuge",
+    "technologies": {
+      "React": {
+        "name": "React",
+        "description": "Eine JavaScript-Bibliothek zum Erstellen von Benutzeroberflächen"
+      },
+      "TypeScript": {
+        "name": "TypeScript",
+        "description": "Eine typisierte Obermenge von JavaScript, die zu normalem JavaScript kompiliert"
+      },
+      "JavaScript": {
+        "name": "JavaScript",
+        "description": "Eine hochentwickelte, interpretierte Programmiersprache"
+      },
+      "HTML": {
+        "name": "HTML",
+        "description": "Die Standard-Auszeichnungssprache für Dokumente, die in einem Webbrowser angezeigt werden sollen"
+      },
+      "CSS": {
+        "name": "CSS",
+        "description": "Eine Stylesheet-Sprache zur Beschreibung der Präsentation eines Dokuments"
+      },
+      "MaterialUI": {
+        "name": "Material-UI",
+        "description": "Ein beliebtes React UI-Framework"
+      },
+      "NodeJS": {
+        "name": "Node.js",
+        "description": "Eine JavaScript-Laufzeitumgebung, die auf Chromes V8 JavaScript-Engine aufbaut"
+      },
+      "Express": {
+        "name": "Express",
+        "description": "Ein minimales und flexibles Node.js-Webanwendungsframework"
+      },
+      "MongoDB": {
+        "name": "MongoDB",
+        "description": "Ein quelloffenes, plattformübergreifendes dokumentenorientiertes Datenbankprogramm"
+      },
+      "MySQL": {
+        "name": "MySQL",
+        "description": "Ein Open-Source-Relationales Datenbankmanagementsystem"
+      },
+      "Git": {
+        "name": "Git",
+        "description": "Ein verteiltes Versionskontrollsystem"
+      },
+      "Jest": {
+        "name": "Jest",
+        "description": "Ein angenehmes JavaScript-Testframework mit Fokus auf Einfachheit"
+      },
+      "BrowserStack": {
+        "name": "BrowserStack",
+        "description": "Eine Cloud-Web- und Mobile-Testplattform"
+      },
+      "Playwright": {
+        "name": "Playwright",
+        "description": "Ein Framework für Web-Tests und Automatisierung"
       }
-    },
+    }
+  },
   "workTimeline": {
     "title": "Arbeitsverlauf",
     "positions": {
@@ -113,24 +113,22 @@
     }
   },
   "projects": {
-    "title": "Projektübersicht",
+    "title": "Projekte Übersicht",
     "learnMore": "Mehr erfahren",
+    "problemSolution": "Problem & Lösung",
+    "techStack": "Tech Stack",
     "items": {
-      "ecommerce": {
-        "title": "Coming soon",
-        "description": ""
+      "portfolio": {
+        "title": "Persönliches Portfolio",
+        "description": "Ein modernes und responsives Portfolio, entwickelt mit React und TypeScript, das meine Professionalität und technisches Können unterstreicht.",
+        "problem": "Es war eine Herausforderung, eine Plattform zu entwickeln, die meine technischen Fähigkeiten, Projekte und meine Persönlichkeit gleichermaßen professionell und ansprechend darstellt. Dabei sollte die Webseite nicht nur visuell überzeugen, sondern auch technisch durch Interaktivität, Internationalisierung und Benutzerfreundlichkeit punkten.",
+        "solution": "Um dieses Problem zu lösen, habe ich ein Portfolio mit React und TypeScript entwickelt. Es enthält moderne Animationen, interaktive Elemente und unterstützt die Internationalisierung mittels i18n. Zudem wurde ein Dark- und Light-Modus integriert, um Nutzern die Wahl des bevorzugten Themas zu ermöglichen. Die gesamte Benutzererfahrung wurde optimiert, um die Navigation intuitiv und ansprechend zu gestalten."
       },
-      "taskManagement": {
-        "title": "Coming soon",
-        "description": ""
-      },
-      "socialMedia": {
-        "title": "Coming soon",
-        "description": ""
-      },
-      "fitness": {
-        "title": "Coming soon",
-        "description": ""
+      "FlexJourney": {
+        "title": "FlexJourney",
+        "description": "Eine moderne, responsive Fitness-Tracking-Website, entwickelt mit React und TypeScript, um Nutzern zu helfen, ihre Fitnessziele zu verfolgen.",
+        "problem": "Viele Fitness-Tracking-Apps sind kostenpflichtig oder enthalten zahlreiche Werbeanzeigen, was die Benutzererfahrung beeinträchtigt. Daher habe ich beschlossen, eine eigene Lösung zu entwickeln. FlexJourney ist eine Fitness-Tracking-App, die darauf ausgelegt ist, den Fortschritt der Nutzer zu verfolgen und eine benutzerfreundliche Erfahrung zu bieten.",
+        "solution": "FlexJourney ermöglicht es Nutzern, eigene Trainingspläne zu erstellen oder aus einer Liste vorgefertigter Trainingspläne zu wählen. Die App bietet eine intuitive Benutzeroberfläche, mit der Nutzer ihre Fortschritte mühelos nachverfolgen und ein optimales Benutzererlebnis genießen können."
       }
     }
   },

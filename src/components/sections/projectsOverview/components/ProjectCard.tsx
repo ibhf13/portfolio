@@ -1,5 +1,5 @@
 import { useTranslation } from '@/hooks/useCustomTranslation'
-import { Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/material'
+import { Alert, Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import { Project } from '../constants/projectsData'
 
@@ -12,10 +12,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
     const navigate = useNavigate()
 
     const handleLearnMore = () => {
-        console.log(project.id)
         navigate(`/project/${project.id}`)
     }
-
+    const handleComingSoon = () => {
+        return (
+            <Alert severity="info">
+                {t('projects.comingSoon')}
+            </Alert>
+        )
+    }
     return (
         <Card>
             <CardMedia
@@ -33,7 +38,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </Typography>
             </CardContent>
             <Box sx={{ p: 2 }}>
-                <Button variant="contained" color="primary" onClick={handleLearnMore}>
+                <Button variant="contained" color="primary" onClick={project.isAvailable ? handleLearnMore : handleComingSoon}>
                     {t('projects.learnMore')}
                 </Button>
             </Box>
