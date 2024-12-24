@@ -1,5 +1,5 @@
-import PageLayout from '@/components/common/Layouts/PageLayout'
-import SectionWrapper from '@/components/layout/sectionWrapper/SectionWrapper'
+import PageLayout from '@/components/layout/PageLayout'
+import SectionWrapper from '@/components/layout/components/sectionWrapper/SectionWrapper'
 import NotFound from '@/components/sections/notFound/NotFound'
 import ProjectDetailsWrapper from '@/components/sections/projectsOverview/components/ProjectDetailsWrapper'
 import { AnimationType } from '@/styles/animations'
