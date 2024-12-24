@@ -1,9 +1,13 @@
-import React, { createContext, useContext, useState } from 'react'
-import { BaseLayoutProps } from '../types/layout.types'
+import React, { createContext, ReactNode, useContext, useState } from 'react'
+
 interface LayoutContextType {
     isDrawerOpen: boolean
     toggleDrawer: () => void
     closeDrawer: () => void
+}
+
+interface BaseLayoutProps {
+    children: ReactNode
 }
 
 const LayoutContext = createContext<LayoutContextType | undefined>(undefined)

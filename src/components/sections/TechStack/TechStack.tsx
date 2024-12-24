@@ -1,41 +1,53 @@
-import React, { useState } from 'react';
-import { Box, Typography, Grid } from '@mui/material';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useTranslation } from '../../../hooks/useCustomTranslation';
-import TechCard from './TechCard';
-import { containerVariants, titleVariants, tabContentVariants } from './TechStackAnimations';
-import { techStackData, TechStackSection } from './TechStackData';
-import TechStackTabs from './TechStackTabs';
-import { styled } from '@mui/material/styles';
+import { useAnimatedSection } from '@/hooks/useAnimatedSection'
+import { useTranslation } from '@/hooks/useCustomTranslation'
+import { AnimationType } from '@/styles/animations'
+import { Box, Grid, Typography } from '@mui/material'
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import { TechCard, TechStackData, TechStackTabs } from './components'
+import { StyledSection } from './styles/techStack.styles'
+import { TechStackSection } from './types/techStack.types'
 
-const StyledSection = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(8, 0),
-  [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(4, 0),
-  },
-}));
-
-const TechStack: React.FC = () => {
-  const { t } = useTranslation();
-  const [activeSection, setActiveSection] = useState<TechStackSection | 'all'>('all');
+const TechStack = () => {
+  const { t } = useTranslation()
+  const [activeSection, setActiveSection] = useState<TechStackSection | 'all'>('all')
+  const { containerVariants, itemVariants } = useAnimatedSection({
+    type: AnimationType.FadeInUp,
+    staggerChildren: 0.1
+  })
 
   const technologies = activeSection === 'all'
-    ? Object.values(techStackData).flat()
-    : techStackData[activeSection];
+    ? Object.values(TechStackData).flat()
+    : TechStackData[activeSection]
 
   return (
-    <StyledSection component="section" id="techStack" aria-labelledby="techStackTitle">
-      <motion.div initial="hidden" animate="visible" variants={titleVariants}>
+    <StyledSection as="section" id="techStack" aria-labelledby="techStackTitle">
+      <motion.div
+        variants={itemVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <Typography id="techStackTitle" variant="h2" textAlign="center" mb={4} fontWeight="bold">
           {t('techStack.title')}
         </Typography>
+        <Box display="flex" justifyContent="center" pb={1}>
+          <TechStackTabs activeSection={activeSection} onChangeSection={setActiveSection} />
+        </Box>
       </motion.div>
 
-      <TechStackTabs activeSection={activeSection} onChangeSection={setActiveSection} />
-
-      <motion.div variants={containerVariants} initial="hidden" animate="visible">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         <AnimatePresence mode="wait">
-          <motion.div key={activeSection} variants={tabContentVariants} initial="hidden" animate="visible" exit="exit">
+          <motion.div
+            key={activeSection}
+            variants={itemVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+          >
             <Grid container spacing={2} justifyContent="center">
               {technologies.map((tech, index) => (
                 <Grid item xs={6} sm={4} md={3} key={tech.name}>
@@ -47,7 +59,7 @@ const TechStack: React.FC = () => {
         </AnimatePresence>
       </motion.div>
     </StyledSection>
-  );
-};
+  )
+}
 
-export default TechStack;
+export default TechStack
