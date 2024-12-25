@@ -3,25 +3,7 @@ import PortfolioLogo from '@/resources/images/logo.png'
 import PortfolioImage1 from '@/resources/images/portfolio/image.png'
 import PortfolioImage3 from '@/resources/images/portfolio/portfolio.gif'
 import PortfolioImage2 from '@/resources/images/portfolio/projects.png'
-
-
-
-
-export interface Project {
-  id: string
-  title: string
-  image: string
-  description: string
-  logo?: string
-  techStack: string[]
-  problem: string
-  solution: string
-  demoUrl?: string
-  githubUrl?: string
-  screenshots: string[]
-  isAvailable: boolean
-}
-
+import { Project } from '../types/project.types'
 
 const projects: Project[] = [
   {

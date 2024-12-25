@@ -98,18 +98,21 @@
     "positions": {
       "frontend": "Frontend Developer",
       "vb": "Visual basic Developer",
-      "support": "IT Support Specialist"
+      "support": "IT Support Specialist",
+      "mentor": "Web Development Mentor"
     },
     "description": {
-      "frontend": "Developing new features and maintaining a responsive portal using modern frontend technologies.",
+      "frontend": "Developing new features and maintaining a responsive portal using modern frontend technologies, testing, maintaining and refactoring existing codes.",
       "vb": "Developing functional and user-friendly interface as a replacement for the excel sheets.",
-      "support": "Providing first and second level support for the employees by troubleshooting hardware and software issues.",
-      "student": "Studied and graduated from the University of osnabrueck with a Bachelor of Science in computer science."
+      "support": "Professional customer consultations, managing customer inquiries, offering professional advice, addressing complaints, and resolving technical issues",
+      "student": "Studied and graduated from the University of osnabrueck with a Bachelor of Science in computer science.",
+      "mentor": "Mentoring students in the field of web development and providing guidance on best practices, sessions planning, tickets creation and project management."
     },
     "companies": {
       "concentrix": "Concentrix",
       "e3dc": "E3/DC",
-      "uos": "University of osnabrueck"
+      "uos": "University of osnabrueck",
+      "techLabs": "TechLabs Düsseldorf"
     }
   },
   "projects": {

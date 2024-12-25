@@ -1,4 +1,4 @@
-import { NavItem } from './types/header.types'
+import { NavItem } from '../types/header.types'
 
 export const NAV_ITEMS: NavItem[] = [
     { key: 'aboutMe', label: 'header.navItems.aboutMe' },

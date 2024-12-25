@@ -7,7 +7,7 @@ import LightModeIcon from '@mui/icons-material/LightMode'
 import { Box, Drawer, IconButton, List, ListItem, ListItemText, useTheme } from '@mui/material'
 import { motion } from 'framer-motion'
 import React from 'react'
-import { NAV_ITEMS } from '../constants'
+import { NAV_ITEMS } from '../constants/header.constants'
 import LanguageMenu from './LanguageMenu'
 
 interface MobileDrawerProps {

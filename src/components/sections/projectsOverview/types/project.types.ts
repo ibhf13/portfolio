@@ -1,3 +1,8 @@
+export interface ProjectDetailsProps {
+    project: Project
+}
+
+
 export interface Project {
     id: string
     title: string

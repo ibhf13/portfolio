@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material'
-import { HEADER_HEIGHT, MOBILE_DRAWER_WIDTH } from '../constants'
+import { HEADER_HEIGHT, MOBILE_DRAWER_WIDTH } from '../constants/header.constants'
 
 export const getHeaderStyles = (theme: Theme) => ({
     navButton: {

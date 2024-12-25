@@ -2,13 +2,9 @@ import { useTranslation } from '@/hooks/useCustomTranslation'
 import { Alert, Box, Button, Card, CardContent, CardMedia, Typography } from '@mui/material'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Project } from '../constants/projectsData'
+import { ProjectDetailsProps } from '../types/project.types'
 
-interface ProjectCardProps {
-    project: Project
-}
-
-const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+const ProjectCard: React.FC<ProjectDetailsProps> = ({ project }) => {
     const { t } = useTranslation()
     const navigate = useNavigate()
     const [showAlert, setShowAlert] = useState(false)

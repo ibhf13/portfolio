@@ -3,12 +3,10 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import LaunchIcon from '@mui/icons-material/Launch'
 import { Box, Chip, IconButton, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
-import { Project } from '../constants/projectsData'
+import { ProjectDetailsProps } from '../types/project.types'
 import ImageCarousel from './imageCarousel/ImageCarousel'
 
-interface ProjectDetailsProps {
-    project: Project
-}
+
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
     const { t } = useTranslation()
 

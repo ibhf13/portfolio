@@ -5,7 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import React from 'react'
 import HeaderContent from './components/HeaderContent'
 import MobileHeader from './components/MobileHeader'
-import { HEADER_HEIGHT } from './constants'
+import { HEADER_HEIGHT } from './constants/header.constants'
 import { HeaderProps } from './types/header.types'
 
 const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
