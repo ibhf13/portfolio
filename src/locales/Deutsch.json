@@ -98,18 +98,21 @@
     "positions": {
       "frontend": "Frontend-Entwickler",
       "vb": "Visual Basic-Entwickler",
-      "support": "IT-Support-Spezialist"
+      "support": "IT-Support-Spezialist",
+      "mentor": "Webentwicklung Mentor"
     },
     "description": {
-      "frontend": "Entwicklung neuer Funktionen und Wartung eines responsiven Portals mit modernen Frontend-Technologien.",
+      "frontend": "Entwicklung neuer Funktionen und Wartung eines responsiven Portals mit modernen Frontend-Technologien sowie Testen, Warten und Refaktorisieren bestehender Codes.",
       "vb": "Entwicklung einer funktionalen und benutzerfreundlichen Oberfläche als Ersatz für Excel-Tabellen.",
-      "support": "Bereitstellung von First- und Second-Level-Support für die Mitarbeiter durch Fehlerbehebung bei Hard- und Software-Problemen.",
-      "student": "Studium und Abschluss an der Universität Osnabrück mit einem Bachelor of Science in Informatik."
+      "support": "Professionelle Kundenberatung, Kundenanfragen verwalten, Beschwerden bearbeiten und technische Probleme lösen.",
+      "student": "Studium und Abschluss an der Universität Osnabrück mit einem Bachelor of Science in Informatik.",
+      "mentor": "Mentoring von Studenten im Bereich Webentwicklung und Bereitstellung von Sessions planen, Tickets erstellen und Projektmanagement."
     },
     "companies": {
       "concentrix": "Concentrix",
       "e3dc": "E3/DC",
-      "uos": "Universität Osnabrück"
+      "uos": "Universität Osnabrück",
+      "techLabs": "TechLabs Düsseldorf"
     }
   },
   "projects": {

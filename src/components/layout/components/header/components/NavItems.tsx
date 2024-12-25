@@ -5,7 +5,7 @@ import { AnimationType } from '@/styles/animations'
 import { Box, Button } from '@mui/material'
 import { motion } from 'framer-motion'
 import React from 'react'
-import { NAV_ITEMS } from '../constants'
+import { NAV_ITEMS } from '../constants/header.constants'
 
 const NavItems: React.FC = () => {
   const { t } = useTranslation()

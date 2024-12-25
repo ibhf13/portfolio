@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import React from 'react'
-import { ANIMATION_EASE } from '../constants'
 import { ParticleConfig, Shape } from '../types/animatedBackground.types'
 
 interface ParticleProps {
@@ -42,7 +41,7 @@ const Particle: React.FC<ParticleProps> = ({ config }) => {
       transition={{
         duration: config.animation.duration,
         repeat: Infinity,
-        ease: ANIMATION_EASE,
+        ease: "linear",
         repeatType: "reverse",
       }}
     />

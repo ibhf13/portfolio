@@ -26,7 +26,6 @@ const CarouselImage = ({ src, alt, isDialog, onClick }: CarouselImageProps) => {
                 cursor: isDialog ? 'default' : 'pointer',
                 maxHeight: isDialog ? '90vh' : 'unset',
                 objectFit: 'contain',
-                // Specific handling for GIFs to maintain animation
                 imageRendering: isGif ? 'auto' : 'crisp-edges',
             }}
         />
