@@ -19,12 +19,13 @@ const ProjectCard: React.FC<ProjectDetailsProps> = ({ project }) => {
     }
 
     return (
-        <Card>
+        <Card sx={{ width: { xs: '100%', md: '400px' }, height: { xs: '100%', md: '400px' } }}>
             <CardMedia
                 component="img"
                 height="200"
                 image={project.image}
                 alt={t(project.title)}
+                sx={{ objectFit: 'contain' }}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">

@@ -155,5 +155,10 @@
   "translationKey": {
     "enable": "Anzeige der Übersetzungsschlüssel aktivieren",
     "disable": "Anzeige der Übersetzungsschlüssel deaktivieren"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Die Seite, die Sie suchen, existiert nicht.",
+    "button": "Zur Startseite"
   }
 }

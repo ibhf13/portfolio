@@ -94,7 +94,7 @@ const NotFound: React.FC = () => {
                         fontSize: '1.1rem'
                     }}
                 >
-                    {t('notFound.backToHome')}
+                    {t('notFound.button')}
                 </Button>
             </Box>
         </Container>
