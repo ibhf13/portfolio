@@ -36,8 +36,7 @@
     "react-scroll": "^1.9.0",
     "react-virtualized-auto-sizer": "^1.0.24",
     "react-window": "^1.8.10",
-    "styled-components": "^6.1.13",
-    "vercel": "^37.5.4"
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@eslint/compat": "^1.1.1",
