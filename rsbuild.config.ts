@@ -14,6 +14,11 @@ export default defineConfig({
       image: 'static/images',
     },
   },
+  source: {
+    define: {
+      'import.meta.env': JSON.stringify(process.env),
+    },
+  },
   tools: {
     rspack: {
       optimization: {
