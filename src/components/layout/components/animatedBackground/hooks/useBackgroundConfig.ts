@@ -1,23 +1,15 @@
-import { ThemeMode } from '@/types/theme.types'
 import { useTheme } from '@mui/material'
 import { useMemo } from 'react'
 import { BackgroundConfig } from '../types/animatedBackground.types'
-import backgroundConfigs from '../utils/backgroundObjectCreator'
+import { generateStars } from '../utils/starUtils'
 
 const useBackgroundConfig = (sectionId: string): BackgroundConfig => {
   const theme = useTheme()
-  const configFunction = backgroundConfigs[sectionId] || backgroundConfigs.aboutMe
 
-  return useMemo(() => {
-    const config = configFunction(theme)
-    const opacity = theme.palette.mode === ThemeMode.DARK ? '33' : '4D'
-
-    return {
-      ...config,
-      gradientColors: config.gradientColors.map((color: string) => `${color}${opacity}`),
-      isLightMode: theme.palette.mode === ThemeMode.LIGHT
-    }
-  }, [configFunction, theme.palette.mode])
+  return useMemo(() => ({
+    backgroundColor: theme.palette.sections[sectionId as keyof typeof theme.palette.sections] || theme.palette.background.default,
+    stars: generateStars(150)
+  }), [theme.palette.mode, sectionId])
 }
 
 export default useBackgroundConfig
