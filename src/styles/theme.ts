@@ -4,13 +4,13 @@ import { alpha, createTheme, responsiveFontSizes, Theme } from '@mui/material/st
 const COLORS = {
   light: {
     primary: {
-      main: '#5C85B9',
-      light: '#83b1c7',
-      dark: '#5c85b9',
+      main: '#3d6fb7',
+      light: '#5c85b9',
+      dark: '#095748',
     },
     secondary: {
-      main: '#FF6B6B',
-      light: '#FF8E8E',
+      main: '#293d59',
+      light: '#83b1c7',
       dark: '#62969b',
     },
     background: {
@@ -21,6 +21,13 @@ const COLORS = {
       primary: '#212121',
       secondary: '#757575',
     },
+    sections: {
+      aboutMe: 'linear-gradient(135deg, #083f8f 30%, #3d6fb7  80%)',
+      workTimeline: 'linear-gradient(135deg, #3d6fb7 30%, #0e366b  80%)',
+      techStack: 'linear-gradient(135deg, #0e366b 30%, #6B96BE  80%)',
+      projects: 'linear-gradient(135deg, #6B96BE 30%, #0e366b  80%)',
+      contact: 'linear-gradient(135deg, #0e366b 30%, #6B96BE  80%)',
+    }
   },
   dark: {
     primary: {
@@ -30,7 +37,7 @@ const COLORS = {
     },
     secondary: {
       main: '#4ECDC4',
-      light: '#7EEEE7',
+      light: '#2c5d71',
       dark: '#095748',
     },
     background: {
@@ -41,6 +48,14 @@ const COLORS = {
       primary: '#ffffff',
       secondary: '#b0bec5',
     },
+    sections: {
+      aboutMe: 'linear-gradient(135deg, #010e0c  30%, #011612  80%)',
+      workTimeline: 'linear-gradient(135deg, #061512 30%, #09332B 80%)',
+      techStack: 'linear-gradient(135deg, #0C2924 30%, #1b3d3d  80%)',
+      projects: 'linear-gradient(135deg, #1b3d3d 30%, #0d3c3f 80%)',
+      contact: 'linear-gradient(135deg, #0d3c3f 30%, #294a4d 80%)',
+    }
+
   },
 } as const
 
@@ -104,6 +119,13 @@ const createAppTheme = (mode: ThemeMode): Theme => {
       main: mode === ThemeMode.LIGHT ? '#4caf50' : '#81c784',
     },
     divider: mode === ThemeMode.LIGHT ? 'rgba(0, 0, 0, 0.12)' : 'rgba(255, 255, 255, 0.12)',
+    sections: {
+      aboutMe: colors.sections.aboutMe,
+      workTimeline: colors.sections.workTimeline,
+      techStack: colors.sections.techStack,
+      projects: colors.sections.projects,
+      contact: colors.sections.contact,
+    },
   }
 
   const baseTheme = createTheme({
@@ -186,7 +208,7 @@ const createAppTheme = (mode: ThemeMode): Theme => {
               ? '0 4px 20px rgba(0, 0, 0, 0.1)'
               : '0 4px 20px rgba(255, 255, 255, 0.1)',
             background: mode === ThemeMode.LIGHT
-              ? 'linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%)'
+              ? 'linear-gradient(180deg, #001a29 50%, #f5f5f5 40%)'
               : 'linear-gradient(135deg, #1E1E1E 0%, #2D3748 100%)',
             transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
             '&:hover': {
@@ -215,7 +237,7 @@ const createAppTheme = (mode: ThemeMode): Theme => {
           },
           elevation1: {
             boxShadow: mode === ThemeMode.LIGHT
-              ? '0 2px 8px rgba(0, 0, 0, 0.1)'
+              ? '0 2px 8px rgba(120, 12, 12, 0.1)'
               : '0 2px 8px rgba(255, 255, 255, 0.1)',
           },
         },

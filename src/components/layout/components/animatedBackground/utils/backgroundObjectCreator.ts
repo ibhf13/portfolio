@@ -11,7 +11,6 @@ const backgroundObjectCreator = (
   stars: generateStars(starCount),
 })
 
-//TODO: improve colors
 const backgroundConfigs: Record<string, (theme: Theme) => BackgroundConfig> = {
   aboutMe: backgroundObjectCreator(
     ['#1A2980', '#26D0CE'],

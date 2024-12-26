@@ -22,9 +22,14 @@ export const useTypingEffect = ({
     const [isDone, setIsDone] = useState(false)
 
     useEffect(() => {
-        if (isDone) return
+        if (isDone || !texts.length) return
 
         const currentText = texts[currentIndex]
+
+        if (!currentText) {
+            setIsDone(true)
+            return
+        }
 
         if (!isDeleting && displayText === currentText) {
             if (currentIndex === texts.length - 1) {
@@ -37,7 +42,11 @@ export const useTypingEffect = ({
 
         if (isDeleting && displayText === '') {
             setIsDeleting(false)
-            setCurrentIndex((prev) => prev + 1)
+            if (currentIndex < texts.length - 1) {
+                setCurrentIndex((prev) => prev + 1)
+            } else {
+                setIsDone(true)
+            }
             return
         }
 

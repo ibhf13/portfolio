@@ -5,11 +5,7 @@ import { useBackgroundConfig } from './hooks'
 
 interface AnimatedBackgroundProps {
   sectionId: string
-  backgroundColor?: string
-  backgroundImage?: string
-  particleCount?: number
   starCount?: number
-  disableParticles?: boolean
   disableStars?: boolean
 }
 
@@ -21,26 +17,29 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   const theme = useTheme()
   const config = useBackgroundConfig(sectionId)
 
-  const stars = React.useMemo(() => {
-    if (disableStars) return null
-    return Array.from({ length: starCount }, (_, index) => (
+  const stars = disableStars ? null : (
+    Array.from({ length: starCount }, (_, index) => (
       <Star
         key={`star-${index}`}
         config={config.stars[index % config.stars.length]}
       />
     ))
-  }, [starCount, config.stars, disableStars])
+  )
 
   return (
     <Box
       sx={{
         position: 'absolute',
         inset: 0,
-        background: `linear-gradient(135deg, ${config.gradientColors.join(', ')})`,
+        background: theme.palette.sections[sectionId as keyof typeof theme.palette.sections] || theme.palette.sections.aboutMe,
         opacity: 0.7,
-        transition: theme.transitions.create('background', {
+        transition: theme.transitions.create('background-color', {
           duration: theme.transitions.duration.standard,
         }),
+        '@keyframes twinkle': {
+          '0%': { opacity: 0.3 },
+          '100%': { opacity: 1 }
+        }
       }}
     >
       {stars}

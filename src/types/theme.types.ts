@@ -44,6 +44,26 @@ declare module '@mui/material/styles' {
         gradientLight?: string
         gradientDark?: string
     }
+
+    interface Palette {
+        sections: {
+            aboutMe: string
+            workTimeline: string
+            techStack: string
+            projects: string
+            contact: string
+        }
+    }
+
+    interface PaletteOptions {
+        sections?: {
+            aboutMe: string
+            workTimeline: string
+            techStack: string
+            projects: string
+            contact: string
+        }
+    }
 }
 
 declare module '@mui/material' {
