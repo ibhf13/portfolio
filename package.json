@@ -10,7 +10,7 @@
     "preview": "rsbuild preview",
     "cache": "cache clean",
     "delete-build": "rm -rf dist",
-    "deploy": "npm run build && vercel --prod",
+    "deploy": "npm run build && firebase deploy --only hosting",
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
     "prettier:check": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
