@@ -36,6 +36,6 @@ export const SOCIAL_LINKS: SocialLink[] = [
     {
         name: 'Xing',
         icon: XingIcon,
-        url: ''
+        url: 'https://www.xing.com/profile/ibrahim_Klusmann'
     }
 ] 
