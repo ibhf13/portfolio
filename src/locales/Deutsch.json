@@ -144,7 +144,13 @@
     "submitButton": "Nachricht senden",
     "successMessage": "Nachricht erfolgreich gesendet!",
     "errorMessage": "Fehler beim Senden der Nachricht: {{error}}. Bitte versuchen Sie es erneut.",
-    "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten"
+    "unexpectedError": "Ein unerwarteter Fehler ist aufgetreten",
+    "confirmationDialog": {
+      "loading": "Nachricht wird gesendet...",
+      "successTitle": "Danke für Ihre Nachricht!",
+      "errorTitle": "Fehler beim Senden der Nachricht, error: {{error}}",
+      "closeButton": "Schließen"
+    }
   },
   "translationKey": {
     "enable": "Anzeige der Übersetzungsschlüssel aktivieren",

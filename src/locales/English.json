@@ -144,7 +144,13 @@
     "submitButton": "Send Message",
     "successMessage": "Message sent successfully!",
     "errorMessage": "Error sending message: {{error}}. Please try again.",
-    "unexpectedError": "An unexpected error occurred"
+    "unexpectedError": "An unexpected error occurred",
+    "confirmationDialog": {
+      "loading": "Sending message...",
+      "successTitle": "Thank you for your message!",
+      "errorTitle": "Error sending message, error: {{error}}",
+      "closeButton": "Close"
+    }
   },
   "translationKey": {
     "enable": "Enable display of translation keys",

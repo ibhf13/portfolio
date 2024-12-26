@@ -15,6 +15,7 @@ export interface Section {
 }
 
 export const getSections = (theme: Theme): Section[] => [
+
     {
         name: 'aboutMe',
         Component: AboutMe,
@@ -26,6 +27,7 @@ export const getSections = (theme: Theme): Section[] => [
         name: 'workTimeline',
         Component: WorkTimeline,
         animationType: AnimationType.Slide,
+        fullHeight: true,
         backgroundColor: theme.palette.background.paper,
     },
     {
@@ -33,19 +35,21 @@ export const getSections = (theme: Theme): Section[] => [
         Component: TechStack,
         animationType: AnimationType.Zoom,
         backgroundColor: theme.palette.background.default,
+        fullHeight: true,
     },
     {
         name: 'projects',
         Component: ProjectsOverview,
         animationType: AnimationType.ExpandContract,
-        backgroundColor: theme.palette.background.paper,
         fullHeight: true,
+        backgroundColor: theme.palette.background.paper,
     },
     {
         name: 'contact',
         Component: ContactForm,
-        animationType: AnimationType.Elastic,
-        backgroundColor: theme.palette.background.default,
+        animationType: AnimationType.Slide,
         fullHeight: true,
+        backgroundColor: theme.palette.background.default,
     },
+
 ] 

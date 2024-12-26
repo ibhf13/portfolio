@@ -32,6 +32,7 @@ const PageLayout = ({ children, toggleTheme }: PageLayoutProps) => {
     return (
         <Box
             sx={{
+                p: 0,
                 position: 'relative',
                 zIndex: 1,
                 overflow: 'hidden',
