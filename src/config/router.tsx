@@ -7,14 +7,15 @@ import { Theme, useMediaQuery } from '@mui/material'
 import { RouteObject } from 'react-router-dom'
 import { getSections } from './routes'
 
-export const getRouterConfig = ({ theme, toggleTheme }: { theme: Theme, toggleTheme: () => void }): RouteObject[] => {
-    const sections = getSections(theme)
+export const useResponsiveContainer = ({ theme, toggleTheme }: { theme: Theme, toggleTheme: () => void }): RouteObject[] => {
+    const sections = getSections()
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
     const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'))
 
     const getContainerWidth = () => {
         if (isMobile) return 'xs'
         if (isTablet) return 'sm'
+
         return 'xl'
     }
 
@@ -23,13 +24,12 @@ export const getRouterConfig = ({ theme, toggleTheme }: { theme: Theme, toggleTh
             path: '/',
             element: (
                 <PageLayout toggleTheme={toggleTheme}>
-                    {sections.map(({ name, Component, animationType, fullHeight, backgroundColor }) => (
+                    {sections.map(({ name, Component, animationType, fullHeight }) => (
                         <SectionWrapper
                             key={name}
                             id={name}
                             animationType={animationType}
                             fullHeight={fullHeight}
-                            backgroundColor={backgroundColor}
                             containerWidth={getContainerWidth()}
                         >
                             <Component />
@@ -45,7 +45,6 @@ export const getRouterConfig = ({ theme, toggleTheme }: { theme: Theme, toggleTh
                     <SectionWrapper
                         id="project-details"
                         animationType={AnimationType.Fade}
-                        backgroundColor={theme.palette.background.paper}
                         containerWidth={getContainerWidth()}
                         fullHeight={true}
                     >
@@ -61,7 +60,6 @@ export const getRouterConfig = ({ theme, toggleTheme }: { theme: Theme, toggleTh
                     <SectionWrapper
                         id="not-found"
                         animationType={AnimationType.Fade}
-                        backgroundColor={theme.palette.background.paper}
                         containerWidth={getContainerWidth()}
                         fullHeight={true}
                     >

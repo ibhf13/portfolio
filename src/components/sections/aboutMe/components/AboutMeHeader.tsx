@@ -20,7 +20,7 @@ const AboutMeHeader = ({ name, age }: AboutMeHeaderProps) => {
                 <Typography variant="h2" fontWeight="bold" mb={4}>
                     {name}
                 </Typography>
-                <Box display="flex" flexDirection={'row'} flexWrap={'wrap'} alignItems="flex-start" gap={1} mb={2}>
+                <Box display="flex" flexDirection="row" flexWrap="wrap" alignItems="flex-start" gap={1} mb={2}>
                     <Typography variant="h5" >
                         {t('aboutMe.age', { age })}
                     </Typography>

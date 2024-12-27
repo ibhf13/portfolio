@@ -12,24 +12,24 @@ import flexJourney_8 from '@/resources/images/FlexJourney/flexJourney_8.png'
 import flexJourney_9 from '@/resources/images/FlexJourney/flexJourney_9.png'
 import flexJourney_Change_Plan from '@/resources/images/FlexJourney/flexJourney_Change_Plan.gif'
 import flexJourney_Create_Plan from '@/resources/images/FlexJourney/flexJourney_Create_Plan.gif'
-import FlexJourneyLogo from '@/resources/images/FlexJourney/logo.png'
-import PortfolioLogo from '@/resources/images/logo.png'
-import PortfolioDark from '@/resources/images/portfolio/portfolio_dark.gif'
-import PortfolioDark1 from '@/resources/images/portfolio/portfolio_dark1.png'
-import PortfolioDark2 from '@/resources/images/portfolio/portfolio_dark2.png'
-import PortfolioDarkMobile from '@/resources/images/portfolio/portfolio_dark_mobile.png'
-import PortfolioLight from '@/resources/images/portfolio/portfolio_light.gif'
-import PortfolioLight1 from '@/resources/images/portfolio/portfolio_light1.png'
-import PortfolioLight2 from '@/resources/images/portfolio/portfolio_light2.png'
-import PortfolioLightMobile from '@/resources/images/portfolio/portfolio_light_mobile.png'
+import flexJourneyLogo from '@/resources/images/FlexJourney/logo.png'
+import portfolioLogo from '@/resources/images/logo.png'
+import portfolioDark from '@/resources/images/portfolio/portfolio_dark.gif'
+import portfolioDark1 from '@/resources/images/portfolio/portfolio_dark1.png'
+import portfolioDark2 from '@/resources/images/portfolio/portfolio_dark2.png'
+import portfolioDarkMobile from '@/resources/images/portfolio/portfolio_dark_mobile.png'
+import portfolioLight from '@/resources/images/portfolio/portfolio_light.gif'
+import portfolioLight1 from '@/resources/images/portfolio/portfolio_light1.png'
+import portfolioLight2 from '@/resources/images/portfolio/portfolio_light2.png'
+import portfolioLightMobile from '@/resources/images/portfolio/portfolio_light_mobile.png'
 import { Project } from '../types/project.types'
 
 const projects: Project[] = [
   {
     id: 'portfolio',
     title: 'projects.items.portfolio.title',
-    image: PortfolioLogo,
-    logo: PortfolioLogo,
+    image: portfolioLogo,
+    logo: portfolioLogo,
     description: 'projects.items.portfolio.description',
     problem: 'projects.items.portfolio.problem',
     solution: 'projects.items.portfolio.solution',
@@ -43,22 +43,22 @@ const projects: Project[] = [
     demoUrl: 'https://ibrahim-klusmann.web.app/',
     githubUrl: 'https://github.com/ibhf13/portfolio',
     screenshots: [
-      PortfolioDark,
-      PortfolioLight,
-      PortfolioDark1,
-      PortfolioDark2,
-      PortfolioDarkMobile,
-      PortfolioLight1,
-      PortfolioLight2,
-      PortfolioLightMobile,
+      portfolioDark,
+      portfolioLight,
+      portfolioDark1,
+      portfolioDark2,
+      portfolioDarkMobile,
+      portfolioLight1,
+      portfolioLight2,
+      portfolioLightMobile,
     ],
     isAvailable: true
   },
   {
     id: 'FlexJourney',
     title: 'projects.items.FlexJourney.title',
-    image: FlexJourneyLogo,
-    logo: FlexJourneyLogo,
+    image: flexJourneyLogo,
+    logo: flexJourneyLogo,
     description: 'projects.items.FlexJourney.description',
     problem: 'projects.items.FlexJourney.problem',
     solution: 'projects.items.FlexJourney.solution',

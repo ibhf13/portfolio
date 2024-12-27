@@ -69,7 +69,7 @@ export default [
 
       // Import rules
       'import/no-duplicates': 'error',
-      'import/no-unresolved': 'error',
+      'import/no-unresolved': ['error', { caseSensitive: false }],
       'import/no-cycle': 'warn',
 
       // General rules

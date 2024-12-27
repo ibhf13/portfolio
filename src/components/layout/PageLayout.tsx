@@ -19,6 +19,7 @@ const PageLayout = ({ children, toggleTheme }: PageLayoutProps) => {
     useEffect(() => {
         if (state?.scrollTo) {
             const section = document.getElementById(state.scrollTo)
+
             if (section) {
                 setTimeout(() => {
                     section.scrollIntoView({
@@ -27,6 +28,7 @@ const PageLayout = ({ children, toggleTheme }: PageLayoutProps) => {
                     })
                 }, 300)
             }
+
             window.history.replaceState({}, document.title)
         }
     }, [state?.scrollTo])

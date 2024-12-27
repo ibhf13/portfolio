@@ -28,15 +28,19 @@ export const useTypingEffect = ({
 
         if (!currentText) {
             setIsDone(true)
+
             return
         }
 
         if (!isDeleting && displayText === currentText) {
             if (currentIndex === texts.length - 1) {
                 setIsDone(true)
+
                 return
             }
+
             setTimeout(() => setIsDeleting(true), deletingDelay)
+
             return
         }
 
@@ -47,6 +51,7 @@ export const useTypingEffect = ({
             } else {
                 setIsDone(true)
             }
+
             return
         }
 
@@ -55,6 +60,7 @@ export const useTypingEffect = ({
                 if (isDeleting) {
                     return prev.slice(0, -1)
                 }
+
                 return currentText.slice(0, prev.length + 1)
             })
         }, typingDelay)

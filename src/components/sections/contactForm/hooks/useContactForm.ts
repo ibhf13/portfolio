@@ -17,6 +17,7 @@ export const useContactForm = ({ emailjsTemplateId, emailjsServiceId }: UseConta
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target
+
         setFormData(prev => ({ ...prev, [name]: value }))
     }
 

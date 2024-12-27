@@ -7,6 +7,7 @@
     "dev": "rsbuild dev --open",
     "format": "prettier --write .",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "preview": "rsbuild preview",
     "cache": "cache clean",
     "delete-build": "rm -rf dist",
@@ -39,19 +40,25 @@
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.1.1",
-    "@eslint/js": "^9.10.0",
+    "@eslint/compat": "^1.2.0",
+    "@eslint/js": "^9.12.0",
     "@rsbuild/core": "^1.0.1",
     "@rsbuild/plugin-react": "^1.0.1",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
-    "eslint": "^9.10.0",
-    "eslint-plugin-react": "^7.35.2",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "@typescript-eslint/eslint-plugin": "^8.12.2",
+    "@typescript-eslint/parser": "^8.12.2",
+    "@types/eslint": "^9.6.1",
+    "eslint": "^9.14.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
     "firebase-tools": "^13.19.0",
     "globals": "^15.9.0",
     "prettier": "^3.3.3",
     "typescript": "^5.5.2",
-    "typescript-eslint": "^8.5.0"
+    "typescript-eslint": "^8.8.1"
   }
 }
