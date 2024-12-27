@@ -1,8 +1,27 @@
+import flexJourney_1 from '@/resources/images/FlexJourney/flexJourney_1.png'
+import flexJourney_10 from '@/resources/images/FlexJourney/flexJourney_10.png'
+import flexJourney_11 from '@/resources/images/FlexJourney/flexJourney_11.png'
+import flexJourney_12 from '@/resources/images/FlexJourney/flexJourney_12.png'
+import flexJourney_2 from '@/resources/images/FlexJourney/flexJourney_2.png'
+import flexJourney_3 from '@/resources/images/FlexJourney/flexJourney_3.png'
+import flexJourney_4 from '@/resources/images/FlexJourney/flexJourney_4.png'
+import flexJourney_5 from '@/resources/images/FlexJourney/flexJourney_5.png'
+import flexJourney_6 from '@/resources/images/FlexJourney/flexJourney_6.png'
+import flexJourney_7 from '@/resources/images/FlexJourney/flexJourney_7.png'
+import flexJourney_8 from '@/resources/images/FlexJourney/flexJourney_8.png'
+import flexJourney_9 from '@/resources/images/FlexJourney/flexJourney_9.png'
+import flexJourney_Change_Plan from '@/resources/images/FlexJourney/flexJourney_Change_Plan.gif'
+import flexJourney_Create_Plan from '@/resources/images/FlexJourney/flexJourney_Create_Plan.gif'
 import FlexJourneyLogo from '@/resources/images/FlexJourney/logo.png'
 import PortfolioLogo from '@/resources/images/logo.png'
-import PortfolioImage1 from '@/resources/images/portfolio/image.png'
-import PortfolioImage3 from '@/resources/images/portfolio/portfolio.gif'
-import PortfolioImage2 from '@/resources/images/portfolio/projects.png'
+import PortfolioDark from '@/resources/images/portfolio/portfolio_dark.gif'
+import PortfolioDark1 from '@/resources/images/portfolio/portfolio_dark1.png'
+import PortfolioDark2 from '@/resources/images/portfolio/portfolio_dark2.png'
+import PortfolioDarkMobile from '@/resources/images/portfolio/portfolio_dark_mobile.png'
+import PortfolioLight from '@/resources/images/portfolio/portfolio_light.gif'
+import PortfolioLight1 from '@/resources/images/portfolio/portfolio_light1.png'
+import PortfolioLight2 from '@/resources/images/portfolio/portfolio_light2.png'
+import PortfolioLightMobile from '@/resources/images/portfolio/portfolio_light_mobile.png'
 import { Project } from '../types/project.types'
 
 const projects: Project[] = [
@@ -21,12 +40,17 @@ const projects: Project[] = [
       'Framer Motion',
       'i18next',
     ],
-    demoUrl: 'https://ibrahimklusmann.com',
+    demoUrl: 'https://ibrahim-klusmann.web.app/',
     githubUrl: 'https://github.com/ibhf13/portfolio',
     screenshots: [
-      PortfolioImage1,
-      PortfolioImage2,
-      PortfolioImage3
+      PortfolioDark,
+      PortfolioLight,
+      PortfolioDark1,
+      PortfolioDark2,
+      PortfolioDarkMobile,
+      PortfolioLight1,
+      PortfolioLight2,
+      PortfolioLightMobile,
     ],
     isAvailable: true
   },
@@ -43,15 +67,26 @@ const projects: Project[] = [
       'TypeScript',
       'Material-UI',
       'Framer Motion',
-      'i18next',
-      'Rsbuild'
+      'Firebase',
+      'Firestore',
     ],
     demoUrl: 'https://flexjourney.web.app/',
     githubUrl: 'https://github.com/ibhf13/flexjourney',
     screenshots: [
-      '/images/portfolio-1.png',
-      '/images/portfolio-2.png',
-      '/images/portfolio-3.png'
+      flexJourney_1,
+      flexJourney_2,
+      flexJourney_9,
+      flexJourney_10,
+      flexJourney_11,
+      flexJourney_12,
+      flexJourney_3,
+      flexJourney_4,
+      flexJourney_5,
+      flexJourney_6,
+      flexJourney_7,
+      flexJourney_8,
+      flexJourney_Create_Plan,
+      flexJourney_Change_Plan,
     ],
     isAvailable: true
   },

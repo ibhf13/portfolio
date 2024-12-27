@@ -23,8 +23,11 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, toggleThem
   const { navigateToSection } = useNavigation()
 
   const handleNavigation = (sectionId: string) => {
-    navigateToSection(sectionId)
     onClose()
+
+    setTimeout(() => {
+      navigateToSection(sectionId)
+    }, 300)
   }
 
   return (

@@ -1,14 +1,28 @@
+import { useNavigation } from '@/hooks/useNavigation'
 import logo from '@/resources/images/logo.png'
 import { Box } from '@mui/material'
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NAV_ITEMS } from '../constants/header.constants'
 
 const Logo: React.FC = () => {
-  const navigate = useNavigate()
+  const { navigateToSection, isHomePage } = useNavigation()
 
   const handleClick = () => {
-    navigate('/')
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    const firstSectionId = NAV_ITEMS[0].key
+
+    if (!isHomePage) {
+      navigateToSection(firstSectionId)
+    } else {
+      setTimeout(() => {
+        const firstSection = document.getElementById(firstSectionId)
+        if (firstSection) {
+          firstSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          })
+        }
+      }, 300)
+    }
   }
 
   return (
