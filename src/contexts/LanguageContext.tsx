@@ -42,11 +42,13 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const getInitialLanguage = (): Language => {
     const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY)
+
     if (savedLanguage && Object.values(Language).includes(savedLanguage as Language)) {
       return savedLanguage as Language
     }
 
     const browserLang = navigator.language.split('-')[0].toUpperCase()
+
     return browserLang === Language.DE ? Language.DE : Language.EN
   }
 
@@ -61,6 +63,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     const changeLanguage = async () => {
       await i18n.changeLanguage(language)
     }
+
     changeLanguage()
   }, [language])
 
@@ -73,8 +76,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext)
+
   if (context === undefined) {
     throw new Error('useLanguage must be used within a LanguageProvider')
   }
+
   return context
 }

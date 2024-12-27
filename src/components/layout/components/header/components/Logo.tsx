@@ -15,6 +15,7 @@ const Logo: React.FC = () => {
     } else {
       setTimeout(() => {
         const firstSection = document.getElementById(firstSectionId)
+
         if (firstSection) {
           firstSection.scrollIntoView({
             behavior: 'smooth',

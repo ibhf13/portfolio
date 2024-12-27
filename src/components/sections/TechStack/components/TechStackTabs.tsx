@@ -42,6 +42,7 @@ const TechStackTabs: React.FC<TechStackTabsProps> = ({ activeSection, onChangeSe
     const updateTabIndicator = () => {
       if (tabsRef.current) {
         const activeTab = tabsRef.current.querySelector('[aria-selected="true"]') as HTMLElement
+
         if (activeTab) {
           setTabIndicatorStyle({
             left: `${activeTab.offsetLeft}px`,
@@ -53,6 +54,7 @@ const TechStackTabs: React.FC<TechStackTabsProps> = ({ activeSection, onChangeSe
 
     updateTabIndicator()
     window.addEventListener('resize', updateTabIndicator)
+
     return () => window.removeEventListener('resize', updateTabIndicator)
   }, [activeSection])
 
@@ -60,8 +62,10 @@ const TechStackTabs: React.FC<TechStackTabsProps> = ({ activeSection, onChangeSe
     onChangeSection(newValue)
     if (scrollRef.current) {
       const activeTab = scrollRef.current.querySelector('[aria-selected="true"]') as HTMLElement
+
       if (activeTab) {
         const scrollLeft = activeTab.offsetLeft - scrollRef.current.offsetWidth / 2 + activeTab.offsetWidth / 2
+
         scrollRef.current.scrollTo({ left: scrollLeft, behavior: 'smooth' })
       }
     }

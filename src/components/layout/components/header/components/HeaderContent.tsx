@@ -39,4 +39,5 @@ const HeaderContent: React.FC<HeaderProps> = ({ toggleTheme }) => {
     </>
   )
 }
+
 export default HeaderContent

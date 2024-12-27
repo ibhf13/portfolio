@@ -17,6 +17,7 @@ export const useTranslation = (): {
     if (showKeys) {
       return key
     }
+
     return i18nT(key, options)
   }, [showKeys, i18nT]) as TFunction
 

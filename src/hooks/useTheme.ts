@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 const getInitialThemeMode = (): ThemeMode => {
   const savedTheme = localStorage.getItem(THEME_STORAGE_KEY)
+
   return (savedTheme === ThemeMode.LIGHT || savedTheme === ThemeMode.DARK) ? savedTheme : DEFAULT_THEME_MODE
 }
 
@@ -14,8 +15,10 @@ export const useTheme = () => {
   const toggleTheme = () => {
     setMode((prevMode) => {
       const newMode: ThemeMode = prevMode === ThemeMode.LIGHT ? ThemeMode.DARK : ThemeMode.LIGHT
+
       localStorage.setItem(THEME_STORAGE_KEY, newMode)
       setKey((prevKey) => prevKey + 1)
+
       return newMode
     })
   }
