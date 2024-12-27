@@ -14,102 +14,120 @@ This is a personal portfolio website built with React, TypeScript, and Material-
 
 ## Features
 
-- Responsive design
-- Dark/Light mode toggle
+- Responsive design with Material-UI
+- Dark/Light mode theme toggle
 - Internationalization (English and German)
-- Animated components using Framer Motion
-- Sections for About Me, Tech Stack, Work Timeline, Projects, and Contact Form
+- Smooth animations using Framer Motion
+- Sections for:
+  - About Me with experience highlights
+  - Interactive Tech Stack showcase
+  - Work Timeline
+  - Projects Portfolio
+  - Contact Form with EmailJS integration
 
 ## Tech Stack
 
-- React
+- React 18
 - TypeScript
-- Material-UI (MUI)
+- Material-UI (MUI) v6
+- Firebase (Auth, Hosting, Firestore)
 - Framer Motion for animations
 - i18next for internationalization
 - Rsbuild for building and development
+- ESLint & Prettier for code quality
+- EmailJS for contact form
 
+## Project Structure
 
 ```
-portfolio/
-├── src/
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Header.tsx
-│   │   │   ├── MobileDrawer.tsx
-│   │   │   └── ...
-│   │   ├── about-me/
-│   │   │   ├── AboutMe.tsx
-│   │   │   ├── ProfileImage.tsx
-│   │   │   └── ...
-│   │   ├── TechStack.tsx
-│   │   ├── WorkTimeline.tsx
-│   │   ├── ProjectsOverview.tsx
-│   │   └── ContactForm.tsx
-│   ├── contexts/
-│   │   ├── LanguageContext.tsx
-│   │   └── TranslationKeyContext.tsx
-│   ├── hooks/
-│   │   ├── useCustomTranslation.ts
-│   │   └── useTheme.ts
-│   ├── locales/
-│   │   ├── English.json
-│   │   └── Deutsch.json
-│   ├── resources/
-│   │   ├── icons/
-│   │   ├── company-logos/
-│   │   └── ...
-│   ├── styles/
-│   │   └── theme.ts
-│   ├── utils/
-│   │   └── dateUtils.ts
-│   ├── App.tsx
-│   └── index.tsx
-├── public/
-├── package.json
-├── tsconfig.json
-├── rsbuild.config.ts
-└── vercel.json
+src/
+├── components/
+│   ├── layout/              # Layout components
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── styles/
+│   │   └── types/
+│   └── sections/            # Feature-based sections
+│       ├── aboutMe/
+│       ├── contactForm/
+│       │   ├── components/
+│       │   ├── constants/
+│       │   ├── context/
+│       │   ├── styles/
+│       │   ├── types/
+│       │   └── index.ts
+│       ├── notFound/
+│       ├── projectsOverview/
+│       ├── techStack/
+│       └── workTimeline/
+├── config/                  # App configuration
+├── contexts/               # React contexts
+├── hooks/                  # Custom hooks
+├── locales/               # i18n translations
+├── resources/             # Static resources
+│   ├── icons/
+│   └── images/
+├── styles/                # Global styles
+│   ├── animations.ts
+│   └── theme.ts
+├── types/                 # Global TypeScript types
+├── utils/                 # Utility functions
+└── App.tsx               # Root component
 ```
 
 ## Getting Started
 
 1. Clone the repository:
-   ```
+   ```bash
    git clone <repository-url>
    ```
 
 2. Install dependencies:
-   ```
+   ```bash
    npm install
    ```
 
-3. Start the development server:
-   ```
+3. Set up Firebase:
+   - Create a Firebase project
+   - Enable Authentication and Firestore
+   - Add your Firebase config to the project
+
+4. Start the development server:
+   ```bash
    npm run dev
    ```
 
 ## Development
 
-- `npm run dev`: Start the development server
-- `npm run build`: Build the project for production
-- `npm run preview`: Preview the production build locally
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run preview`: Preview production build
 - `npm run lint`: Run ESLint
-- `npm run format`: Format code with Prettier
+- `npm run lint:fix`: Fix ESLint issues
+- `npm run format`: Format with Prettier
+- `npm run deploy`: Build and deploy to Firebase
 
 ## Deployment
 
-This project is configured for deployment on Vercel. The `vercel.json` file contains the necessary configuration.
+This project is configured for deployment on Firebase Hosting.
 
-To deploy:
-
-1. Install the Vercel CLI:
-   ```
-   npm i -g vercel
+1. Install Firebase CLI if not already installed:
+   ```bash
+   npm install -g firebase-tools
    ```
 
-2. Run the deployment command:
+2. Login to Firebase:
+   ```bash
+   firebase login
    ```
+
+3. Initialize Firebase (first time only):
+   ```bash
+   firebase init
+   ```
+
+4. Deploy to Firebase:
+   ```bash
    npm run deploy
    ```
 
@@ -117,8 +135,15 @@ To deploy:
 
 The project supports English and German languages. Language files are located in `src/locales/`.
 
-To add or modify translations, edit the corresponding JSON files:
+To add or modify translations, edit:
 - `English.json`
 - `Deutsch.json`
 
 The `useTranslation` hook from `src/hooks/useCustomTranslation.ts` is used to access translations throughout the application.
+
+## Code Quality
+
+- ESLint configuration for TypeScript and React
+- Prettier for consistent code formatting
+- Strict TypeScript configuration
+- Git hooks for pre-commit checks
