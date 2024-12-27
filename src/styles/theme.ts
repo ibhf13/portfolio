@@ -6,7 +6,7 @@ const COLORS = {
     primary: {
       main: '#3d6fb7',
       light: '#5c85b9',
-      dark: '#095748',
+      dark: '#3d6fb7',
     },
     secondary: {
       main: '#293d59',
@@ -19,7 +19,7 @@ const COLORS = {
     },
     text: {
       primary: '#212121',
-      secondary: '#757575',
+      secondary: '#000000',
     },
     sections: {
       aboutMe: 'linear-gradient(135deg, #083f8f 30%, #3d6fb7  80%)',
@@ -232,12 +232,9 @@ const createAppTheme = (mode: ThemeMode): Theme => {
       },
       MuiPaper: {
         styleOverrides: {
-          root: {
-            // backgroundImage: 'none',
-          },
           elevation1: {
             boxShadow: mode === ThemeMode.LIGHT
-              ? '0 2px 8px rgba(120, 12, 12, 0.1)'
+              ? '0 2px 8px rgba(12, 12, 12, 0.1)'
               : '0 2px 8px rgba(255, 255, 255, 0.1)',
           },
         },

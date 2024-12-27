@@ -21,10 +21,12 @@ const PageLayout = ({ children, toggleTheme }: PageLayoutProps) => {
             const section = document.getElementById(state.scrollTo)
             if (section) {
                 setTimeout(() => {
-                    section.scrollIntoView({ behavior: 'smooth' })
-                }, 100)
+                    section.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    })
+                }, 300)
             }
-            // Clear the state to prevent scrolling on subsequent renders
             window.history.replaceState({}, document.title)
         }
     }, [state?.scrollTo])

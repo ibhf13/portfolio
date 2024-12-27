@@ -1,3 +1,4 @@
+import { useMediaQuery, useTheme } from '@mui/material'
 import { motion } from 'framer-motion'
 
 export interface CarouselImageProps {
@@ -9,6 +10,8 @@ export interface CarouselImageProps {
 
 const CarouselImage = ({ src, alt, isDialog, onClick }: CarouselImageProps) => {
     const isGif = src.toLowerCase().endsWith('.gif')
+    const theme = useTheme()
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
 
     return (
         <motion.img
@@ -21,7 +24,7 @@ const CarouselImage = ({ src, alt, isDialog, onClick }: CarouselImageProps) => {
             onClick={onClick}
             style={{
                 width: '100%',
-                height: 'auto',
+                height: isMobile || isDialog ? 'auto' : '500px',
                 borderRadius: 8,
                 cursor: isDialog ? 'default' : 'pointer',
                 maxHeight: isDialog ? '90vh' : 'unset',

@@ -58,7 +58,6 @@ const TechStackTabs: React.FC<TechStackTabsProps> = ({ activeSection, onChangeSe
 
   const handleTabChange = (_event: React.SyntheticEvent, newValue: TechStackSection | 'all') => {
     onChangeSection(newValue)
-    // Scroll the active tab into view
     if (scrollRef.current) {
       const activeTab = scrollRef.current.querySelector('[aria-selected="true"]') as HTMLElement
       if (activeTab) {

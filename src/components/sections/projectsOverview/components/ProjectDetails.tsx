@@ -18,7 +18,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
                         component="img"
                         src={project.logo}
                         alt={t(project.title)}
-                        sx={{ width: 60, height: 60 }}
+                        sx={{ width: 60, height: 60, objectFit: 'contain' }}
                     />
                 )}
                 <Typography variant="h3">{t(project.title)}</Typography>
@@ -50,7 +50,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
                     </motion.div>
                 </Box>
 
-                <Box display="flex" flexDirection="column" justifyContent="center" flex={1}>
+                <Box display="flex" flexDirection="column" justifyContent="center" flex={1} >
                     <Box display="flex" flexDirection="column" justifyContent="center" flex={1} >
                         <motion.div
                             initial={{ opacity: 0, x: -50 }}
@@ -60,13 +60,19 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
                             <ImageCarousel images={project.screenshots} />
                         </motion.div>
                     </Box>
-                    <Box display="flex" justifyContent="flex-end" gap={2}>
+                    <Box display="flex" justifyContent="flex-end" gap={2} >
                         {project.githubUrl && (
                             <IconButton
                                 href={project.githubUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="GitHub"
+                                sx={{
+                                    '&:hover': {
+                                        backgroundColor: 'primary.dark',
+                                    },
+                                }}
+
                             >
                                 <GitHubIcon />
                             </IconButton>
@@ -77,6 +83,11 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Live Demo"
+                                sx={{
+                                    '&:hover': {
+                                        backgroundColor: 'primary.dark',
+                                    },
+                                }}
                             >
                                 <LaunchIcon />
                             </IconButton>

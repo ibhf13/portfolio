@@ -4,8 +4,8 @@
     "title": "About Me",
     "age": "{{age}} years old |",
     "profession": "Software Developer",
-    "description": "I'm a {{age}} year old frontend developer with a passion for problem-solving and experimenting with new technologies, especially AI.",
-    "passion": "I love turning complex problems into simple, create user-friendly websites and apps, elegant solutions through clean and efficient code",
+    "description": "I am a software developer specializing in frontend with a passion for problem solving and implementing new technologies.",
+    "passion": "s. I enjoy transforming complex challenges into simple, user friendly websites and apps while delivering elegant solutions through clean, efficient code.",
     "hobbies": "When not coding, i like to dance salsa and bachata, photography, cooking and lift weights. These activities help me stay creative and energized.",
     "experiences": {
       "coding": "Years of Coding",
@@ -30,8 +30,8 @@
   "techStack": {
     "title": "My Tech Stack",
     "all": "All",
-    "frontend": "Front-End",
-    "backend": "Back-End",
+    "frontend": "Frontend",
+    "backend": "Backend",
     "testing": "Testing",
     "tools": "Tools",
     "technologies": {
@@ -45,7 +45,7 @@
       },
       "JavaScript": {
         "name": "JavaScript",
-        "description": "A high-level, interpreted programming language"
+        "description": "A high level, interpreted programming language"
       },
       "HTML": {
         "name": "HTML",
@@ -56,7 +56,7 @@
         "description": "A style sheet language used for describing the presentation of a document"
       },
       "MaterialUI": {
-        "name": "Material-UI",
+        "name": "Material UI",
         "description": "A popular React UI framework"
       },
       "NodeJS": {
@@ -69,11 +69,11 @@
       },
       "MongoDB": {
         "name": "MongoDB",
-        "description": "A source-available cross-platform document-oriented database program"
+        "description": "A source available cross platform document oriented database program"
       },
       "MySQL": {
         "name": "MySQL",
-        "description": "An open-source relational database management system"
+        "description": "An open source relational database management system"
       },
       "Git": {
         "name": "Git",
@@ -103,7 +103,7 @@
     },
     "description": {
       "frontend": "Developing new features and maintaining a responsive portal using modern frontend technologies, testing, maintaining and refactoring existing codes.",
-      "vb": "Developing functional and user-friendly interface as a replacement for the excel sheets.",
+      "vb": "Developing functional and user friendly interface as a replacement for the excel sheets.",
       "support": "Professional customer consultations, managing customer inquiries, offering professional advice, addressing complaints, and resolving technical issues",
       "student": "Studied and graduated from the University of osnabrueck with a Bachelor of Science in computer science.",
       "mentor": "Mentoring students in the field of web development and providing guidance on best practices, sessions planning, tickets creation and project management."
@@ -125,14 +125,14 @@
       "portfolio": {
         "title": "Personal Portfolio",
         "description": "A modern and responsive portfolio developed with React and TypeScript that showcases my professionalism and technical skills.",
-        "problem": "Creating a platform that professionally and engagingly showcases my technical skills, projects, and personality was a challenge. The website needed to stand out visually while also excelling technically with interactivity, internationalization, and user-friendliness.",
+        "problem": "Creating a platform that professionally and engagingly showcases my technical skills, projects, and personality was a challenge. The website needed to stand out visually while also excelling technically with interactivity, internationalization, and user friendliness.",
         "solution": "To address this challenge, I developed a portfolio using React and TypeScript. It features modern animations, interactive elements, and supports internationalization through i18n. Additionally, I integrated a dark and light mode to allow users to choose their preferred theme. The overall user experience was optimized to make navigation intuitive and engaging."
       },
       "FlexJourney": {
         "title": "FlexJourney",
         "description": "A modern, responsive fitness tracking website developed using React and TypeScript to help users track their fitness goals.",
-        "problem": "Many fitness tracking apps are either paid or loaded with intrusive ads, which detract from the user experience. This motivated me to create my own solution. FlexJourney is a fitness tracking app designed to help users monitor their progress while providing a seamless and user-friendly experience.",
-        "solution": "FlexJourney allows users to create personalized workout plans or choose from a curated list of pre-made plans. With an intuitive interface, the app makes it easy to track progress and ensures a high-quality user experience."
+        "problem": "Many fitness tracking apps are either paid or loaded with intrusive ads, which detract from the user experience. This motivated me to create my own solution. FlexJourney is a fitness tracking app designed to help users monitor their progress while providing a seamless and user friendly experience.",
+        "solution": "FlexJourney allows users to create personalized workout plans or choose from a curated list of pre made plans. With an intuitive interface, the app makes it easy to track progress and ensures a high quality user experience."
       }
     }
   },
