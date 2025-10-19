@@ -27,38 +27,15 @@ import qrBites_Dashboard_light from '@/resources/images/QRBites/qrbites_Dashboar
 import qrBites_Flow from '@/resources/images/QRBites/qrbites_Flow.gif'
 import qrBites_Home from '@/resources/images/QRBites/qrbites_Home.png'
 import qrBites_Logo from '@/resources/images/QRBites/qrbites_Logo.png'
+import techlabs_About from '@/resources/images/techlabs/techlabs_About.png'
+import techlabs_Flow from '@/resources/images/techlabs/techlabs_Flow.gif'
+import techlabs_Home from '@/resources/images/techlabs/techlabs_Home.png'
+import techlabs_Logo from '@/resources/images/techlabs/techlabs_Logo.svg'
+import techlabs_Partners from '@/resources/images/techlabs/techlabs_Partners.png'
+import techlabs_Tracks from '@/resources/images/techlabs/techlabs_Tracks.png'
 import { Project } from '../types/project.types'
 
 const projects: Project[] = [
-  {
-    id: 'portfolio',
-    title: 'projects.items.portfolio.title',
-    image: portfolioLogo,
-    logo: portfolioLogo,
-    description: 'projects.items.portfolio.description',
-    problem: 'projects.items.portfolio.problem',
-    solution: 'projects.items.portfolio.solution',
-    techStack: [
-      'React',
-      'TypeScript',
-      'Material-UI',
-      'Framer Motion',
-      'i18next',
-    ],
-    demoUrl: 'https://ibrahim-klusmann.web.app/',
-    githubUrl: 'https://github.com/ibhf13/portfolio',
-    screenshots: [
-      portfolioDark,
-      portfolioLight,
-      portfolioDark1,
-      portfolioDark2,
-      portfolioDarkMobile,
-      portfolioLight1,
-      portfolioLight2,
-      portfolioLightMobile,
-    ],
-    isAvailable: true
-  },
   {
     id: 'FlexJourney',
     title: 'projects.items.FlexJourney.title',
@@ -96,13 +73,13 @@ const projects: Project[] = [
     isAvailable: true
   },
   {
-    id: '3',
-    title: 'projects.items.QRBites.title',
-    image: qrBites_Dashboard,
+    id: 'QRBites',
+    title: 'projects.items.qrbites.title',
+    image: qrBites_Logo,
     logo: qrBites_Logo,
-    description: 'projects.items.QRBites.description',
-    problem: 'projects.items.QRBites.problem',
-    solution: 'projects.items.QRBites.solution',
+    description: 'projects.items.qrbites.description',
+    problem: 'projects.items.qrbites.problem',
+    solution: 'projects.items.qrbites.solution',
     techStack: [
       'React',
       'TypeScript',
@@ -127,7 +104,65 @@ const projects: Project[] = [
     ],
     isAvailable: true
   },
-
+  {
+    id: 'TechLabs',
+    title: 'projects.items.techlabs.title',
+    image: techlabs_Logo,
+    logo: techlabs_Logo,
+    description: 'projects.items.techlabs.description',
+    problem: 'projects.items.techlabs.problem',
+    solution: 'projects.items.techlabs.solution',
+    techStack: [
+      'React',
+      'TypeScript',
+      'Material-UI',
+      'jest',
+      'i18next',
+      "accessibly",
+      "vercel",
+      "WCAG 2.x AA"
+    ],
+    demoUrl: 'https://techlabs-96b2d.web.app/',
+    githubUrl: 'https://github.com/ibhf13/techlabs',
+    screenshots: [
+      techlabs_Home,
+      techlabs_About,
+      techlabs_Partners,
+      techlabs_Tracks,
+      techlabs_Home,
+      techlabs_Flow,
+    ],
+    isAvailable: true
+  },
+  {
+    id: 'portfolio',
+    title: 'projects.items.portfolio.title',
+    image: portfolioLogo,
+    logo: portfolioLogo,
+    description: 'projects.items.portfolio.description',
+    problem: 'projects.items.portfolio.problem',
+    solution: 'projects.items.portfolio.solution',
+    techStack: [
+      'React',
+      'TypeScript',
+      'Material-UI',
+      'Framer Motion',
+      'i18next',
+    ],
+    demoUrl: 'https://ibrahim-klusmann.web.app/',
+    githubUrl: 'https://github.com/ibhf13/portfolio',
+    screenshots: [
+      portfolioDark,
+      portfolioLight,
+      portfolioDark1,
+      portfolioDark2,
+      portfolioDarkMobile,
+      portfolioLight1,
+      portfolioLight2,
+      portfolioLightMobile,
+    ],
+    isAvailable: true
+  },
 ]
 
 export default projects

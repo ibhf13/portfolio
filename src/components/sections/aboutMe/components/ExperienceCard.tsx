@@ -11,6 +11,8 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 }) => {
     const theme = useTheme()
 
+    const shouldUsePlus = years > 3
+
     return (
         <Box
             textAlign="center"
@@ -47,7 +49,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                 my={2}
                 color="primary"
             >
-                {years}
+                {years}{shouldUsePlus ? '+' : ''}
             </Typography>
             <Typography variant="body1">{text}</Typography>
         </Box>

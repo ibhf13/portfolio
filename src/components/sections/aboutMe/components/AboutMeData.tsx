@@ -10,7 +10,7 @@ export const AboutMeData = (): ExperienceItem[] => {
   return [
     {
       icon: <CodeIcon fontSize="large" />,
-      years: 5,
+      years: 6,
       text: t('aboutMe.experiences.coding')
     },
     {
@@ -20,7 +20,7 @@ export const AboutMeData = (): ExperienceItem[] => {
     },
     {
       icon: <EmojiEventsIcon fontSize="large" />,
-      years: 3,
+      years: 4,
       text: t('aboutMe.experiences.projects')
     }
   ]
