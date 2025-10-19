@@ -47,7 +47,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                 my={2}
                 color="primary"
             >
-                {years}+
+                {years}
             </Typography>
             <Typography variant="body1">{text}</Typography>
         </Box>

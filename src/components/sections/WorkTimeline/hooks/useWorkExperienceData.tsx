@@ -21,7 +21,7 @@ export const useWorkExperienceData = (): WorkExperience[] => {
             company: t('workTimeline.companies.techLabs'),
             description: t('workTimeline.description.mentor'),
             logo: techLabs,
-            year: '2024',
+            year: '2024 - Heute',
         },
         {
             position: t('workTimeline.positions.vb'),
@@ -42,7 +42,7 @@ export const useWorkExperienceData = (): WorkExperience[] => {
             company: t('workTimeline.companies.uos'),
             description: t('workTimeline.description.student'),
             logo: uosLogo,
-            year: '2018-2023',
+            year: '2017-2023',
         },
     ]
 } 

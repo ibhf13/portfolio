@@ -15,7 +15,7 @@ export const AboutMeData = (): ExperienceItem[] => {
     },
     {
       icon: <SchoolIcon fontSize="large" />,
-      years: 2,
+      years: 3,
       text: t('aboutMe.experiences.industry')
     },
     {

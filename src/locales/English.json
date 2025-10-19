@@ -99,7 +99,7 @@
       "frontend": "Frontend Developer",
       "vb": "Visual basic Developer",
       "support": "IT Support Specialist",
-      "mentor": "Web Development Mentor"
+      "mentor": "Web Development Mentor - Volunteer"
     },
     "description": {
       "frontend": "Developing new features and maintaining a responsive portal using modern frontend technologies, testing, maintaining and refactoring existing codes.",
@@ -133,6 +133,12 @@
         "description": "A modern, responsive fitness tracking website developed using React and TypeScript to help users track their fitness goals.",
         "problem": "Many fitness tracking apps are either paid or loaded with intrusive ads, which detract from the user experience. This motivated me to create my own solution. FlexJourney is a fitness tracking app designed to help users monitor their progress while providing a seamless and user friendly experience.",
         "solution": "FlexJourney allows users to create personalized workout plans or choose from a curated list of pre made plans. With an intuitive interface, the app makes it easy to track progress and ensures a high quality user experience."
+      },
+      "QRBites": {
+        "title": "QRBites",
+        "description": "A modern digital menu management system for restaurants, enabling contactless dining experiences through QR code technology.",
+        "problem": "Traditional paper menus in restaurants present multiple challenges: they're unhygienic (especially post-pandemic), difficult to update with price changes or new items, costly to reprint, and don't provide analytics on customer preferences. Additionally, managing multiple restaurant locations with different menus creates operational complexity, and paper menus can't accommodate real-time updates for out-of-stock items or special offers.",
+        "solution": "QRBites solves these challenges by providing a comprehensive digital menu platform. Restaurant owners can create and manage multiple restaurants and menus through an intuitive dashboard, instantly update prices and availability, and generate unique QR codes for each menu. Customers simply scan the QR code to access a beautifully designed, mobile-optimized menu without downloading any app."
       }
     }
   },

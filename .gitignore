@@ -5,6 +5,7 @@
 
 # Dist
 node_modules
+package-lock.json
 dist/
 .firebase/
 .vscode/

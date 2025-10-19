@@ -22,6 +22,11 @@ import portfolioLight from '@/resources/images/portfolio/portfolio_light.gif'
 import portfolioLight1 from '@/resources/images/portfolio/portfolio_light1.png'
 import portfolioLight2 from '@/resources/images/portfolio/portfolio_light2.png'
 import portfolioLightMobile from '@/resources/images/portfolio/portfolio_light_mobile.png'
+import qrBites_Dashboard from '@/resources/images/QRBites/qrbites_Dashboard.png'
+import qrBites_Dashboard_light from '@/resources/images/QRBites/qrbites_Dashboard_light.png'
+import qrBites_Flow from '@/resources/images/QRBites/qrbites_Flow.gif'
+import qrBites_Home from '@/resources/images/QRBites/qrbites_Home.png'
+import qrBites_Logo from '@/resources/images/QRBites/qrbites_Logo.png'
 import { Project } from '../types/project.types'
 
 const projects: Project[] = [
@@ -92,29 +97,35 @@ const projects: Project[] = [
   },
   {
     id: '3',
-    title: 'QRBites',
-    image: '/images/QRBites-preview.png',
-    logo: '/images/QRBites-logo.png',
-    description: 'coming soon',
-    problem: 'coming soon',
-    solution: 'coming soon',
+    title: 'projects.items.QRBites.title',
+    image: qrBites_Dashboard,
+    logo: qrBites_Logo,
+    description: 'projects.items.QRBites.description',
+    problem: 'projects.items.QRBites.problem',
+    solution: 'projects.items.QRBites.solution',
     techStack: [
       'React',
       'TypeScript',
-      'Material-UI',
-      'Framer Motion',
-      'i18next',
-      'Rsbuild'
+      'TailwindCSS',
+      'MongoDB',
+      'Express',
+      'Node.js',
+      'Jest',
+      'Docker',
+      'Cloudinary',
+      'Vercel',
+      'Vite'
     ],
 
-    demoUrl: 'https://ibrahimklusmann.com',
-    githubUrl: 'https://github.com/ibhf13/portfolio',
+    demoUrl: 'https://qr-bites.vercel.app/home',
+    githubUrl: 'https://github.com/ibhf13/qrbites',
     screenshots: [
-      '/images/portfolio-1.png',
-      '/images/portfolio-2.png',
-      '/images/portfolio-3.png'
+      qrBites_Home,
+      qrBites_Dashboard_light,
+      qrBites_Dashboard,
+      qrBites_Flow,
     ],
-    isAvailable: false
+    isAvailable: true
   },
 
 ]

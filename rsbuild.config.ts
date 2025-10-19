@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [pluginReact()],
   html: {
     title: 'Portfolio',
+    favicon: './public/favicon.png',
   },
   output: {
     distPath: {
