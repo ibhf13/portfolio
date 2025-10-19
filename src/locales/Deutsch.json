@@ -59,6 +59,10 @@
         "name": "Material UI",
         "description": "Ein beliebtes React UI Framework"
       },
+      "TailwindCSS": {
+        "name": "TailwindCSS",
+        "description": "Eine Utility-first CSS Framework"
+      },
       "NodeJS": {
         "name": "Node.js",
         "description": "Eine JavaScript Laufzeitumgebung, die auf Chromes V8 JavaScript Engine aufbaut"
@@ -74,6 +78,14 @@
       "MySQL": {
         "name": "MySQL",
         "description": "Ein Open Source Relationales Datenbankmanagementsystem"
+      },
+      "Docker": {
+        "name": "Docker",
+        "description": "Ein Containerisierungsframework"
+      },
+      "AWS": {
+        "name": "AWS",
+        "description": "Eine Cloud Computing Plattform"
       },
       "Git": {
         "name": "Git",

@@ -1,5 +1,7 @@
+import AWSIcon from '@/resources/icons/AWS.svg'
 import BrowserStackIcon from '@/resources/icons/browserstack.svg'
 import CSSIcon from '@/resources/icons/css.svg'
+import DockerIconSvg from '@/resources/icons/Docker.svg'
 import ExpressIcon from '@/resources/icons/express.svg'
 import GitIcon from '@/resources/icons/git.svg'
 import HTMLIcon from '@/resources/icons/html.svg'
@@ -11,6 +13,7 @@ import MySQLIcon from '@/resources/icons/mysql.svg'
 import NodeJSIcon from '@/resources/icons/nodejs.svg'
 import PlaywrightIcon from '@/resources/icons/playwright.svg'
 import ReactIcon from '@/resources/icons/react.svg'
+import TailwindCSSIcon from '@/resources/icons/tailwind.svg'
 import TypeScriptIcon from '@/resources/icons/typescript.svg'
 import { TechStackDataProps } from '../types/techStack.types'
 
@@ -47,6 +50,12 @@ export const TechStackData: TechStackDataProps = {
       translationKey: 'CSS'
     },
     {
+      name: 'TailwindCSS',
+      icon: TailwindCSSIcon,
+      color: '#193837',
+      translationKey: 'TailwindCSS'
+    },
+    {
       name: 'Material-UI',
       icon: MaterialUIIcon,
       color: '#193837',
@@ -80,6 +89,12 @@ export const TechStackData: TechStackDataProps = {
       color: '#4479A1',
       translationKey: 'MySQL'
     },
+    {
+      name: 'Docker',
+      icon: DockerIconSvg,
+      color: '#2496ED',
+      translationKey: 'Docker'
+    },
   ],
   testing: [
     {
@@ -107,6 +122,12 @@ export const TechStackData: TechStackDataProps = {
       icon: BrowserStackIcon,
       color: '#F15B2A',
       translationKey: 'BrowserStack'
+    },
+    {
+      name: 'AWS',
+      icon: AWSIcon,
+      color: '#8e2609',
+      translationKey: 'AWS'
     },
   ],
 }
