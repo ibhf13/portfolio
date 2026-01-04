@@ -173,7 +173,8 @@
       "loading": "Sending message...",
       "successTitle": "Thank you for your message!",
       "errorTitle": "Error sending message, error: {{error}}",
-      "closeButton": "Close"
+      "closeButton": "Close",
+      "sending": "Sending message..."
     }
   },
   "translationKey": {

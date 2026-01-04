@@ -173,7 +173,8 @@
       "loading": "Nachricht wird gesendet...",
       "successTitle": "Danke für Ihre Nachricht!",
       "errorTitle": "Fehler beim Senden der Nachricht, error: {{error}}",
-      "closeButton": "Schließen"
+      "closeButton": "Schließen",
+      "sending": "Nachricht wird gesendet..."
     }
   },
   "translationKey": {

@@ -36,7 +36,7 @@ const ConfirmationDialog = ({ state, onClose }: ConfirmationDialogProps) => {
                                 <>
                                     <CircularProgress />
                                     <Typography variant="body1">
-                                        {t('contact.sending')}
+                                        {t('contact.confirmationDialog.sending')}
                                     </Typography>
                                 </>
                             ) : (
