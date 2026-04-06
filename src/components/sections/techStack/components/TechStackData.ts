@@ -3,18 +3,23 @@ import BrowserStackIcon from '@/resources/icons/browserstack.svg'
 import CSSIcon from '@/resources/icons/css.svg'
 import DockerIconSvg from '@/resources/icons/Docker.svg'
 import ExpressIcon from '@/resources/icons/express.svg'
+import FirebaseIcon from '@/resources/icons/firebase.svg'
 import GitIcon from '@/resources/icons/git.svg'
 import HTMLIcon from '@/resources/icons/html.svg'
 import JavaScriptIcon from '@/resources/icons/javascript.svg'
 import JestIcon from '@/resources/icons/jest.svg'
+import JupyterIcon from '@/resources/icons/jupyter.svg'
 import MaterialUIIcon from '@/resources/icons/material-ui.svg'
 import MongoDBIcon from '@/resources/icons/mongodb.svg'
 import MySQLIcon from '@/resources/icons/mysql.svg'
 import NodeJSIcon from '@/resources/icons/nodejs.svg'
+import PandasIcon from '@/resources/icons/pandas.svg'
 import PlaywrightIcon from '@/resources/icons/playwright.svg'
+import PythonIcon from '@/resources/icons/python.svg'
 import ReactIcon from '@/resources/icons/react.svg'
 import TailwindCSSIcon from '@/resources/icons/tailwind.svg'
 import TypeScriptIcon from '@/resources/icons/typescript.svg'
+import ViteIcon from '@/resources/icons/vite.svg'
 import { TechStackDataProps } from '../types/techStack.types'
 
 export const TechStackData: TechStackDataProps = {
@@ -61,8 +66,27 @@ export const TechStackData: TechStackDataProps = {
       color: '#193837',
       translationKey: 'MaterialUI'
     },
+    {
+      name: 'Vite',
+      icon: ViteIcon,
+      color: '#646CFF',
+      translationKey: 'Vite'
+    },
   ],
   backend: [
+    {
+      name: 'Python',
+      icon: PythonIcon,
+      color: '#3776AB',
+      translationKey: 'Python'
+    },
+    {
+      name: 'pandas',
+      icon: PandasIcon,
+      color: '#150458',
+      backgroundColor: '#FFFFFF',
+      translationKey: 'Pandas'
+    },
     {
       name: 'Node.js',
       icon: NodeJSIcon,
@@ -128,6 +152,18 @@ export const TechStackData: TechStackDataProps = {
       icon: AWSIcon,
       color: '#8e2609',
       translationKey: 'AWS'
+    },
+    {
+      name: 'Firebase',
+      icon: FirebaseIcon,
+      color: '#FFCA28',
+      translationKey: 'Firebase'
+    },
+    {
+      name: 'Jupyter',
+      icon: JupyterIcon,
+      color: '#F37626',
+      translationKey: 'Jupyter'
     },
   ],
 }

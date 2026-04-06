@@ -22,6 +22,7 @@ import portfolioLight from '@/resources/images/portfolio/portfolio_light.gif';
 import portfolioLight1 from '@/resources/images/portfolio/portfolio_light1.png';
 import portfolioLight2 from '@/resources/images/portfolio/portfolio_light2.png';
 import portfolioLightMobile from '@/resources/images/portfolio/portfolio_light_mobile.png';
+import itinde_Logo from '@/resources/images/itinde/itinde_Logo.svg';
 import qrBites_Dashboard from '@/resources/images/qrbites/qrbites_Dashboard.png';
 import qrBites_Dashboard_light from '@/resources/images/qrbites/qrbites_Dashboard_light.png';
 import qrBites_Flow from '@/resources/images/qrbites/qrbites_Flow.gif';
@@ -131,6 +132,39 @@ const projects: Project[] = [
       techlabs_Tracks,
       techlabs_Home,
       techlabs_Flow,
+    ],
+    isAvailable: true
+  },
+  {
+    id: 'itinde',
+    title: 'projects.items.itinde.title',
+    image: itinde_Logo,
+    logo: itinde_Logo,
+    description: 'projects.items.itinde.description',
+    problem: 'projects.items.itinde.problem',
+    solution: 'projects.items.itinde.solution',
+    techStack: [
+      'Python',
+      'Poetry',
+      'pandas',
+      'Jupyter',
+      'DeepSeek LLM',
+      'MinHash LSH',
+      'JobSpy',
+      'React 19',
+      'TypeScript',
+      'Vite',
+      'TanStack Router',
+      'TanStack Query',
+      'Recharts',
+      'react-simple-maps',
+      'Tailwind CSS',
+      'Firebase Hosting',
+    ],
+    demoUrl: 'https://it-in-de.web.app/',
+    githubUrl: 'https://github.com/ibhf13/it-in-de',
+    screenshots: [
+      itinde_Logo,
     ],
     isAvailable: true
   },

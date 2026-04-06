@@ -102,6 +102,26 @@
       "Playwright": {
         "name": "Playwright",
         "description": "Ein Framework für Web Tests und Automatisierung"
+      },
+      "Vite": {
+        "name": "Vite",
+        "description": "Ein schnelles Build-Tool und Dev-Server für moderne Web-Projekte"
+      },
+      "Python": {
+        "name": "Python",
+        "description": "Eine vielseitige Programmiersprache für Daten, Skripte und ML"
+      },
+      "Pandas": {
+        "name": "pandas",
+        "description": "Eine Python-Bibliothek für Datenanalyse und -manipulation"
+      },
+      "Jupyter": {
+        "name": "Jupyter",
+        "description": "Interaktive Notebooks für Datenexploration und Analyse"
+      },
+      "Firebase": {
+        "name": "Firebase",
+        "description": "Googles App-Plattform mit Hosting, Auth und Firestore"
       }
     }
   },
@@ -162,6 +182,12 @@
         "description": "Eine moderne, responsive IT Bootcamp Website, entwickelt mit React und TypeScript, um Nutzern zu helfen, in die Tech Branche zu kommen.",
         "problem": "Die aktuelle TechLabs Website ist veraltet und bietet nicht genügend Informationen über die verfügbaren IT Bootcamps und die Möglichkeit, in die Tech Branche zu kommen. Dies motivierte mich, eine eigene Lösung zu entwickeln.",
         "solution": "TechLabs bietet einen umfassenden Überblick über unsere IT-Bootcamps und eine klare Call-to-Action für deinen Einstieg in die Tech-Branche. Echte Erfahrungsberichte von Absolvent:innen, aktuelle und vergangene Events sowie Unternehmens-Partnerschaften für Praktika und Jobs runden das Angebot ab – alles mit nahtloser Nutzerführung und hervorragender Barrierefreiheit."
+      },
+      "itinde": {
+        "title": "Deutscher IT-Arbeitsmarkt",
+        "description": "Eine End-to-End-Datenpipeline und ein interaktives Dashboard zur Analyse von rund 22.500 deutschen IT-Stellenanzeigen von LinkedIn und Indeed, angereichert zu 29 strukturierten Feldern pro Stelle.",
+        "problem": "Der deutsche IT-Arbeitsmarkt ist über viele Jobbörsen verteilt, mit uneinheitlichen Schemata, Freitextbeschreibungen, Dubletten und ohne standardisierte Sicht auf Gehalt, Seniorität, geforderte Skills, Arbeitsmodell oder Sprachanforderungen. Bewerber:innen und Analyst:innen fehlt ein sauberer, vergleichbarer Datensatz, um Fragen zu beantworten wie: Welche Städte zahlen am besten, welche Tech-Stacks sind gefragt, wie remote-freundlich ist der Markt wirklich?",
+        "solution": "Ich habe eine 9-stufige Python-Pipeline gebaut (scrape → ingest → prepare → deduplicate → regex extract → LLM extract → validate → clean & enrich → export), die Roh-Postings in 29 angereicherte Spalten pro Job verwandelt. Die Deduplizierung kombiniert URL-, Composite-Key-, SHA-256- und MinHash-LSH-Verfahren. Die Extraktion läuft in zwei Modi: ein deterministischer Regex-Modus (0 €, sofort) und ein LLM-Modus mit DeepSeek V3, async Semaphoren und Checkpoint-DB, sodass Re-Runs nur neue Zeilen verarbeiten. Die Ergebnisse werden in 11 Jupyter-Notebooks (35 Charts) exploriert und als React 19 + TanStack Dashboard mit Recharts und interaktiver Deutschlandkarte (react-simple-maps) auf Firebase Hosting ausgeliefert."
       }
     }
   },

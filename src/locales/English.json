@@ -102,6 +102,26 @@
       "Playwright": {
         "name": "Playwright",
         "description": "A framework for Web Testing and Automation"
+      },
+      "Vite": {
+        "name": "Vite",
+        "description": "A fast build tool and dev server for modern web projects"
+      },
+      "Python": {
+        "name": "Python",
+        "description": "A versatile, high-level programming language used for data, scripting and ML"
+      },
+      "Pandas": {
+        "name": "pandas",
+        "description": "A Python library for data manipulation and analysis"
+      },
+      "Jupyter": {
+        "name": "Jupyter",
+        "description": "Interactive notebooks for data exploration and analysis"
+      },
+      "Firebase": {
+        "name": "Firebase",
+        "description": "Google's app development platform with hosting, auth and Firestore"
       }
     }
   },
@@ -162,6 +182,12 @@
         "description": "A modern, responsive IT Bootcamp website developed using React and TypeScript to help people get into the tech industry for free.",
         "problem": "current Techlabs website is outdated and doesn't provide enough information about the available IT Bootcamps and call to action to get people into the tech industry. This motivated me to create my own solution.",
         "solution": "TechLabs gives you a complete overview of our IT bootcamps and a clear call to action to launch your tech career. Real alumni stories, upcoming and past events, and company partnerships for internships and jobs round out the experience—delivered with seamless usability and excellent accessibility."
+      },
+      "itinde": {
+        "title": "German IT Job Market",
+        "description": "An end-to-end data pipeline and interactive dashboard analysing ~22,500 German IT job postings scraped from LinkedIn and Indeed, enriched into 29 structured fields per job.",
+        "problem": "The German IT job market is fragmented across multiple boards with inconsistent schemas, free-text descriptions, duplicate listings, and no standardised view of salary, seniority, required skills, work modality, or language requirements. Job seekers and analysts have no clean, comparable dataset to answer questions like which cities pay best, which tech stacks are in demand, or how remote-friendly the market really is.",
+        "solution": "I built a 9-step Python pipeline (scrape → ingest → prepare → deduplicate → regex extract → LLM extract → validate → clean & enrich → export) that turns raw postings into 29 enriched columns per job. Deduplication combines URL, composite key, SHA-256 and MinHash LSH near-dup grouping. Extraction runs in two modes: a deterministic regex-only mode ($0, instant) and an LLM mode using DeepSeek V3 with async semaphores and a checkpoint DB so re-runs only process new rows. Findings are explored in 11 Jupyter notebooks (35 charts) and shipped as a React 19 + TanStack dashboard with Recharts and an interactive Germany map (react-simple-maps) deployed on Firebase Hosting."
       }
     }
   },
