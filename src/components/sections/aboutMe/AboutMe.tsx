@@ -1,3 +1,5 @@
+import Seo from '@/components/Seo'
+import { SITE_URL } from '@/config/site'
 import { useTranslation } from '@/hooks/useCustomTranslation'
 import { calculateAge } from '@/utils/dateUtils'
 import { Box, Container } from '@mui/material'
@@ -20,6 +22,12 @@ const AboutMe = () => {
       position="relative"
       overflow="hidden"
     >
+      <Seo
+        title={t('seo.home.title')}
+        description={t('seo.home.description')}
+        canonical={SITE_URL}
+        type="website"
+      />
       <Container maxWidth="lg">
         <motion.div initial="hidden" animate="visible">
           <Box

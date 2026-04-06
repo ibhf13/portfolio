@@ -129,6 +129,13 @@
     "present": "Present",
     "loading": "Loading"
   },
+  "seo": {
+    "author": "Ibrahim Klusmann",
+    "home": {
+      "title": "Ibrahim Klusmann — Frontend Developer Portfolio",
+      "description": "Portfolio of Ibrahim Klusmann, a frontend developer specialising in React, TypeScript and modern web interfaces. Selected projects, work history, and contact."
+    }
+  },
   "workTimeline": {
     "title": "Work Timeline",
     "positions": {
