@@ -9,14 +9,14 @@ export const StyledSection = styled('section')(({ theme }) => ({
     },
 }))
 
-export const StyledPaper = styled(Paper)(({ theme }) => ({
-    padding: theme.spacing(2),
+export const StyledPaper = styled(Paper)(() => ({
+    padding: '16px',
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    transition: 'all 0.3s ease-in-out',
+    transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background 0.3s ease-in-out',
 }))
 
 export const IconWrapper = styled(motion.div, {
@@ -52,14 +52,16 @@ export const IconWrapper = styled(motion.div, {
     })
 )
 
-export const TechIcon = styled('img')<{ isExpress: boolean; isActive: boolean }>(
+export const TechIcon = styled('img', {
+    shouldForwardProp: (prop) => !['isExpress', 'isActive'].includes(prop as string),
+})<{ isExpress: boolean; isActive: boolean }>(
     ({ isExpress, isActive }) => ({
         width: '100%',
         height: '100%',
         objectFit: 'contain',
-        filter: isExpress && isActive ? ' brightness(2) contrast(150%)' : 'none',
+        filter: isExpress && isActive ? 'brightness(2) contrast(150%)' : 'none',
         transition: 'filter 0.3s ease-in-out',
         position: 'relative',
         zIndex: 1,
     })
-) 
+)

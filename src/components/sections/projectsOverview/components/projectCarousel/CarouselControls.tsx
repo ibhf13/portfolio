@@ -1,7 +1,7 @@
-import { useTheme } from '@/hooks/useTheme'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 import { IconButton } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
 
 interface CarouselControlsProps {
     onNext: () => void
@@ -14,14 +14,18 @@ const CarouselControls = ({ onNext, onPrevious, showControls }: CarouselControls
 
     if (!showControls) return null
 
+    const isLight = theme.palette.mode === 'light'
+
     const buttonStyles = {
         position: 'absolute',
         top: '50%',
         transform: 'translateY(-50%)',
-        bgcolor: theme.theme.palette.background.paper,
+        bgcolor: isLight ? theme.palette.primary.main : theme.palette.background.paper,
+        color: isLight ? theme.palette.primary.contrastText : theme.palette.primary.main,
+        boxShadow: theme.shadows[3],
         zIndex: 10,
         '&:hover': {
-            bgcolor: theme.theme.palette.background.default,
+            bgcolor: isLight ? theme.palette.primary.dark : theme.palette.background.default,
         },
     }
 
@@ -46,4 +50,3 @@ const CarouselControls = ({ onNext, onPrevious, showControls }: CarouselControls
 }
 
 export default CarouselControls
-

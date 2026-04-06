@@ -11,7 +11,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
 }) => {
     const theme = useTheme()
 
-    const shouldUsePlus = years > 3
+    const shouldUsePlus = years >= 4
 
     return (
         <Box
@@ -28,17 +28,17 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                transition: 'all 0.3s ease-in-out',
+                transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out',
                 '&:hover': {
                     transform: 'translateY(-10px)',
                     boxShadow: theme.shadows[10],
-                    border: `2px solid ${theme.palette.secondary.light}`,
+                    borderColor: theme.palette.secondary.light,
                 },
             }}
         >
             <motion.div
                 whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.2 }}
+                transition={{ duration: 0.6 }}
                 style={{ color: theme.palette.primary.main }}
             >
                 {icon}

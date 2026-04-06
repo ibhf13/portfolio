@@ -4,6 +4,8 @@ export interface Technology {
     color: string
     backgroundColor?: string
     translationKey: string
+    needsBackdrop?: boolean
+    invertOnActive?: boolean
 }
 
 export interface TechStackDataProps {
@@ -15,12 +17,14 @@ export interface TechStackDataProps {
 
 export type TechStackSection = keyof TechStackDataProps
 
+export type ActiveTechSection = TechStackSection | 'all'
+
 export interface TechCardProps {
     tech: Technology
     index: number
 }
 
 export interface TechStackTabsProps {
-    activeSection: TechStackSection | 'all'
-    onChangeSection: (section: TechStackSection | 'all') => void
-} 
+    activeSection: ActiveTechSection
+    onChangeSection: (section: ActiveTechSection) => void
+}

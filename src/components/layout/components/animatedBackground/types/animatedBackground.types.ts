@@ -21,6 +21,7 @@ export interface StarConfig {
     size: number
     color: string
     position: Position
+    animationDelay: number
 }
 
 export interface ParticleConfig {

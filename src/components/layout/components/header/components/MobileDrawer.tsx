@@ -1,12 +1,13 @@
 import { useLanguage } from '@/contexts/LanguageContext'
 import { useTranslation } from '@/hooks/useCustomTranslation'
 import { useNavigation } from '@/hooks/useNavigation'
+import { ThemeMode } from '@/types/theme.types'
 import CloseIcon from '@mui/icons-material/Close'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
 import { Box, Drawer, IconButton, List, ListItem, ListItemText, useTheme } from '@mui/material'
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useRef } from 'react'
 import { NAV_ITEMS } from '../constants/header.constants'
 import LanguageMenu from './LanguageMenu'
 
@@ -21,13 +22,18 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, toggleThem
   const theme = useTheme()
   const { language, setLanguage } = useLanguage()
   const { navigateToSection } = useNavigation()
+  const pendingNavRef = useRef<string | null>(null)
 
   const handleNavigation = (sectionId: string) => {
+    pendingNavRef.current = sectionId
     onClose()
+  }
 
-    setTimeout(() => {
-      navigateToSection(sectionId)
-    }, 300)
+  const handleExited = () => {
+    if (pendingNavRef.current) {
+      navigateToSection(pendingNavRef.current)
+      pendingNavRef.current = null
+    }
   }
 
   return (
@@ -35,15 +41,21 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, toggleThem
       anchor="right"
       open={isOpen}
       onClose={onClose}
-      PaperProps={{
-        sx: {
-          width: 250,
-          backgroundColor: 'background.paper',
+      slotProps={{
+        transition: { onExited: handleExited },
+        paper: {
+          sx: {
+            width: 250,
+            backgroundColor: 'background.paper',
+            display: 'flex',
+            flexDirection: 'column',
+            height: '100%',
+          },
         },
       }}
     >
       <Box sx={{ p: 2, display: 'flex', justifyContent: 'flex-end' }}>
-        <IconButton onClick={onClose}>
+        <IconButton onClick={onClose} aria-label="Close menu">
           <CloseIcon />
         </IconButton>
       </Box>
@@ -66,8 +78,8 @@ const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose, toggleThem
           currentLanguage={language}
           onLanguageChange={setLanguage}
         />
-        <IconButton onClick={toggleTheme} color="inherit">
-          {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+        <IconButton onClick={toggleTheme} color="inherit" aria-label="Toggle theme">
+          {theme.palette.mode === ThemeMode.DARK ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
       </Box>
     </Drawer>

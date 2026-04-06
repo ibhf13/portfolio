@@ -3,25 +3,26 @@ import concentrixLogo from '@/resources/images/concentrix.jpg'
 import e3dcLogo from '@/resources/images/e3dc.jpg'
 import techLabs from '@/resources/images/techlabs.jpg'
 import uosLogo from '@/resources/images/uos.jpg'
+import { useMemo } from 'react'
 import { WorkExperience } from '../types/workTimeline.types'
 
 export const useWorkExperienceData = (): WorkExperience[] => {
     const { t } = useTranslation()
 
-    return [
+    return useMemo(() => [
         {
             position: t('workTimeline.positions.frontend'),
             company: t('workTimeline.companies.e3dc'),
             description: t('workTimeline.description.frontend'),
             logo: e3dcLogo,
-            year: '2023 - Heute',
+            year: `2023 - ${t('common.present')}`,
         },
         {
             position: t('workTimeline.positions.mentor'),
             company: t('workTimeline.companies.techLabs'),
             description: t('workTimeline.description.mentor'),
             logo: techLabs,
-            year: '2024 - Heute',
+            year: `2024 - ${t('common.present')}`,
         },
         {
             position: t('workTimeline.positions.vb'),
@@ -38,11 +39,11 @@ export const useWorkExperienceData = (): WorkExperience[] => {
             year: '2019-2021',
         },
         {
-            position: "Student",
+            position: t('workTimeline.positions.student'),
             company: t('workTimeline.companies.uos'),
             description: t('workTimeline.description.student'),
             logo: uosLogo,
             year: '2017-2023',
         },
-    ]
-} 
+    ], [t])
+}

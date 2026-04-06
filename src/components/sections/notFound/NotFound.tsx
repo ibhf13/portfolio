@@ -1,14 +1,18 @@
 import { useTranslation } from '@/hooks/useCustomTranslation'
-import { useNavigation } from '@/hooks/useNavigation'
 import HomeIcon from '@mui/icons-material/Home'
 import SearchOffIcon from '@mui/icons-material/SearchOff'
 import { Box, Button, Container, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const NotFound: React.FC = () => {
-    const { navigateToSection } = useNavigation()
+    const navigate = useNavigate()
     const { t } = useTranslation()
+
+    const handleGoHome = () => {
+        navigate('/')
+    }
 
     return (
         <Container maxWidth="sm">
@@ -22,21 +26,22 @@ const NotFound: React.FC = () => {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    minHeight: 'calc(100vh - 80px)',
+                    minHeight: 'calc(100dvh - 80px)',
                     textAlign: 'center',
-                    gap: 2
+                    gap: 2,
                 }}
             >
                 <SearchOffIcon
+                    aria-hidden="true"
                     sx={{
                         fontSize: 100,
                         color: 'primary.main',
-                        mb: 2
+                        mb: 2,
                     }}
                 />
                 <Typography
-                    variant="h1"
-                    component={motion.h1}
+                    aria-hidden="true"
+                    component={motion.div}
                     initial={{ scale: 0.5 }}
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.2 }}
@@ -48,14 +53,14 @@ const NotFound: React.FC = () => {
                         backgroundClip: 'text',
                         WebkitBackgroundClip: 'text',
                         color: 'transparent',
-                        mb: 2
+                        mb: 2,
                     }}
                 >
                     404
                 </Typography>
                 <Typography
                     variant="h4"
-                    component={motion.h2}
+                    component={motion.h1}
                     initial={{ x: -50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.3 }}
@@ -70,7 +75,6 @@ const NotFound: React.FC = () => {
                     initial={{ x: 50, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 0.4 }}
-                    paragraph
                 >
                     {t('notFound.description')}
                 </Typography>
@@ -84,14 +88,14 @@ const NotFound: React.FC = () => {
                     variant="contained"
                     size="large"
                     startIcon={<HomeIcon />}
-                    onClick={() => navigateToSection('aboutMe')}
+                    onClick={handleGoHome}
                     sx={{
                         mt: 4,
                         px: 4,
                         py: 1.5,
                         borderRadius: 2,
                         textTransform: 'none',
-                        fontSize: '1.1rem'
+                        fontSize: '1.1rem',
                     }}
                 >
                     {t('notFound.button')}

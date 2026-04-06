@@ -26,8 +26,7 @@ export const getSectionStyles = (theme: Theme) => ({
         margin: '0 auto',
         padding: theme.spacing(isMobile ? 2 : isTablet ? 3 : 4),
         borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.background.paper, 0.8),
-        backdropFilter: 'blur(10px)',
+        backgroundColor: alpha(theme.palette.background.paper, 0.85),
         boxShadow: theme.shadows[4],
-    })
+    }),
 }) 

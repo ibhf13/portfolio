@@ -36,7 +36,7 @@ const baseVariants: Variants = {
     },
 }
 
-export const animationVariants: Record<AnimationType, Variants> = {
+export const animationVariants = {
     [AnimationType.Fade]: baseVariants,
 
     [AnimationType.Slide]: {
@@ -120,7 +120,7 @@ export const animationVariants: Record<AnimationType, Variants> = {
         ...baseVariants,
         visible: {
             ...baseVariants.visible,
-            skew: [0, -12.5, 6.25, -3.125, 1.5625, -0.78125, 0.390625, -0.1953125, 0],
+            skewX: [0, -12.5, 6.25, -3.125, 1.5625, -0.78125, 0.390625, -0.1953125, 0],
             transition: {
                 duration: 1,
                 ease: "easeInOut",
@@ -265,5 +265,5 @@ export const animationVariants: Record<AnimationType, Variants> = {
 }
 
 export const getAnimationVariant = (type: AnimationType): Variants => {
-    return animationVariants[type] || baseVariants
-} 
+    return (animationVariants[type] as Variants) || baseVariants
+}

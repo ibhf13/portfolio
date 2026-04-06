@@ -1,10 +1,10 @@
-import { useAnimatedSection } from '@/hooks/useAnimatedSection'
-import { AnimationType } from '@/styles/animations'
-import { useMediaQuery, useTheme } from '@mui/material'
-import { useAnimation } from 'framer-motion'
-import { useEffect } from 'react'
-import { useInView } from 'react-intersection-observer'
-import { useWorkExperienceData } from './useWorkExperienceData'
+import { useAnimatedSection } from '@/hooks/useAnimatedSection';
+import { AnimationType } from '@/styles/animations';
+import { useMediaQuery, useTheme } from '@mui/material';
+import { useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
+import { useWorkExperienceData } from './useWorkExperienceData';
 
 export const useWorkTimelineLogic = () => {
     const theme = useTheme()
@@ -15,8 +15,8 @@ export const useWorkTimelineLogic = () => {
     const { itemVariants } = useAnimatedSection({ type: AnimationType.FadeInUp })
     const { containerVariants } = useAnimatedSection({
         type: AnimationType.SlideInRight,
-        staggerChildren: 0.3,
-        delay: 0.2,
+        staggerChildren: 0.08,
+        delay: 0.02,
     })
 
     const workExperience = useWorkExperienceData()
@@ -27,10 +27,6 @@ export const useWorkTimelineLogic = () => {
         }
     }, [controls, inView])
 
-    useEffect(() => {
-        controls.start('visible')
-    }, [controls])
-
     return {
         isMobile,
         controls,
@@ -39,4 +35,4 @@ export const useWorkTimelineLogic = () => {
         containerVariants,
         workExperience,
     }
-} 
+}

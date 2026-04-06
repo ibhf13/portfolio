@@ -1,7 +1,6 @@
 import { ThemeMode } from '@/types/theme.types'
-import { AppBar, Toolbar } from '@mui/material'
+import { AppBar, Box, Toolbar } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
 import React from 'react'
 import HeaderContent from './components/HeaderContent'
 import MobileHeader from './components/MobileHeader'
@@ -10,7 +9,6 @@ import { HeaderProps } from './types/header.types'
 
 const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
   const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
     <AppBar
@@ -24,14 +22,15 @@ const Header: React.FC<HeaderProps> = ({ toggleTheme }) => {
           height: '100%',
           background: theme.palette.mode === ThemeMode.LIGHT
             ? theme.palette.primary.gradientLight
-            : theme.palette.primary.gradientDark
+            : theme.palette.primary.gradientDark,
         }}
       >
-        {isMobile ? (
-          <MobileHeader toggleTheme={toggleTheme} />
-        ) : (
+        <Box sx={{ display: { xs: 'none', md: 'contents' } }}>
           <HeaderContent toggleTheme={toggleTheme} />
-        )}
+        </Box>
+        <Box sx={{ display: { xs: 'contents', md: 'none' } }}>
+          <MobileHeader toggleTheme={toggleTheme} />
+        </Box>
       </Toolbar>
     </AppBar>
   )

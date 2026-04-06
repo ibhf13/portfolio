@@ -1,19 +1,22 @@
-import AboutMe from '@/components/sections/aboutMe/AboutMe'
-import ContactForm from '@/components/sections/contactForm/ContactForm'
-import ProjectsOverview from '@/components/sections/projectsOverview/ProjectsOverview'
-import TechStack from '@/components/sections/techStack/TechStack'
-import WorkTimeline from '@/components/sections/workTimeline/WorkTimeline'
 import { AnimationType } from '@/styles/animations'
+import { lazy, type ComponentType, type LazyExoticComponent } from 'react'
+
+const AboutMe = lazy(() => import('@/components/sections/aboutMe/AboutMe'))
+const WorkTimeline = lazy(() => import('@/components/sections/workTimeline/WorkTimeline'))
+const TechStack = lazy(() => import('@/components/sections/techStack/TechStack'))
+const ProjectsOverview = lazy(() => import('@/components/sections/projectsOverview/ProjectsOverview'))
+const ContactForm = lazy(() => import('@/components/sections/contactForm/ContactForm'))
+
+export type SectionName = 'aboutMe' | 'workTimeline' | 'techStack' | 'projects' | 'contact'
 
 export interface Section {
-    name: string
-    Component: React.FC
+    name: SectionName
+    Component: LazyExoticComponent<ComponentType>
     animationType: AnimationType
     fullHeight?: boolean
-    backgroundColor?: string
 }
 
-export const getSections = (): Section[] => [
+export const sections: readonly Section[] = [
     {
         name: 'aboutMe',
         Component: AboutMe,
@@ -44,5 +47,4 @@ export const getSections = (): Section[] => [
         animationType: AnimationType.Slide,
         fullHeight: true,
     },
-
-] 
+] as const

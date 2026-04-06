@@ -15,19 +15,17 @@ const AboutMeHeader = ({ name, age }: AboutMeHeaderProps) => {
     const { itemVariants } = useAnimatedSection({ type: AnimationType.FadeInUp })
 
     return (
-        <>
-            <motion.div variants={itemVariants}>
-                <Typography variant="h2" fontWeight="bold" mb={4}>
-                    {name}
+        <motion.div variants={itemVariants}>
+            <Typography id="about-heading" variant="h2" fontWeight="bold" mb={4}>
+                {name}
+            </Typography>
+            <Box display="flex" flexDirection="row" flexWrap="wrap" alignItems="flex-start" gap={1} mb={2}>
+                <Typography variant="h5">
+                    {t('aboutMe.age', { age })}
                 </Typography>
-                <Box display="flex" flexDirection="row" flexWrap="wrap" alignItems="flex-start" gap={1} mb={2}>
-                    <Typography variant="h5" >
-                        {t('aboutMe.age', { age })}
-                    </Typography>
-                    <DynamicProfession />
-                </Box>
-            </motion.div>
-        </>
+                <DynamicProfession />
+            </Box>
+        </motion.div>
     )
 }
 
