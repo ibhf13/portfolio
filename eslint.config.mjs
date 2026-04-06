@@ -2,7 +2,11 @@ import prettier from 'eslint-config-prettier'
 import importPlugin from 'eslint-plugin-import'
 import react from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
+import { fileURLToPath } from 'node:url'
+import { dirname } from 'node:path'
 import tseslint from 'typescript-eslint'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default [
   {
@@ -24,7 +28,7 @@ export default [
           jsx: true,
         },
         project: './tsconfig.json',
-        tsconfigRootDir: '.',
+        tsconfigRootDir: __dirname,
       },
     },
     settings: {
