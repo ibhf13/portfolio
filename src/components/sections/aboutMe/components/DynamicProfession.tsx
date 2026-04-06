@@ -1,6 +1,7 @@
 import { useTranslation } from '@/hooks/useCustomTranslation'
 import { Typography } from '@mui/material'
 import { motion } from 'framer-motion'
+import { useMemo } from 'react'
 import { useTypingEffect } from '../hooks/useTypingEffect'
 import { ProfessionKeys } from '../types/aboutMe.types'
 
@@ -8,7 +9,7 @@ const professions = [ProfessionKeys.SOFTWARE, ProfessionKeys.FRONTEND]
 
 const DynamicProfession = () => {
     const { t } = useTranslation()
-    const translatedTexts = professions.map(profession => t(profession))
+    const translatedTexts = useMemo(() => professions.map(profession => t(profession)), [t])
     const { displayText, isDone } = useTypingEffect({ texts: translatedTexts })
 
     return (

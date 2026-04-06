@@ -22,12 +22,12 @@ const COLORS = {
       secondary: '#000000',
     },
     sections: {
-      aboutMe: 'linear-gradient(135deg, #083f8f 30%, #3d6fb7  80%)',
-      workTimeline: 'linear-gradient(135deg, #3d6fb7 30%, #0e366b  80%)',
-      techStack: 'linear-gradient(135deg, #0e366b 30%, #6B96BE  80%)',
-      projects: 'linear-gradient(135deg, #6B96BE 30%, #0e366b  80%)',
-      contact: 'linear-gradient(135deg, #0e366b 30%, #6B96BE  80%)',
-    }
+      aboutMe: 'linear-gradient(135deg, #083f8f 30%, #3d6fb7 80%)',
+      workTimeline: 'linear-gradient(135deg, #3d6fb7 30%, #0e366b 80%)',
+      techStack: 'linear-gradient(135deg, #0e366b 30%, #6B96BE 80%)',
+      projects: 'linear-gradient(135deg, #6B96BE 30%, #0e366b 80%)',
+      contact: 'linear-gradient(135deg, #0e366b 30%, #6B96BE 80%)',
+    },
   },
   dark: {
     primary: {
@@ -49,13 +49,12 @@ const COLORS = {
       secondary: '#b0bec5',
     },
     sections: {
-      aboutMe: 'linear-gradient(135deg, #010e0c  30%, #011612  80%)',
+      aboutMe: 'linear-gradient(135deg, #010e0c 30%, #011612 80%)',
       workTimeline: 'linear-gradient(135deg, #061512 30%, #09332B 80%)',
-      techStack: 'linear-gradient(135deg, #0C2924 30%, #1b3d3d  80%)',
+      techStack: 'linear-gradient(135deg, #0C2924 30%, #1b3d3d 80%)',
       projects: 'linear-gradient(135deg, #1b3d3d 30%, #0d3c3f 80%)',
       contact: 'linear-gradient(135deg, #0d3c3f 30%, #294a4d 80%)',
-    }
-
+    },
   },
 } as const
 
@@ -73,7 +72,8 @@ const GRADIENTS = {
 } as const
 
 const TYPOGRAPHY = {
-  fontFamily: '"Inter", "Roboto", "Helvetica", "Arial", sans-serif',
+  bodyFontFamily: '"Manrope Variable", "Manrope", "Helvetica Neue", "Helvetica", "Arial", sans-serif',
+  displayFontFamily: '"Bricolage Grotesque Variable", "Bricolage Grotesque", "Manrope Variable", "Helvetica Neue", "Helvetica", sans-serif',
   fontWeights: {
     regular: 400,
     medium: 500,
@@ -131,20 +131,55 @@ const createAppTheme = (mode: ThemeMode): Theme => {
   const baseTheme = createTheme({
     palette,
     typography: {
-      fontFamily: TYPOGRAPHY.fontFamily,
-      h1: { fontWeight: TYPOGRAPHY.fontWeights.bold, letterSpacing: '-0.01562em' },
-      h2: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '-0.00833em' },
-      h3: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '0em' },
-      h4: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '0.00735em' },
-      h5: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '0em' },
-      h6: { fontWeight: TYPOGRAPHY.fontWeights.semiBold, letterSpacing: '0.0075em' },
-      subtitle1: { letterSpacing: '0.00938em' },
-      subtitle2: { letterSpacing: '0.00714em' },
-      body1: { letterSpacing: '0.00938em' },
-      body2: { letterSpacing: '0.01071em' },
-      button: { letterSpacing: '0.02857em', textTransform: 'none' },
-      caption: { letterSpacing: '0.03333em' },
-      overline: { letterSpacing: '0.08333em', textTransform: 'uppercase' },
+      fontFamily: TYPOGRAPHY.bodyFontFamily,
+      h1: {
+        fontFamily: TYPOGRAPHY.displayFontFamily,
+        fontWeight: TYPOGRAPHY.fontWeights.bold,
+        letterSpacing: '-0.025em',
+        lineHeight: 1.05,
+      },
+      h2: {
+        fontFamily: TYPOGRAPHY.displayFontFamily,
+        fontWeight: TYPOGRAPHY.fontWeights.bold,
+        letterSpacing: '-0.022em',
+        lineHeight: 1.1,
+      },
+      h3: {
+        fontFamily: TYPOGRAPHY.displayFontFamily,
+        fontWeight: TYPOGRAPHY.fontWeights.semiBold,
+        letterSpacing: '-0.018em',
+        lineHeight: 1.15,
+      },
+      h4: {
+        fontFamily: TYPOGRAPHY.displayFontFamily,
+        fontWeight: TYPOGRAPHY.fontWeights.semiBold,
+        letterSpacing: '-0.012em',
+        lineHeight: 1.2,
+      },
+      h5: {
+        fontFamily: TYPOGRAPHY.displayFontFamily,
+        fontWeight: TYPOGRAPHY.fontWeights.semiBold,
+        letterSpacing: '-0.008em',
+        lineHeight: 1.25,
+      },
+      h6: {
+        fontFamily: TYPOGRAPHY.displayFontFamily,
+        fontWeight: TYPOGRAPHY.fontWeights.semiBold,
+        letterSpacing: '-0.004em',
+        lineHeight: 1.3,
+      },
+      subtitle1: { letterSpacing: '0.005em', lineHeight: 1.55 },
+      subtitle2: { letterSpacing: '0.003em', lineHeight: 1.55 },
+      body1: { letterSpacing: '0.002em', lineHeight: 1.65 },
+      body2: { letterSpacing: '0.003em', lineHeight: 1.6 },
+      button: {
+        fontFamily: TYPOGRAPHY.displayFontFamily,
+        fontWeight: TYPOGRAPHY.fontWeights.semiBold,
+        letterSpacing: '0.005em',
+        textTransform: 'none',
+      },
+      caption: { letterSpacing: '0.02em' },
+      overline: { letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: TYPOGRAPHY.fontWeights.semiBold },
     },
     shape: {
       borderRadius: 8,
@@ -152,6 +187,13 @@ const createAppTheme = (mode: ThemeMode): Theme => {
     components: {
       MuiCssBaseline: {
         styleOverrides: {
+          '@keyframes twinkle': {
+            '0%': { opacity: 0.3 },
+            '100%': { opacity: 1 },
+          },
+          'section[id]': {
+            scrollMarginTop: '64px',
+          },
           body: {
             scrollbarColor: mode === ThemeMode.LIGHT ? "#CFD8DC #ECEFF1" : "#37474F #263238",
             "&::-webkit-scrollbar, & *::-webkit-scrollbar": {
@@ -208,7 +250,7 @@ const createAppTheme = (mode: ThemeMode): Theme => {
               ? '0 4px 20px rgba(0, 0, 0, 0.1)'
               : '0 4px 20px rgba(255, 255, 255, 0.1)',
             background: mode === ThemeMode.LIGHT
-              ? 'linear-gradient(180deg, #001a29 50%, #f5f5f5 40%)'
+              ? palette.background.paper
               : 'linear-gradient(135deg, #1E1E1E 0%, #2D3748 100%)',
             transition: 'transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
             '&:hover': {
@@ -280,7 +322,7 @@ const createAppTheme = (mode: ThemeMode): Theme => {
             border: '1px solid #bdbdbd',
             backgroundColor: '#fafafa',
             opacity: 1,
-            transition: 'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+            transition: 'background-color 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
           },
         },
       },

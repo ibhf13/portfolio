@@ -1,4 +1,4 @@
-import { Box, Grid, useMediaQuery, useTheme } from '@mui/material'
+import { Box, useMediaQuery, useTheme } from '@mui/material'
 import { SPACING } from '../constants/aboutMe.constants'
 import { ExperienceItem } from '../types/aboutMe.types'
 import ExperienceCard from './ExperienceCard'
@@ -16,16 +16,24 @@ const ExperienceGrid = ({ experiences }: ExperienceGridProps) => {
 
     return (
         <Box p={spacing}>
-            <Grid container spacing={spacing}>
-                {experiences.map((exp, index) => (
-                    <Grid item xs={12} sm={4} key={index}>
-                        <ExperienceCard
-                            {...exp}
-                            isMobile={isMobile}
-                        />
-                    </Grid>
+            <Box
+                sx={{
+                    display: 'grid',
+                    gap: spacing,
+                    gridTemplateColumns: {
+                        xs: '1fr',
+                        sm: 'repeat(3, minmax(0, 1fr))',
+                    },
+                }}
+            >
+                {experiences.map((exp) => (
+                    <ExperienceCard
+                        key={exp.text}
+                        {...exp}
+                        isMobile={isMobile}
+                    />
                 ))}
-            </Grid>
+            </Box>
         </Box>
     )
 }

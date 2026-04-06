@@ -39,9 +39,9 @@ export const useTypingEffect = ({
                 return
             }
 
-            setTimeout(() => setIsDeleting(true), deletingDelay)
+            const pauseTimeout = setTimeout(() => setIsDeleting(true), deletingDelay)
 
-            return
+            return () => clearTimeout(pauseTimeout)
         }
 
         if (isDeleting && displayText === '') {

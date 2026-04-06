@@ -14,10 +14,10 @@ const TechCard = ({ tech, index }: TechCardProps) => {
     const [isActive, setIsActive] = useState(false)
     const { itemVariants } = useAnimatedSection({
         type: AnimationType.ScaleInCenter,
-        delay: index * 0.1
+        delay: Math.min(index, 8) * 0.05,
     })
 
-    const needsWhiteBg = tech.name === 'MongoDB' || tech.name === 'Express'
+    const needsWhiteBg = tech.needsBackdrop ?? false
 
     const handleCardStyle = {
         boxShadow: isActive ? `0 0 15px ${tech.color}` : theme.shadows[3],
@@ -28,14 +28,20 @@ const TechCard = ({ tech, index }: TechCardProps) => {
 
     const handleActivation = (active: boolean) => () => setIsActive(active)
 
+    const techName = t(`techStack.technologies.${tech.translationKey}.name`)
+    const techDescription = t(`techStack.technologies.${tech.translationKey}.description`)
+
     return (
-        <Tooltip title={t(`techStack.technologies.${tech.translationKey}.description`)}>
+        <Tooltip title={techDescription}>
             <motion.div
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onHoverStart={handleActivation(true)}
                 onHoverEnd={handleActivation(false)}
+                tabIndex={0}
+                role="button"
+                aria-label={`${techName}: ${techDescription}`}
             >
                 <StyledPaper elevation={3} sx={handleCardStyle}>
                     <IconWrapper
@@ -49,13 +55,13 @@ const TechCard = ({ tech, index }: TechCardProps) => {
                     >
                         <TechIcon
                             src={tech.icon}
-                            alt={`${tech.name} icon`}
-                            isExpress={tech.name === 'Express'}
+                            alt=""
+                            isExpress={tech.invertOnActive ?? false}
                             isActive={isActive}
                         />
                     </IconWrapper>
                     <Typography variant="body1" mt={2} textAlign="center" fontWeight="medium">
-                        {t(`techStack.technologies.${tech.translationKey}.name`)}
+                        {techName}
                     </Typography>
                 </StyledPaper>
             </motion.div>
@@ -63,4 +69,4 @@ const TechCard = ({ tech, index }: TechCardProps) => {
     )
 }
 
-export default TechCard 
+export default TechCard

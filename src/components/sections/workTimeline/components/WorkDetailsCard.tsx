@@ -1,59 +1,58 @@
 import { useAnimatedSection } from '@/hooks/useAnimatedSection'
 import { AnimationType } from '@/styles/animations'
-import { Grid, Paper, Typography, useTheme } from '@mui/material'
+import { Box, Paper, Typography, useTheme } from '@mui/material'
 import { motion } from 'framer-motion'
 import { WorkExperience } from '../types/workTimeline.types'
 
+interface WorkDetailsCardProps {
+    experience: WorkExperience
+}
 
-const WorkDetailsCard = ({ experience }: { experience: WorkExperience }) => {
+const WorkDetailsCard = ({ experience }: WorkDetailsCardProps) => {
     const theme = useTheme()
     const { itemVariants: variants } = useAnimatedSection({
         type: AnimationType.SlideInRight,
     })
 
-
     return (
-        <motion.div variants={variants} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+        <motion.div
+            variants={variants}
+            whileHover={{ y: -4 }}
+            whileTap={{ scale: 0.97 }}
+            tabIndex={0}
+        >
             <Paper
+                component="article"
                 elevation={3}
                 sx={{
                     p: theme.spacing(2),
                     backgroundColor: theme.palette.background.paper,
                     borderRadius: 2,
-                    transition: 'all 0.3s ease-in-out',
+                    transition: 'box-shadow 0.3s ease-in-out',
                     '&:hover': {
                         boxShadow: theme.shadows[8],
                     },
                 }}
             >
-                <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                        <Typography variant="h6" color="primary" fontWeight="bold">
-                            {experience.position}
-                        </Typography>
-                    </Grid>
-                    <Grid item xs={12}>
-                        <Typography variant="subtitle1" fontWeight="bold">
-                            {experience.company}
-                        </Typography>
-                    </Grid>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                    <Typography variant="h6" color="primary" fontWeight="bold">
+                        {experience.position}
+                    </Typography>
+                    <Typography variant="subtitle1" fontWeight="bold">
+                        {experience.company}
+                    </Typography>
                     {experience.year && (
-                        <Grid item xs={12}>
-                            <Typography variant="body2" color="textSecondary">
-                                {experience.year}
-                            </Typography>
-                        </Grid>
-                    )}
-                    <Grid item xs={12}>
-                        <Typography variant="body2">
-                            {experience.description}
+                        <Typography variant="body2" color="text.secondary">
+                            {experience.year}
                         </Typography>
-                    </Grid>
-                </Grid>
-
+                    )}
+                    <Typography variant="body2">
+                        {experience.description}
+                    </Typography>
+                </Box>
             </Paper>
         </motion.div>
     )
 }
 
-export default WorkDetailsCard 
+export default WorkDetailsCard

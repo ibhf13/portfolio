@@ -29,7 +29,11 @@ const TimelineItem = ({ experience, index, totalItems }: TimelineItemProps) => {
                     >
                         <motion.img
                             src={experience.logo}
-                            alt={`${experience.company} logo`}
+                            alt=""
+                            width={80}
+                            height={80}
+                            loading="lazy"
+                            decoding="async"
                             style={{
                                 width: '100%',
                                 height: '100%',

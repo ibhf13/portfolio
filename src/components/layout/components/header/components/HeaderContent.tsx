@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext'
+import { ThemeMode } from '@/types/theme.types'
 import { isLocalEnvironment } from '@/utils/environmentUtils'
 import DarkModeIcon from '@mui/icons-material/DarkMode'
 import LightModeIcon from '@mui/icons-material/LightMode'
@@ -30,10 +31,10 @@ const HeaderContent: React.FC<HeaderProps> = ({ toggleTheme }) => {
         <IconButton
           onClick={toggleTheme}
           color="inherit"
-          aria-label={theme.palette.mode === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          aria-label={theme.palette.mode === ThemeMode.DARK ? 'Switch to light mode' : 'Switch to dark mode'}
           sx={{ ml: 1 }}
         >
-          {theme.palette.mode === 'dark' ? <LightModeIcon /> : <DarkModeIcon />}
+          {theme.palette.mode === ThemeMode.DARK ? <LightModeIcon /> : <DarkModeIcon />}
         </IconButton>
       </Box>
     </>

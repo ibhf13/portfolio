@@ -1,3 +1,4 @@
+import { useCallback } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 export const useNavigation = () => {
@@ -5,7 +6,7 @@ export const useNavigation = () => {
     const location = useLocation()
     const isHomePage = location.pathname === '/'
 
-    const navigateToSection = (sectionId: string) => {
+    const navigateToSection = useCallback((sectionId: string) => {
         if (!isHomePage) {
             navigate('/', { state: { scrollTo: sectionId } })
 
@@ -17,15 +18,11 @@ export const useNavigation = () => {
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' })
         }
-    }
+    }, [isHomePage, navigate])
 
-    const navigateToProject = (projectId: string) => {
-        navigate(`/project/${projectId}`)
-    }
+    const navigateToProject = useCallback((projectId: string) => {
+        navigate(`/project/${encodeURIComponent(projectId)}`)
+    }, [navigate])
 
-    return {
-        navigateToSection,
-        navigateToProject,
-        isHomePage
-    }
-} 
+    return { navigateToSection, navigateToProject, isHomePage }
+}

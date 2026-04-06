@@ -132,4 +132,3 @@ export const TechStackData: TechStackDataProps = {
   ],
 }
 
-export type TechStackSection = keyof typeof TechStackData

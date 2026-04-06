@@ -1,16 +1,16 @@
 import { useAnimatedSection } from '@/hooks/useAnimatedSection'
 import { useTranslation } from '@/hooks/useCustomTranslation'
 import { AnimationType } from '@/styles/animations'
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 import { TechCard, TechStackData, TechStackTabs } from './components'
 import { StyledSection } from './styles/techStack.styles'
-import { TechStackSection } from './types/techStack.types'
+import { ActiveTechSection } from './types/techStack.types'
 
 const TechStack = () => {
   const { t } = useTranslation()
-  const [activeSection, setActiveSection] = useState<TechStackSection | 'all'>('all')
+  const [activeSection, setActiveSection] = useState<ActiveTechSection>('all')
   const { containerVariants, itemVariants } = useAnimatedSection({
     type: AnimationType.FadeInUp,
     staggerChildren: 0.1
@@ -21,7 +21,7 @@ const TechStack = () => {
     : TechStackData[activeSection]
 
   return (
-    <StyledSection as="section" id="techStack" aria-labelledby="techStackTitle">
+    <StyledSection id="techStack" aria-labelledby="techStackTitle">
       <motion.div
         variants={itemVariants}
         initial="hidden"
@@ -47,14 +47,28 @@ const TechStack = () => {
             initial="hidden"
             animate="visible"
             exit="hidden"
+            role="tabpanel"
+            id={`techstack-panel-${activeSection}`}
+            aria-labelledby={`techstack-tab-${activeSection}`}
           >
-            <Grid container spacing={2} justifyContent="center">
+            <Box
+              sx={{
+                display: 'grid',
+                gap: 2,
+                justifyContent: 'center',
+                gridTemplateColumns: {
+                  xs: 'repeat(2, minmax(0, 1fr))',
+                  sm: 'repeat(3, minmax(0, 1fr))',
+                  md: 'repeat(4, minmax(0, 1fr))',
+                },
+              }}
+            >
               {technologies.map((tech, index) => (
-                <Grid item xs={6} sm={4} md={3} key={tech.name}>
+                <Box key={tech.name}>
                   <TechCard tech={tech} index={index} />
-                </Grid>
+                </Box>
               ))}
-            </Grid>
+            </Box>
           </motion.div>
         </AnimatePresence>
       </motion.div>

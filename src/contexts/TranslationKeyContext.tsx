@@ -1,8 +1,8 @@
-import React, { createContext, ReactNode, useContext, useState } from 'react'
+import React, { createContext, ReactNode, useCallback, useContext, useMemo, useState } from 'react'
 
 interface TranslationKeyContextType {
   showKeys: boolean
-  setShowKeys: React.Dispatch<React.SetStateAction<boolean>>
+  toggleShowKeys: () => void
 }
 
 const TranslationKeyContext = createContext<TranslationKeyContextType | undefined>(undefined)
@@ -10,8 +10,14 @@ const TranslationKeyContext = createContext<TranslationKeyContextType | undefine
 export const TranslationKeyProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [showKeys, setShowKeys] = useState(false)
 
+  const toggleShowKeys = useCallback(() => {
+    setShowKeys((prev) => !prev)
+  }, [])
+
+  const value = useMemo(() => ({ showKeys, toggleShowKeys }), [showKeys, toggleShowKeys])
+
   return (
-    <TranslationKeyContext.Provider value={{ showKeys, setShowKeys }}>
+    <TranslationKeyContext.Provider value={value}>
       {children}
     </TranslationKeyContext.Provider>
   )

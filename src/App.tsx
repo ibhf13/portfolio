@@ -1,17 +1,18 @@
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
-import React from 'react'
+import { useMemo, type FC } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { useResponsiveContainer } from './config/router'
+import { buildRoutes } from './config/router'
 import { LanguageProvider } from './contexts/LanguageContext'
 import { TranslationKeyProvider } from './contexts/TranslationKeyContext'
 import { useTheme } from './hooks/useTheme'
 
-const App: React.FC = () => {
+const App: FC = () => {
   const { theme, toggleTheme } = useTheme()
 
-  const router = createBrowserRouter(
-    useResponsiveContainer({ theme, toggleTheme })
+  const router = useMemo(
+    () => createBrowserRouter(buildRoutes({ toggleTheme })),
+    [toggleTheme]
   )
 
   return (

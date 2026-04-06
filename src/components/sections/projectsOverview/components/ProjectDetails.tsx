@@ -52,13 +52,15 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ project }) => {
 
                 <Box display="flex" flexDirection="column" justifyContent="center" flex={1} >
                     <Box display="flex" flexDirection="column" justifyContent="center" flex={1} >
-                        <motion.div
-                            initial={{ opacity: 0, x: -50 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.5 }}
-                        >
-                            <ImageCarousel images={project.screenshots} />
-                        </motion.div>
+                        {project.screenshots.length > 0 && (
+                            <motion.div
+                                initial={{ opacity: 0, x: -50 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                <ImageCarousel images={project.screenshots} />
+                            </motion.div>
+                        )}
                     </Box>
                     <Box display="flex" justifyContent="flex-end" gap={2} >
                         {project.githubUrl && (

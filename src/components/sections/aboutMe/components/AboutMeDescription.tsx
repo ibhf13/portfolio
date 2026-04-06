@@ -13,19 +13,17 @@ const AboutMeDescription = ({ age }: AboutMeDescriptionProps) => {
     const { itemVariants } = useAnimatedSection({ type: AnimationType.SlideInLeft })
 
     return (
-        <>
-            <motion.div variants={itemVariants}>
-                <Typography variant="body1" paragraph>
-                    {t('aboutMe.description', { age })}
-                </Typography>
-                <Typography variant="body1" paragraph>
-                    {t('aboutMe.passion')}
-                </Typography>
-                <Typography variant="body1" mb={4}>
-                    {t('aboutMe.hobbies')}
-                </Typography>
-            </motion.div>
-        </>
+        <motion.div variants={itemVariants}>
+            <Typography variant="body1" gutterBottom>
+                {t('aboutMe.description', { age })}
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+                {t('aboutMe.passion')}
+            </Typography>
+            <Typography variant="body1" gutterBottom>
+                {t('aboutMe.hobbies')}
+            </Typography>
+        </motion.div>
     )
 }
 

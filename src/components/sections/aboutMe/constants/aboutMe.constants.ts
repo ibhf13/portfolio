@@ -1,3 +1,5 @@
+export const BIRTH_DATE = new Date('1994-01-01')
+
 export const ANIMATION_DELAYS = {
     STAGGER_CHILDREN: 0.2,
     DELAY_CHILDREN: 0.3,

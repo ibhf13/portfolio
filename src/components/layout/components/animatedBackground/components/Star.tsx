@@ -17,8 +17,8 @@ const Star: React.FC<StarProps> = ({ config }) => {
         height: config.size,
         backgroundColor: config.color,
         borderRadius: '50%',
-        boxShadow: `0 0 ${config.size}px ${config.color}`,
         animation: 'twinkle 1.5s infinite ease-in-out alternate',
+        animationDelay: `${config.animationDelay}s`,
       }}
     />
   )

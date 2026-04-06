@@ -1,34 +1,38 @@
 import { useAnimatedSection } from '@/hooks/useAnimatedSection'
 import { useTranslation } from '@/hooks/useCustomTranslation'
 import { AnimationType } from '@/styles/animations'
-import emailjs from '@emailjs/browser'
 import { Button, TextField, Typography } from '@mui/material'
 import { motion } from 'framer-motion'
-import { useEffect } from 'react'
 import ConfirmationDialog from './components/ConfirmationDialog'
 import SocialLinks from './components/SocialLinks'
-import { EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from './constants/contactForm.constants'
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID } from './constants/contactForm.constants'
 import { useContactForm } from './hooks/useContactForm'
 import { FormContainer, StyledFormSection } from './styles/contactForm.styles'
 
 const ContactForm = () => {
   const { t } = useTranslation()
-  const { formData, dialogState, handleChange, handleSubmit, handleCloseDialog } = useContactForm({
+  const {
+    formData,
+    dialogState,
+    errors,
+    handleChange,
+    handleSubmit,
+    handleCloseDialog,
+  } = useContactForm({
     emailjsTemplateId: EMAILJS_TEMPLATE_ID,
-    emailjsServiceId: EMAILJS_SERVICE_ID
+    emailjsServiceId: EMAILJS_SERVICE_ID,
   })
-  const { containerVariants, itemVariants } = useAnimatedSection({
+  const { itemVariants } = useAnimatedSection({
     type: AnimationType.FadeInUp,
-    staggerChildren: 0.1
+    staggerChildren: 0.1,
   })
 
-  useEffect(() => {
-    emailjs.init(EMAILJS_PUBLIC_KEY)
-  }, [])
+  const isSubmitting = dialogState.isLoading
 
   return (
-    <StyledFormSection as="section" id="contact">
+    <StyledFormSection as="section" id="contact" aria-labelledby="contactTitle">
       <Typography
+        id="contactTitle"
         variant="h2"
         textAlign="center"
         mb={4}
@@ -41,6 +45,8 @@ const ContactForm = () => {
       <FormContainer
         as="form"
         onSubmit={handleSubmit}
+        noValidate
+        aria-labelledby="contactTitle"
       >
         <TextField
           fullWidth
@@ -48,6 +54,9 @@ const ContactForm = () => {
           name="name"
           value={formData.name}
           onChange={handleChange}
+          disabled={isSubmitting}
+          error={Boolean(errors.name)}
+          helperText={errors.name}
           required
         />
         <TextField
@@ -57,6 +66,9 @@ const ContactForm = () => {
           type="email"
           value={formData.email}
           onChange={handleChange}
+          disabled={isSubmitting}
+          error={Boolean(errors.email)}
+          helperText={errors.email}
           required
         />
         <TextField
@@ -67,6 +79,10 @@ const ContactForm = () => {
           rows={4}
           value={formData.message}
           onChange={handleChange}
+          disabled={isSubmitting}
+          error={Boolean(errors.message)}
+          helperText={errors.message}
+          inputProps={{ maxLength: 2000 }}
           required
         />
         <Button
@@ -75,21 +91,17 @@ const ContactForm = () => {
           color="primary"
           fullWidth
           size="large"
+          disabled={isSubmitting}
+          aria-busy={isSubmitting}
         >
           {t('contact.submitButton')}
         </Button>
       </FormContainer>
 
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <SocialLinks />
-      </motion.div>
+      <SocialLinks />
 
       <ConfirmationDialog state={dialogState} onClose={handleCloseDialog} />
-    </StyledFormSection >
+    </StyledFormSection>
   )
 }
 

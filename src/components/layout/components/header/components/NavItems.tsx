@@ -1,37 +1,38 @@
-import { useAnimatedSection } from '@/hooks/useAnimatedSection'
 import { useTranslation } from '@/hooks/useCustomTranslation'
+import { useActiveSection } from '@/hooks/useActiveSection'
 import { useNavigation } from '@/hooks/useNavigation'
-import { AnimationType } from '@/styles/animations'
 import { Box, Button } from '@mui/material'
-import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { NAV_ITEMS } from '../constants/header.constants'
 
 const NavItems: React.FC = () => {
   const { t } = useTranslation()
-  const { itemVariants } = useAnimatedSection({ type: AnimationType.Slide })
-  const { navigateToSection } = useNavigation()
+  const { navigateToSection, isHomePage } = useNavigation()
+  const sectionIds = useMemo(() => NAV_ITEMS.map((item) => item.key), [])
+  const activeId = useActiveSection(isHomePage ? sectionIds : [])
 
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-      {NAV_ITEMS.map((item) => (
-        <motion.div
-          key={item.key}
-          variants={itemVariants}
-        >
+      {NAV_ITEMS.map((item) => {
+        const isActive = activeId === item.key
+
+        return (
           <Button
+            key={item.key}
             color="inherit"
             onClick={() => navigateToSection(item.key)}
+            aria-current={isActive ? 'page' : undefined}
             sx={{
               mx: 1,
               position: 'relative',
+              fontWeight: isActive ? 'bold' : 'normal',
               '&::after': {
                 content: '""',
                 position: 'absolute',
-                width: '0%',
+                width: isActive ? '100%' : '0%',
                 height: '2px',
                 bottom: 0,
-                left: '50%',
+                left: isActive ? '0%' : '50%',
                 backgroundColor: 'primary.main',
                 transition: 'all 0.3s ease-in-out',
               },
@@ -43,8 +44,8 @@ const NavItems: React.FC = () => {
           >
             {t(item.label)}
           </Button>
-        </motion.div>
-      ))}
+        )
+      })}
     </Box>
   )
 }

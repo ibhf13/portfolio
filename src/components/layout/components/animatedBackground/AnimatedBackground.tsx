@@ -1,5 +1,5 @@
 import { Box, useTheme } from '@mui/material'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { Star } from './components'
 import { useBackgroundConfig } from './hooks'
 
@@ -9,22 +9,21 @@ interface AnimatedBackgroundProps {
   disableStars?: boolean
 }
 
+const DEFAULT_STAR_COUNT = 30
+
 const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
   sectionId,
-  starCount = 100,
+  starCount = DEFAULT_STAR_COUNT,
   disableStars = false
 }) => {
   const theme = useTheme()
-  const config = useBackgroundConfig(sectionId)
+  const config = useBackgroundConfig(sectionId, starCount)
 
-  const stars = disableStars ? null : (
-    Array.from({ length: starCount }, (_, index) => (
-      <Star
-        key={`star-${index}`}
-        config={config.stars[index % config.stars.length]}
-      />
+  const stars = useMemo(() => (
+    disableStars ? null : config.stars.map((starConfig, index) => (
+      <Star key={`star-${index}`} config={starConfig} />
     ))
-  )
+  ), [disableStars, config.stars])
 
   return (
     <Box
@@ -36,10 +35,6 @@ const AnimatedBackground: React.FC<AnimatedBackgroundProps> = ({
         transition: theme.transitions.create('background-color', {
           duration: theme.transitions.duration.standard,
         }),
-        '@keyframes twinkle': {
-          '0%': { opacity: 0.3 },
-          '100%': { opacity: 1 }
-        }
       }}
     >
       {stars}

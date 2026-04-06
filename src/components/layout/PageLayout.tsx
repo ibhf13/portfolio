@@ -1,6 +1,7 @@
+import { trackPageView } from '@/firebase'
 import { Box } from '@mui/material'
 import { ReactNode, useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { Header } from './components/header'
 
 interface LocationState {
@@ -14,36 +15,41 @@ interface PageLayoutProps {
 
 const PageLayout = ({ children, toggleTheme }: PageLayoutProps) => {
     const location = useLocation()
-    const state = location.state as LocationState
+    const navigate = useNavigate()
+    const state = location.state as LocationState | null
 
     useEffect(() => {
-        if (state?.scrollTo) {
-            const section = document.getElementById(state.scrollTo)
+        trackPageView(location.pathname)
+    }, [location.pathname])
 
-            if (section) {
-                setTimeout(() => {
-                    section.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    })
-                }, 300)
-            }
+    useEffect(() => {
+        if (!state?.scrollTo) return
 
-            window.history.replaceState({}, document.title)
-        }
-    }, [state?.scrollTo])
+        const targetId = state.scrollTo
+
+        const raf = requestAnimationFrame(() => {
+            const section = document.getElementById(targetId)
+
+            section?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        })
+
+        navigate(location.pathname, { replace: true, state: {} })
+
+        return () => cancelAnimationFrame(raf)
+    }, [state?.scrollTo, navigate, location.pathname])
 
     return (
         <Box
+            component="main"
             sx={{
                 p: 0,
                 position: 'relative',
                 zIndex: 1,
                 overflow: 'hidden',
-                height: '100vh',
+                height: '100dvh',
                 overflowY: 'scroll',
                 '&::-webkit-scrollbar': {
-                    display: 'none'
+                    display: 'none',
                 },
                 scrollbarWidth: 'none',
                 msOverflowStyle: 'none',
@@ -55,4 +61,4 @@ const PageLayout = ({ children, toggleTheme }: PageLayoutProps) => {
     )
 }
 
-export default PageLayout 
+export default PageLayout

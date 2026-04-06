@@ -1,14 +1,5 @@
-import deTranslations from '@/locales/Deutsch.json'
-import enTranslations from '@/locales/English.json'
-import i18n from 'i18next'
-import LanguageDetector from 'i18next-browser-languagedetector'
-import React, { createContext, useContext, useEffect, useState } from 'react'
-import { initReactI18next } from 'react-i18next'
-
-export enum Language {
-  EN = 'EN',
-  DE = 'DE',
-}
+import i18n, { Language } from '@/i18n'
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
 interface LanguageContextType {
   language: Language
@@ -17,58 +8,57 @@ interface LanguageContextType {
 
 const LANGUAGE_STORAGE_KEY = 'preferredLanguage'
 
-i18n
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    resources: {
-      EN: { translation: enTranslations },
-      DE: { translation: deTranslations },
-    },
-    detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
-      caches: ['localStorage'],
-    },
-    fallbackLng: Language.DE,
-    interpolation: {
-      escapeValue: false,
-    },
-    keySeparator: '.',
-    nsSeparator: ':',
-  })
-
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
-
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const getInitialLanguage = (): Language => {
+const getInitialLanguage = (): Language => {
+  try {
     const savedLanguage = localStorage.getItem(LANGUAGE_STORAGE_KEY)
 
     if (savedLanguage && Object.values(Language).includes(savedLanguage as Language)) {
       return savedLanguage as Language
     }
+  } catch {
+    // ignore
+  }
 
+  if (typeof navigator !== 'undefined') {
     const browserLang = navigator.language.split('-')[0].toUpperCase()
 
     return browserLang === Language.DE ? Language.DE : Language.EN
   }
 
-  const [language, setLanguage] = useState<Language>(getInitialLanguage())
+  return Language.EN
+}
 
-  const handleSetLanguage = (lang: Language) => {
+const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
+
+export { Language }
+
+export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [language, setLanguage] = useState<Language>(getInitialLanguage)
+
+  const handleSetLanguage = useCallback((lang: Language) => {
     setLanguage(lang)
-    localStorage.setItem(LANGUAGE_STORAGE_KEY, lang)
-  }
+    try {
+      localStorage.setItem(LANGUAGE_STORAGE_KEY, lang)
+    } catch {
+      // ignore
+    }
+  }, [])
 
   useEffect(() => {
-    const changeLanguage = async () => {
-      await i18n.changeLanguage(language)
+    if (i18n.language !== language) {
+      i18n.changeLanguage(language).catch((err) => {
+        if (import.meta.env.DEV) console.error('changeLanguage failed', err)
+      })
     }
-
-    changeLanguage()
   }, [language])
 
+  const value = useMemo(
+    () => ({ language, setLanguage: handleSetLanguage }),
+    [language, handleSetLanguage]
+  )
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: handleSetLanguage }}>
+    <LanguageContext.Provider value={value}>
       {children}
     </LanguageContext.Provider>
   )

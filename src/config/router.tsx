@@ -1,72 +1,79 @@
+import LoadingSpinner from '@/components/LoadingSpinner/LoadingSpinner'
 import PageLayout from '@/components/layout/PageLayout'
 import SectionWrapper from '@/components/layout/components/sectionWrapper/SectionWrapper'
-import NotFound from '@/components/sections/notFound/NotFound'
-import ProjectDetailsWrapper from '@/components/sections/projectsOverview/components/ProjectDetailsWrapper'
 import { AnimationType } from '@/styles/animations'
-import { Theme, useMediaQuery } from '@mui/material'
-import { RouteObject } from 'react-router-dom'
-import { getSections } from './routes'
+import { lazy, Suspense } from 'react'
+import { Outlet, RouteObject } from 'react-router-dom'
+import { sections } from './routes'
 
-export const useResponsiveContainer = ({ theme, toggleTheme }: { theme: Theme, toggleTheme: () => void }): RouteObject[] => {
-    const sections = getSections()
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
-    const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'))
+const NotFound = lazy(() => import('@/components/sections/notFound/NotFound'))
+const ProjectDetailsWrapper = lazy(
+    () => import('@/components/sections/projectsOverview/components/ProjectDetailsWrapper')
+)
 
-    const getContainerWidth = () => {
-        if (isMobile) return 'xs'
-        if (isTablet) return 'sm'
+interface BuildRoutesArgs {
+    toggleTheme: () => void
+}
 
-        return 'xl'
-    }
+const SectionFallback = () => (
+    <LoadingSpinner minHeight="100dvh" />
+)
 
-    return [
-        {
-            path: '/',
-            element: (
-                <PageLayout toggleTheme={toggleTheme}>
-                    {sections.map(({ name, Component, animationType, fullHeight }) => (
-                        <SectionWrapper
-                            key={name}
-                            id={name}
-                            animationType={animationType}
-                            fullHeight={fullHeight}
-                            containerWidth={getContainerWidth()}
-                        >
-                            <Component />
-                        </SectionWrapper>
-                    ))}
-                </PageLayout>
-            ),
-        },
-        {
-            path: '/project/:id',
-            element: (
-                <PageLayout toggleTheme={toggleTheme}>
+export const buildRoutes = ({ toggleTheme }: BuildRoutesArgs): RouteObject[] => [
+    {
+        element: (
+            <PageLayout toggleTheme={toggleTheme}>
+                <Outlet />
+            </PageLayout>
+        ),
+        children: [
+            {
+                path: '/',
+                element: (
+                    <>
+                        {sections.map(({ name, Component, animationType, fullHeight }) => (
+                            <SectionWrapper
+                                key={name}
+                                id={name}
+                                animationType={animationType}
+                                fullHeight={fullHeight}
+                            >
+                                <Suspense fallback={<SectionFallback />}>
+                                    <Component />
+                                </Suspense>
+                            </SectionWrapper>
+                        ))}
+                    </>
+                ),
+            },
+            {
+                path: '/project/:id',
+                element: (
                     <SectionWrapper
                         id="project-details"
                         animationType={AnimationType.Fade}
-                        containerWidth={getContainerWidth()}
-                        fullHeight={true}
+                        fullHeight
                     >
-                        <ProjectDetailsWrapper />
+                        <Suspense fallback={<SectionFallback />}>
+                            <ProjectDetailsWrapper />
+                        </Suspense>
                     </SectionWrapper>
-                </PageLayout>
-            ),
-        },
-        {
-            path: '*',
-            element: (
-                <PageLayout toggleTheme={toggleTheme}>
+                ),
+            },
+            {
+                path: '*',
+                element: (
                     <SectionWrapper
                         id="not-found"
                         animationType={AnimationType.Fade}
-                        containerWidth={getContainerWidth()}
-                        fullHeight={true}
+                        fullHeight
                     >
-                        <NotFound />
+                        <Suspense fallback={<SectionFallback />}>
+                            <NotFound />
+                        </Suspense>
                     </SectionWrapper>
-                </PageLayout>
-            ),
-        },
-    ]
-} 
+                ),
+            },
+        ],
+    },
+]

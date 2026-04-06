@@ -10,6 +10,7 @@ const WorkTimeline = () => {
   const {
     isMobile,
     ref,
+    controls,
     itemVariants,
     containerVariants,
     workExperience,
@@ -19,15 +20,22 @@ const WorkTimeline = () => {
     <Box
       component="section"
       id="workTimeline"
+      aria-labelledby="workTimelineTitle"
       py={isMobile ? 4 : 8}
       sx={{ overflow: 'hidden' }}
     >
       <motion.div
         variants={itemVariants}
         initial="hidden"
-        animate="visible"
+        animate={controls}
       >
-        <Typography variant="h2" textAlign="center" mb={6} fontWeight="bold">
+        <Typography
+          id="workTimelineTitle"
+          variant="h2"
+          textAlign="center"
+          mb={6}
+          fontWeight="bold"
+        >
           {t('workTimeline.title')}
         </Typography>
       </motion.div>
@@ -35,7 +43,7 @@ const WorkTimeline = () => {
       <motion.div
         variants={containerVariants}
         initial="hidden"
-        animate="visible"
+        animate={controls}
         ref={ref}
       >
         <Timeline

@@ -105,13 +105,18 @@
       }
     }
   },
+  "common": {
+    "present": "Heute",
+    "loading": "Lädt"
+  },
   "workTimeline": {
     "title": "Arbeitsverlauf",
     "positions": {
       "frontend": "Frontend Entwickler",
       "vb": "Visual Basic Entwickler",
       "support": "IT Support Spezialist",
-      "mentor": "Webentwicklung Mentor - Ehernamt"
+      "mentor": "Webentwicklung Mentor - Ehernamt",
+      "student": "Student"
     },
     "description": {
       "frontend": "Entwicklung neuer Funktionen und Wartung eines responsiven Portals mit modernen Frontend Technologien sowie Testen, Warten und Refaktorisieren bestehender Codes.",

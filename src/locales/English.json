@@ -105,13 +105,18 @@
       }
     }
   },
+  "common": {
+    "present": "Present",
+    "loading": "Loading"
+  },
   "workTimeline": {
     "title": "Work Timeline",
     "positions": {
       "frontend": "Frontend Developer",
       "vb": "Visual basic Developer",
       "support": "IT Support Specialist",
-      "mentor": "Web Development Mentor - Volunteer"
+      "mentor": "Web Development Mentor - Volunteer",
+      "student": "Student"
     },
     "description": {
       "frontend": "Developing new features and maintaining a responsive portal using modern frontend technologies, testing, maintaining and refactoring existing codes.",
