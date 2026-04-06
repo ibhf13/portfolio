@@ -22,6 +22,7 @@ import portfolioLight from '@/resources/images/portfolio/portfolio_light.gif';
 import portfolioLight1 from '@/resources/images/portfolio/portfolio_light1.png';
 import portfolioLight2 from '@/resources/images/portfolio/portfolio_light2.png';
 import portfolioLightMobile from '@/resources/images/portfolio/portfolio_light_mobile.png';
+import itinde_Dashboard from '@/resources/images/it-in-de/dashboard.gif';
 import itinde_Logo from '@/resources/images/itinde/itinde_Logo.svg';
 import qrBites_Dashboard from '@/resources/images/qrbites/qrbites_Dashboard.png';
 import qrBites_Dashboard_light from '@/resources/images/qrbites/qrbites_Dashboard_light.png';
@@ -164,6 +165,7 @@ const projects: Project[] = [
     demoUrl: 'https://it-in-de.web.app/',
     githubUrl: 'https://github.com/ibhf13/it-in-de',
     screenshots: [
+      itinde_Dashboard,
       itinde_Logo,
     ],
     isAvailable: true

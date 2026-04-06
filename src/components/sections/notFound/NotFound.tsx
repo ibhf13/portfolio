@@ -1,3 +1,4 @@
+import Seo from '@/components/Seo'
 import { useTranslation } from '@/hooks/useCustomTranslation'
 import HomeIcon from '@mui/icons-material/Home'
 import SearchOffIcon from '@mui/icons-material/SearchOff'
@@ -16,6 +17,10 @@ const NotFound: React.FC = () => {
 
     return (
         <Container maxWidth="sm">
+            <Seo
+                title={`${t('notFound.title')} — ${t('seo.author')}`}
+                description={t('notFound.description')}
+            />
             <Box
                 component={motion.div}
                 initial={{ opacity: 0, y: 20 }}
